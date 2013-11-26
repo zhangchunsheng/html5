@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0045)http://www.zlong.org/js-practice/imgswap.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css">
+*{font-family:Arial, Helvetica, sans-serif}
+.div1{ 
+background-color:#35BDDB; 
+float:left; 
+margin-left:1px;
+color:#fff;
+vertical-align:middle;
+font-size:0px;
+}
+.sorted{
+	background-color:#CFD0D2}
+#content{ width:100%; height:601px; background-color:#222222; text-align:center; padding:0px}
+</style>
+<script type="text/javascript" src="./jquery-1.4.2.js"></script>
+<script type="text/javascript">
+
+[].indexOf || (Array.prototype.indexOf = function(v){
+       for(var i = this.length; i-- && this[i] !== v;);
+       return i;
+});
+
+var numbs = [];
+var numbers = 5;
+var divWidth = Math.floor(1000/numbers);
+var ti = 1;
+var step = 0;
+var step1 = 0;
+function init(){
+	step1 = 0;
+	numbers = $("#numb").val();
+	if(isNaN(numbers) || Number(numbers) <= 0){
+		numbers = 40;
+		$("#numb").val(40);
+	}
+	if(Number(numbers) > 500){
+		numbers = 500;
+		$("#numb").val(500);
+	}
+	numbs = [];
+	step = 0;
+	ti = 1;
+	$("#content").html("");
+	while(numbs.length < numbers){
+		var t = Math.floor(600*Math.random());
+		if(numbs.indexOf(t) < 0){
+			numbs.push(t);
+		}
+	}
+	$("#step").html("");
+	$.each(numbs, function(i,n){
+		$("<div>").addClass("div1").css({width: (100/numbers - 0.11)+"%", height: n + "px", "margin-top": (600-n) + "px"})
+			.attr("id", n).appendTo($("#content"));
+	});
+}
+
+$(function(){
+	init();
+	$("#random").click(init);
+	$("#bubbleSort").click(function(){
+		$(":input").attr("disabled","disabled");
+		if(step1 != 0){
+			init();
+		}
+		bubbleSort();
+	});
+	$("#QuickSort").click(function(){
+		$(":input").attr("disabled","disabled");
+		if(step1 != 0){
+			init();
+		}
+		QuickSort(numbs, 0, numbs.length);
+	});	
+	$("#MergeSort").click(function(){
+		$(":input").attr("disabled","disabled");
+		if(step1 != 0){
+			init();
+		}
+		MergeSort(numbs, 0, numbs.length - 1);
+	});
+	$("#insertBefore").click(function(){
+		insertBefore($("#" + numbs[0]), $("#" + numbs[1]));
+	});
+});
+
+function bubbleSort(){
+	for(i = 0; i< numbs.length;i++){
+		for(j = i + 1;j<numbs.length;j++){
+			if(numbs[i] > numbs[j]){
+				swap(numbs, i, j);
+			}
+		}
+	}
+}
+
+function swap(arrays, i, j){
+	var t = arrays[i];
+	var m = arrays[j];
+	arrays[i] = arrays[j];
+	arrays[j] = t;
+	step1++;
+	setTimeout("swapDiv($('#' + "+t+"), $('#' + "+m+"))", (ti++)*50);
+}
+
+function swapDiv(div1, div2){
+	$(".div1").removeClass("sorted");
+	var tempDiv = $("<div>");
+	div1.after(tempDiv);
+	div2.after(div1);
+	tempDiv.after(div2);
+	tempDiv.remove();
+	div1.addClass("sorted");
+	div2.addClass("sorted");
+	$("#step").html(++step);
+	
+	if(step == step1){
+		$(":input").attr("disabled","");
+		$(".div1").removeClass("sorted");
+	}
+}
+
+function QuickSort(pData, left, right){    
+	var i,j;   
+	var middle,temp;   
+	i = left;   
+	j = right;   
+	middle = pData[left];   
+	while(true){   
+		while((++i)<right-1 && pData[i]<middle);   
+		while((--j)>left && pData[j]>middle);   
+		if(i>=j)   
+			break;    
+		swap(pData, i, j);
+	}   
+	swap(pData, left, j);  
+	if(left<j)    
+		QuickSort(pData,left,j);   
+	if(right>i)    
+		QuickSort(pData,i,right);   
+}
+
+function MergeSort(arrays, p, r){
+	if(p < r){
+		var q = Math.floor((r + p)/2);
+		MergeSort(arrays, p, q);
+		MergeSort(arrays, q + 1, r);
+		merge(arrays, p, q, r);
+	}
+}
+
+function merge(arrays, p, q, r){
+	var i = j = 0;
+	var n1 = q - p + 1;
+	var n2 = r -q;
+	var la = [];
+	var ra = [];
+	for(i = 0; i < n1; i++){
+		la[i] = arrays[p + i];
+	}
+	for(i = 0; i < n2; i++){
+		ra[i] = arrays[q + 1 + i];
+	}
+	i = j = 0;
+	for(k = p; k <= r; k++){
+		var m = la[i];
+		var n = ra[j];
+		if((j == n2) || (la[i] < ra[j])){
+			arrays[k] = la[i];
+			i++;
+		} else {
+			arrays[k] = ra[j];
+			j++;
+			setTimeout("insertBefore($('#' + "+m+"), $('#' + "+n+"))", (ti++)*50);
+			step1 ++;
+		}
+	}
+}
+
+function insertBefore(div1, div2){
+	$(".div1").removeClass("sorted");
+	div2.insertBefore(div1);
+	div1.addClass("sorted");
+	div2.addClass("sorted");
+	$("#step").html(++step);
+	if(step == step1){
+		$(":input").attr("disabled","");
+		$(".div1").removeClass("sorted");
+	}
+}
+
+</script>
+</head>
+<body>
+<div id="num"></div>
+<button id="bubbleSort">bubbleSort</button>
+<button id="QuickSort">QuickSort</button>
+<button id="MergeSort">MergeSort</button>
+<input id="numb" value="40">
+<button id="random">init</button>
+step:<span id="step"></span>
+<div id="n"></div>
+<div id="content"><div class="div1" style="width: 2.39%; height: 530px; margin-top: 70px; " id="530"></div><div class="div1" style="width: 2.39%; height: 296px; margin-top: 304px; " id="296"></div><div class="div1" style="width: 2.39%; height: 430px; margin-top: 170px; " id="430"></div><div class="div1" style="width: 2.39%; height: 433px; margin-top: 167px; " id="433"></div><div class="div1" style="width: 2.39%; height: 0px; margin-top: 600px; " id="0"></div><div class="div1" style="width: 2.39%; height: 167px; margin-top: 433px; " id="167"></div><div class="div1" style="width: 2.39%; height: 380px; margin-top: 220px; " id="380"></div><div class="div1" style="width: 2.39%; height: 469px; margin-top: 131px; " id="469"></div><div class="div1" style="width: 2.39%; height: 110px; margin-top: 490px; " id="110"></div><div class="div1" style="width: 2.39%; height: 308px; margin-top: 292px; " id="308"></div><div class="div1" style="width: 2.39%; height: 162px; margin-top: 438px; " id="162"></div><div class="div1" style="width: 2.39%; height: 354px; margin-top: 246px; " id="354"></div><div class="div1" style="width: 2.39%; height: 313px; margin-top: 287px; " id="313"></div><div class="div1" style="width: 2.39%; height: 376px; margin-top: 224px; " id="376"></div><div class="div1" style="width: 2.39%; height: 213px; margin-top: 387px; " id="213"></div><div class="div1" style="width: 2.39%; height: 53px; margin-top: 547px; " id="53"></div><div class="div1" style="width: 2.39%; height: 288px; margin-top: 312px; " id="288"></div><div class="div1" style="width: 2.39%; height: 130px; margin-top: 470px; " id="130"></div><div class="div1" style="width: 2.39%; height: 297px; margin-top: 303px; " id="297"></div><div class="div1" style="width: 2.39%; height: 50px; margin-top: 550px; " id="50"></div><div class="div1" style="width: 2.39%; height: 551px; margin-top: 49px; " id="551"></div><div class="div1" style="width: 2.39%; height: 306px; margin-top: 294px; " id="306"></div><div class="div1" style="width: 2.39%; height: 518px; margin-top: 82px; " id="518"></div><div class="div1" style="width: 2.39%; height: 236px; margin-top: 364px; " id="236"></div><div class="div1" style="width: 2.39%; height: 9px; margin-top: 591px; " id="9"></div><div class="div1" style="width: 2.39%; height: 40px; margin-top: 560px; " id="40"></div><div class="div1" style="width: 2.39%; height: 588px; margin-top: 12px; " id="588"></div><div class="div1" style="width: 2.39%; height: 546px; margin-top: 54px; " id="546"></div><div class="div1" style="width: 2.39%; height: 595px; margin-top: 5px; " id="595"></div><div class="div1" style="width: 2.39%; height: 169px; margin-top: 431px; " id="169"></div><div class="div1" style="width: 2.39%; height: 100px; margin-top: 500px; " id="100"></div><div class="div1" style="width: 2.39%; height: 231px; margin-top: 369px; " id="231"></div><div class="div1" style="width: 2.39%; height: 514px; margin-top: 86px; " id="514"></div><div class="div1" style="width: 2.39%; height: 77px; margin-top: 523px; " id="77"></div><div class="div1" style="width: 2.39%; height: 87px; margin-top: 513px; " id="87"></div><div class="div1" style="width: 2.39%; height: 395px; margin-top: 205px; " id="395"></div><div class="div1" style="width: 2.39%; height: 577px; margin-top: 23px; " id="577"></div><div class="div1" style="width: 2.39%; height: 346px; margin-top: 254px; " id="346"></div><div class="div1" style="width: 2.39%; height: 255px; margin-top: 345px; " id="255"></div><div class="div1" style="width: 2.39%; height: 198px; margin-top: 402px; " id="198"></div></div>
+
+</body></html>
