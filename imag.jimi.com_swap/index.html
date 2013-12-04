@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1, maximum-scale=1" />
+    <title>中国电信</title>
+    <link rel="apple-touch-icon" href="images/iMetro-icon.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="images/iMetro-icon-large.png" />
+    <style>
+        html,body,div,span,h1,h2,h3,h4,h5,h6,p,a{
+            font-size:100%;
+            font:inherit;
+            vertical-align:baseline;
+            margin:0;
+            padding:0;
+            border:0;
+        }
+        html,body{
+            height:100%;
+            margin:0 auto;
+            font-family: "Microsoft Yahei", Helvetica, Arial, Verdana, sans-serif;
+            height:100%;
+            background:#dedede;
+            -webkit-user-select:none;
+            -webkit-text-size-adjust:none;
+        }
+        .imag
+        {
+            height:100%;
+            width:320px;
+            margin:0 auto;
+            position: relative;
+        }
+        .imag-splash 
+        {
+            height:100%;
+            width:100%;
+            background:url(images/op_bg.png);
+        }
+        .imag-splash > .help-text{
+            position: relative;
+            top:60px;
+            margin:0 auto;
+            padding:245px 10px 10px 10px;
+            background: url(images/splash-help.png) no-repeat top center;
+            text-align: center;
+            font-size: 16px;
+            line-height: 150%;
+        }
+        .imag-splash .start-text
+        {
+            padding:30px 10px;
+            display:block;
+            color: #fff;
+        }
+        .imag-splash .tip-text
+        {
+            padding:30px 150px;
+            opacity: 0;
+            background: url(images/splash-tip.png) no-repeat center  center;
+        }
+        .imag-splash > .loading{
+            margin:10px;
+            font-size:90%;
+            color:gray;
+        }
+        .flex-container-vertical {
+            display: -moz-box;
+            display: -ms-box-box;
+            display: -webkit-box;
+            display: -o-box;
+            display: box;
+            -moz-box-orient: vertical;
+            -webkit-box-orient: vertical;
+            -ms-box-orient: vertical;
+            -o-box-orient: vertical;
+            box-orient: vertical;
+            -moz-box-align:stretch;
+            -ms--box-align:stretch;
+            -webkit-box-align:stretch;
+            -o-box-align:stretch;
+            box-align:stretch;
+        }
+        .flex-row-1 {
+            -moz-box-flex: 1;
+            -webkit-box-flex: 1;
+            -ms-box-flex: 1;
+            -o-box-flex: 1;
+            box-flex: 1;
+        }
+        .imag-main{
+            position: absolute;
+            top:0;
+            left:100%;
+            height:100%;
+            width:100%;
+            margin:0;
+            z-index:2;
+        }
+    </style>
+    <script type="text/javascript" src="js/lazyload.js"></script>
+    <script type="text/javascript">
+        var config = {
+            debug: false,
+            srcPath: '',
+            libPath: '',
+            pluginPath: '',
+            contentPath: '',
+            serviceDomain: '',
+            luckyDrawId: 1,
+            startPage: null
+        };
+        config.version = '0.2' + (config.debug ? Math.random() : '');
+        config.resource = [
+        //css
+            [
+                config.srcPath + 'css/imag.css',
+                config.srcPath + 'css/imag.css',
+                'css/main.css',
+                config.contentPath + 'css/main.css'
+            ],
+            [config.libPath + 'js/jquery-1.9.1.min.js'],
+        //js
+            [
+                config.libPath + 'js/zepto.plugins.js',
+                config.srcPath + 'js/imag.js',
+                config.pluginPath + 'js/scratch-lottery.js',
+                'js/main.js'
+            ],
+        //image
+            [
+                config.contentPath + 'images/p1_bg.png'
+            ]
+        ];
+        window.onerror = function (e) {
+            if (config.debug) {
+                alert(e);
+            }
+        };
+        for (var i = 0; i < config.resource.length; i++) {
+            for (var j = 0; j < config.resource[i].length; j++) {
+                if (/(\.js|.css)$/i.test(config.resource[i][j]))
+                    config.resource[i][j] += '?v=' + config.version;
+            }
+        }
+    </script>
+    <!--[if lt IE 10]>
+    <script>
+        config.notSupported = true;
+    </script>
+    <![endif]-->
+</head>
+<body>
+    <div class="imag">
+        <div class="imag-splash">
+            <div class="help-text">
+                <noscript>
+                    <span style="background:#fff;padding:10px;">请打开浏览器Javascript选项。</span>
+                </noscript>
+                <span class="start-text"></span>
+                <span class="tip-text" ></span>
+
+            </div>
+        </div>
+        <div class="imag-main flex-container-vertical">
+            <div class="imag-body flex-row-1">
+                <div class="slider">
+                    <div class="page imetro-index-page" title="首页"></div>
+                    <div class="page" title="公司介绍"></div>
+                    <div class="page" title="企业文化"></div>
+                    <div class="page" title="套餐新玩法"></div>
+                    <div class="page" title="你飞Young了吗"></div>
+                    <div class="page" title="iPhone5 Note2 合约机"></div>
+                    <div class="page" title="青春时尚包"></div>
+                    <div class="page" title="3G智能手机大讲堂"></div>
+                    <div class="page" title="翼吧"></div>
+                    <div class="page luckyDraw" title="刮刮乐"></div>
+                    <div class="page" title="应用墙"></div>
+                </div>
+            </div>
+        </div>
+        <div class="imag-popup-box">
+            <div class="imag-popup-close touchable"></div>
+            <div class="imag-popup-content"></div>
+        </div>
+        <div class="imag-popup-mask"></div>
+        <div class="imag-global-loading"></div>
+    </div>
+    <script type="text/javascript">
+        if (config.notSupported) {
+            document.body.style.display = 'none';
+            alert("抱歉，我们暂不支持您的浏览器。");
+        }
+        function fullScreen(rootDom) {
+            var root = rootDom || document.body;
+            document.body.style.overflow = 'hidden';
+            root.style.height = window.screen.height + 'px';
+            window.scrollTo(0, 1)
+            root.style.height = window.innerHeight + 'px';
+        }
+
+        var App = {
+            loadGlobalResource: function () {
+                function animate() {
+                    $('.tip-text').show().animate(
+                    { opacity: 0.2 }, {
+                        ease: 'linear',
+                        duration: 500,
+                        complete: function () {
+                            $('.tip-text').animate(
+                                { opacity: 1 }, {
+                                    ease: 'linear',
+                                    duration: 500,
+                                    complete: function () {
+                                        animate();
+                                    }
+                                }
+                            );
+                        }
+                    })
+                }
+                var startTxt = document.querySelector('.imag-splash .start-text');
+                LazyLoad.loadAll(
+                    config.resource,
+                    function () {
+                        var txt = 'Loading...  ' + Math.floor(this.resCount / this.total * 100) + '%';
+                        startTxt.textContent = txt;
+                    },
+                    function () {
+                        
+                        $('.imag-main').css({
+                            'position': 'absolute',
+                            'left': '100%',
+                            'visibility': 'hidden'
+                        });
+                        $(startTxt).hide();
+                        animate();
+                        var eventName = 'ontouchstart' in window ? 'swipeleft' : 'click';
+                        $('.imag-splash').on(eventName, function (e) {
+                            e.preventDefault();
+                            $('.imag-main').css('visibility', 'visible').animate({ left: 0 }, {
+                                duration: 300,
+                                complete: function () {
+                                    $('.imag-splash').remove();
+                                }
+                            })
+                            App.main();
+                        });
+                    }
+                )
+            },
+            refresh: function (isFullScreen) {
+                var imag = document.querySelector('.imag');
+                var isWideScreen = window.innerWidth > 800;
+                if (!isWideScreen && isFullScreen) {
+                    fullScreen(imag);
+                }
+                else {
+                    imag.style.height = '100%';
+                    document.body.style.overflow = 'visible';
+                }
+            },
+            init: function () {
+                document.addEventListener('touchstart', function (e) { if (!$(e.changedTouches[0].target).hasClass('imag-tel')) { e.preventDefault(); } }, false);
+                document.querySelector('.imag-splash').addEventListener('touchstart', function (e) {
+                    e.preventDefault();
+                })
+                window.addEventListener('load', function (e) {
+                    App.refresh(true);
+                    App.loadGlobalResource();
+                });
+                window.addEventListener('onorientationchange' in window ? 'orientationchange' : 'resize', function (e) {
+                    App.refresh(true);
+                });
+            }
+        };
+        App.init();
+        window._hmt = [];
+    </script>
+<!-- Baidu tongji imagdev.jimi.com -->
+<script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9a06bfe4278c0e4658ab3efbc623b580' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+</body>
+</html>

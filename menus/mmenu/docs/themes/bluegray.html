@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+		<meta name="author" content="www.frebsite.nl" />
+		<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
+		<meta name="robots" content="noindex, nofollow" />
+
+		<title>jQuery.mmenu &raquo; Color themes</title>
+
+		<link type="text/css" rel="stylesheet" href="../docs.css" />
+		<link type="text/css" rel="stylesheet" href="../../mmenu.css" />
+		
+		<script type="text/javascript" src="../../jquery.js"></script>
+		<script type="text/javascript" src="../../jquery.mmenu.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('nav#menu').mmenu({
+					counters: true
+				});
+			});
+		</script>
+
+		<style type="text/css">
+			.mmenu
+			{
+				background: #323849;
+			}
+			.mmenu li
+			{
+				border-top-color: #3F4454;
+				border-bottom-color: #232733;
+			}
+			.mmenu li > a,
+			.mmenu li > span,
+			.mmenu li > a:hover
+			{
+				color: #abc;
+			}
+			.mmenu li.mmenu-selected > a,
+			.mmenu li.mmenu-selected > span,
+			.mmenu a.mmenu-subclose
+			{
+				background: #232733;
+			}
+			.mmenu a.mmenu-subopen
+			{
+				border-left-color: #232733;
+			}
+			.mmenu li.mmenu-label,
+			.mmenu em.mmenu-counter
+			{
+				background: #3F4454;
+				color: #def;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="page">
+			<div id="header">
+				<a href="#menu"></a>
+				Color themes
+			</div>
+			<div id="content">
+				<p>The menu on this page uses a <strong>blue/gray</strong> theme.</p>
+				<p>This is a demo page.<br />
+					Click the menu-button in the header to open the menu.</p>
+			</div>
+			<nav id="menu">
+				<ul>
+					<li><a href="index.html">Default theme</a></li>
+					<li><a href="white.html">White theme</a></li>
+					<li class="Label">50 shades of gray</li>
+					<li><a href="lightgray.html">Lightgray theme</a></li>
+					<li><a href="redgray.html">Red/gray</a></li>
+					<li><a href="greengray.html">Green/gray</a></li>
+					<li class="Selected"><a href="bluegray.html">Blue/gray</a></li>
+					<li>
+						<a href="#">Submenu colors test</a>
+						<ul>
+							<li><a href="#">Test 1</a></li>
+							<li><a href="#">Test 2</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</body>
+</html>
