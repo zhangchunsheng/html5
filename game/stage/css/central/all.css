@@ -1,0 +1,31 @@
+@charset "UTF-8";
+/**
+ * @author				mitchell
+ * @description		引入全部CSS
+ * @lastmodified		$2011-02-09$
+ */
+
+/* import core styles */
+@import url(../core/reset.css);
+/*@import url(../core/debug.css);*/
+
+
+@import url(../screen/layout.css);
+@import url(../screen/map.css);
+@import url(../screen/bullet.css);
+@import url(../screen/enemy.css);
+@import url(../screen/effect.css);
+@import url(../screen/tower.css);
+@import url(../screen/ui.css);
+
+@import url(../ui/ui.popup.css);
+
+/*
+ui index:
+	map:10
+	tower:20
+	enemy:30
+	bullet:40
+	effect:50
+	ui:60
+*/

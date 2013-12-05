@@ -1,0 +1,162 @@
+<!doctype html>
+<!-- http://tryhtml5.sinaapp.com/wom/play.html -->
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta content="telephone=no,email=no" name="format-detection"/>
+<link rel="apple-touch-icon" href="favicon.png"/>
+<link rel="Shortcut Icon" href="favicon.png" type="image/x-icon" />
+
+
+<title>The Whisper Of Memory 记忆的私语</title>
+
+<link rel="stylesheet" href="./css/main.css" >
+<link rel="stylesheet" href="./css/ui.css" >
+<link rel="stylesheet" href="./css/progress-bar.css" >
+
+<script src="./base/Base.js"></script>
+<script src="./base/Event.js"></script>
+<script src="./base/Timer.js"></script>
+<script src="./base/Loader.js"></script>
+<script src="./base/Animation.js"></script>
+<script src="./base/Game.js"></script>
+
+<script src="./js/Scene.js"></script>
+<script src="./js/Gate.js"></script>
+<script src="./js/Leaf.js"></script>
+<script src="./js/Leaf2.js"></script>
+<script src="./js/Water.js"></script>
+<script src="./js/Player.js"></script>
+<script src="./js/Clock.js"></script>
+<script src="./js/Block.js"></script>
+<script src="./js/Cloud.js"></script>
+<script src="./js/TextBar.js"></script>
+
+<script src="./res/map-data.js"></script>
+<script src="./main.js"></script>
+
+
+<script>
+
+
+	
+</script>
+<style type="text/css">
+
+
+
+</style>
+</head>
+
+<body >
+
+ <div id="loading">
+	  <div class="progress progress-striped active">
+        <div id="loading-bar" class="bar" ></div>
+      </div>
+</div>
+
+
+<div id="container">
+
+
+</div>
+<div id="ui-pool" >
+
+*  It's a plantform game 
+一个平台跳跃类游戏.
+
+
+*  A/D to Move left/right ,W to Jump
+玩家通过A/D按键控制主角左右移动,  W键控制跳跃.
+
+
+* 让主角借助一个个反方向旋转的钟表(去抓钟表的分针) 努力的向上跳跃.
+
+
+* 主角落在某个钟表上之后 钟表开始消失, 玩家要在消失前努力的跳跃到另外的钟表上.
+
+
+* 游戏中有背景音乐. 每当到达音乐的节拍点时(玩家所在的钟表会随着节拍闪动), 
+玩家跳跃的能力会有所提升.
+
+* 游戏除了努力的在尽可能短的时间攀登到顶端这个游戏目的之外, 还有一个更有挑战,也更有内涵的任务:
+去收集隐藏在钟表里的"记忆的私语".
+
+* 本游戏基于HTML5技术, 请使用 chrome 或 safari 浏览器的最新版.
+
+在线体验地址 :  http://tryhtml5.sinaapp.com/wom/play.html
+
+
+
+
+<div id="time-bar">TIME:<span>0</span></div>
+<div id="keys-bar">WHISPER:<span>0</span></div>
+
+		<div id="mainmenu" class="dialog" >
+			<div class="popup" >
+				<span class="title">The Whisper Of Memory</span>
+				<div class="words">
+						Let me talk with another me
+				</div>
+				<a href="javascript:game.start();" class="btn">Find...</a>
+				<a href="javascript:game.about();" class="btn">About</a>
+			</div>
+		</div>
+
+		<div id="gameover" class="dialog">
+			<div class="popup">
+				<span class="title">Game Over</span>
+				<a href="javascript:game.restart()" class="btn">Retry</a>
+				<a href="javascript:game.mainmenu();" class="btn">Exit</a>
+			</div>
+		</div>
+
+		<div id="finish" class="dialog" >
+			<div class="popup" >
+				<span class="title">The Key of Future :</span>
+				<div class="words2">
+						Bravely say Goodbye to Yesterday
+				</div>
+				<a href="javascript:game.restart();" class="btn">Find Again...</a>
+				<a href="javascript:window.location.reload();" class="btn">I See</a>
+			</div>
+		</div>
+
+		<div id="gameover" class="dialog">
+			<div class="popup">
+				<span class="title">Game Over</span>
+				<a href="javascript:game.restart()" class="btn">Retry</a>
+				<a href="javascript:game.mainmenu();" class="btn">Exit</a>
+			</div>
+		</div>
+		<div class="text-bar">Real pain always comes gracefully<br>Just like you</div>
+		<div class="text-bar">If I say I have regrets<br>Can everything then be reversed?</div>
+		<div class="text-bar">Memories are so beautiful,<br>Living is so terrible</div>
+		<div class="text-bar">I don't know and I don't want to know</div>
+		<div class="text-bar">Give me one more chance to rewrite my story</div>
+		<div class="text-bar">Grow up so slowly</div>
+		<div class="text-bar">Grow old so quickly</div>
+		<div class="text-bar">I want to sing a song just for myself</div>
+		<div class="text-bar">I hope the song could heal my heart</div>
+		<div class="text-bar">Can the time wash away all my remorses?</div>
+		<div class="text-bar">Tomorrow will be new again</div>
+		<div class="text-bar">Rather than let you understand me<br>I’d prefer to be a puzzle</div>
+		<div class="text-bar">I only fear my own surrender</div>
+		<div class="text-bar">I'm not truly happy<br>My smile is just a disguise</div>
+		<div class="text-bar">I stand beside you <br>but it’s like we’re separated by a galaxy</div>
+		<div class="text-bar">My life has been seized by memories</div>
+		<div class="text-bar">The happiness of contentment<br>calls me to endure my broken heart</div>
+		<div class="text-bar">Everything will be alright<br>Tomorrow will be fine</div>
+		<div class="text-bar">Laughing through tears, the greatest hurt</div>
+		<div class="text-bar">Is there really that kind of world <br>where the sky never goes dark?</div>
+	</div>
+</body>
+</html>

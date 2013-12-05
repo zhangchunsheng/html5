@@ -1,0 +1,547 @@
+<!doctype html>
+<html>
+    
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>
+            Google
+        </title>
+        <script>
+            window.google = {};
+	    </script>
+        
+        
+
+
+    </head>
+    
+    <body>
+
+                <div id=hplogo style="height:190px;position:relative;width:465px" title="铯元素的发现者 - 化学家罗伯特·本生 200 周年诞辰">
+                    <a href="" style="display:block">
+                        <div style="height:190px;overflow:hidden;position:absolute;width:465px">
+                            <img src="bunsen11-hp-sprite.png" alt="" border=0 width=465>
+                        </div>
+                        <canvas style="background:transparent;left:1px;position:absolute;top:0;z-index:10"
+                        height=190 width=465>
+                        </canvas>
+                        <div style="background:url(bunsen11-hp-sprite.png) no-repeat 0 -190px;height:190px;opacity:0.3;position:absolute;width:465px;z-index:20">
+                        </div>
+                    </a>
+                </div>
+                <noscript>
+                    <style>
+                        #hplogo img,#hplogo canvas{display:none}#hplogo div{background:url(/logos/2011/bunsen11-hp.png)
+                        no-repeat 0 0}
+                    </style>
+                </noscript>
+                <script>
+                    (function() {
+                        var e;
+                        function f(a) {
+                            var b = document.getElementById("hplogo");
+                            if (b && b.getElementsByTagName("img").length) b.getElementsByTagName("img")[0].src = "/logos/2011/bunsen11-hp.png";
+                            google.doodle.bunsen && clearTimeout(google.doodle.bunsen.fa);
+                            google.ml(a, !1, {
+                                cause: "DOODLE"
+                            })
+                        }
+                        try {
+                            if (!google.doodle) google.doodle = {};
+                            var j = ["#2341af", "#32499f", "#305892", "#2f5f8c", "#2f6585", "#2f6b7d", "#2f7175", "#2f786d", "#307e64", "#318459", "#318a4e", "#319144"],
+                            l = ["#fff200", "#fee304", "#fcd509", "#fab712", "#f9a816", "#f79a1b", "#f68b1f", "#f57b20", "#f36b20", "#f25b21", "#f14c22", "#f03c23", "#ee2c23", "#ed1c24", "#e51d2e", "#de1e37", "#d61f41", "#ce214a", "#c62254", "#bf235d", "#b72467", "#ab256d", "#942879", "#89297f", "#7d2a85", "#722c8b", "#662d91", "#63419b", "#6055a5", "#5d69af", "#597cba", "#5690c4", "#53a4ce", "#50b8d8"],
+                            m = function(a, b) {
+                                return Math.round(Math.random() * (b - a) + a)
+                            },
+                            n = function(a, b, c) {
+                                this.min = a;
+                                this.max = b;
+                                this.a = c === void 0 ? m(a, b) : c
+                            };
+                            n.prototype.I = function(a, b) {
+                                var c = b || 0;
+                                this.move(m( - a + c, a + c))
+                            };
+                            n.prototype.set = function(a) {
+                                if (!isNaN(a)) {
+                                    this.a = a;
+                                    if (this.a < this.min) this.a = this.min;
+                                    if (this.a > this.max) this.a = this.max
+                                }
+                            };
+                            n.prototype.move = function(a) {
+                                this.set(this.a + a)
+                            };
+                            var o = function(a, b, c, d, i, g, h, k) {
+                                this.v = a;
+                                this.g = b;
+                                this.h = c;
+                                this.c = d;
+                                this.e = new n(i, g, h);
+                                this.la = k
+                            },
+                            e = o.prototype;
+                            e.i = function() {
+                                this.Da()
+                            };
+                            e.k = function() {
+                                var a = google.doodle.bunsen.canvas;
+                                a.save();
+                                a.translate(this.g, this.h);
+                                a.fillStyle = this.n ? this.Ea() : this.v;
+                                a.lineWidth = 1;
+                                this.la !== void 0 && (a.beginPath(), this.la(), a.clip());
+                                a.beginPath();
+                                a.rect(0, this.K(), this.c, this.e.max - this.K());
+                                a.fill();
+                                a.restore()
+                            };
+                            e.K = function() {
+                                return this.e.max - Math.round(this.e.a)
+                            };
+                            e.Na = function(a) {
+                                this.n = a;
+                                this.N = 1;
+                                this.O = 0
+                            };
+                            e.Ea = function() {
+                                var a = this.n[this.N - 1],
+                                b = this.n[this.N],
+                                c = google.doodle.bunsen.canvas.createLinearGradient(0, Math.round(this.e.a), 0, this.K());
+                                c.addColorStop(0, b);
+                                c.addColorStop(this.O, b);
+                                c.addColorStop(1, a);
+                                return c
+                            };
+                            e.Da = function() {
+                                if (this.n) {
+                                    this.O += 0.1;
+                                    if (this.O > 1) this.N++,
+                                    this.O = 0;
+                                    if (this.N >= this.n.length) this.v = this.n[this.n.length - 1],
+                                    this.n = null
+                                }
+                            };
+                            e.U = function(a) {
+                                this.e.move(a)
+                            };
+                            e.Fa = function(a) {
+                                this.U(a * 0.2 - (this.e.a - this.e.min) * 0.0125 + 0.06)
+                            };
+                            var p = function(a, b) {
+                                this.v = a;
+                                this.va = b;
+                                this.$ = !1;
+                                for (var c = this.H = this.o = this.u = 0,
+                                d; d = b[c++];) this.H += d[2]
+                            },
+                            e = p.prototype;
+                            e.i = function() {
+                                this.u && (this.u < this.H && this.u++, !this.$ && this.o < this.H && this.o++)
+                            };
+                            e.da = function(a) {
+                                if (! (a == this.$ || this.o > 0 && this.o < this.H)) if (this.$ = a) this.u = 1,
+                                this.o = 0
+                            };
+                            e.wa = function(a) {
+                                this.u = a;
+                                this.o = 0
+                            };
+                            e.Z = function() {
+                                return this.u >= this.H
+                            };
+                            e.k = function() {
+                                var a = this.o,
+                                b = this.u - this.o,
+                                c = google.doodle.bunsen.canvas;
+                                c.strokeStyle = this.v;
+                                c.lineCap = "round";
+                                c.lineJoin = "round";
+                                c.lineWidth = 3;
+                                c.beginPath();
+                                var d = this.va[0];
+                                c.moveTo(d[0], d[1]);
+                                for (var i = 1,
+                                g; g = this.va[i++];) {
+                                    var h = g[2],
+                                    k = function(a, b) {
+                                        return d[b] + a / h * (g[b] - d[b])
+                                    };
+                                    if (a > h) a -= h;
+                                    else if (a > 0) c.moveTo(k(a, 0), k(a, 1)),
+                                    c.lineTo(g[0], g[1]),
+                                    a = 0,
+                                    b -= h - a;
+                                    else if (b >= h) c.lineTo(g[0], g[1]),
+                                    b -= h;
+                                    else if (b > 0) {
+                                        c.lineTo(k(b, 0), k(b, 1));
+                                        b = 0;
+                                        break
+                                    }
+                                    d = g
+                                }
+                                c.stroke()
+                            };
+                            var q = function(a, b, c, d) {
+                                this.Ka = a;
+                                this.Oa = Math.round(m(b, c));
+                                this.ha = d
+                            };
+                            q.prototype.i = function(a) {
+                                this.ha -= a;
+                                return this.ha < -this.Ka
+                            };
+                            q.prototype.k = function() {
+                                var a = google.doodle.bunsen.canvas;
+                                a.beginPath();
+                                a.arc(this.Oa, this.ha, 3, 0, Math.PI * 2, !0);
+                                a.stroke()
+                            };
+                            var r = function(a) {
+                                this.j = [];
+                                this.b = 14;
+                                this.M = 2;
+                                this.ea = 0;
+                                this.s = a;
+                                this.d = !1
+                            },
+                            e = r.prototype;
+                            e.k = function() {
+                                var a = google.doodle.bunsen.canvas;
+                                a.save();
+                                a.translate(this.s.g, this.s.h + this.s.K());
+                                a.strokeStyle = "#fff";
+                                a.lineWidth = 2;
+                                a.beginPath();
+                                a.rect(0, 0, this.s.c, this.s.e.a);
+                                a.clip();
+                                for (var b = 0; b < this.j.length; ++b) {
+                                    var c = this.j[b];
+                                    c && c.k()
+                                }
+                                a.restore()
+                            };
+                            e.i = function() {
+                                this.Ha();
+                                this.ea--;
+                                for (var a = 0; a < this.j.length; ++a) {
+                                    var b = this.j[a];
+                                    b && b.i(this.M) && (this.j[a] = null)
+                                }
+                            };
+                            e.Ha = function() {
+                                if (this.d && !(this.ea > 0 || Math.round(m(0, 20 / this.M)) != 1)) {
+                                    this.ea = 10 / this.M;
+                                    for (var a = new q(3, 0, this.s.c, this.s.e.a), b = 0; b < this.j.length; b++) if (this.j[b] == null) {
+                                        this.j[b] = a;
+                                        return
+                                    }
+                                    this.j.push(a)
+                                }
+                            };
+                            e.start = function() {
+                                this.d = !0
+                            };
+                            e.xa = function(a) {
+                                this.M = Math.ceil((a + 0.1) * 3)
+                            };
+                            var s = function(a, b, c, d, i) {
+                                this.g = a;
+                                this.h = b;
+                                this.Ba = 0;
+                                this.b = d;
+                                this.ma = i;
+                                this.ta(0.5);
+                                this.aa = -c / 2;
+                                this.D = c / 2;
+                                this.ga = new n(this.aa, this.D);
+                                this.B = new n(0, this.D / 2);
+                                this.F = new n(this.D, c)
+                            };
+                            s.prototype.ua = function(a) {
+                                this.w = -Math.round(this.b * (0.4 + 0.6 * a));
+                                this.C = new n(this.w / 4, 3 * this.w / 4);
+                                this.G = new n(this.w / 4, 3 * this.w / 4)
+                            };
+                            s.prototype.ta = function(a) {
+                                var b = this.ma.length;
+                                this.v = this.ma[Math.min(Math.max(Math.floor(a * b), 0), b - 1)]
+                            };
+                            s.prototype.i = function() {
+                                this.ga.I(1, this.Ba);
+                                this.B.I(2);
+                                this.C.I(4);
+                                this.F.I(2);
+                                this.G.I(4)
+                            };
+                            s.prototype.k = function() {
+                                var a = google.doodle.bunsen.canvas;
+                                a.save();
+                                a.translate(this.g, this.h);
+                                a.beginPath();
+                                a.strokeStyle = a.fillStyle = this.v;
+                                a.moveTo(this.aa, 0);
+                                a.bezierCurveTo( - this.F.a, this.G.a, -this.B.a, this.C.a, this.ga.a, this.w);
+                                a.bezierCurveTo(this.F.a, this.G.a, this.B.a, this.C.a, this.D, 0);
+                                a.closePath();
+                                a.fill();
+                                a.beginPath();
+                                a.strokeStyle = a.fillStyle = "#ffffff";
+                                a.globalAlpha = 0.5;
+                                a.moveTo(this.aa / 2, 0);
+                                a.bezierCurveTo( - this.F.a / 2, this.G.a / 4, -this.B.a / 2, this.C.a / 4, this.ga.a / 2, this.w / 4);
+                                a.bezierCurveTo(this.F.a / 2, this.G.a / 4, this.B.a / 2, this.C.a / 4, this.D / 2, 0);
+                                a.closePath();
+                                a.fill();
+                                a.globalAlpha = 1;
+                                a.restore()
+                            };
+                            var t = 15 * Math.PI / 180,
+                            u = Math.PI / 5,
+                            v = function(a, b, c) {
+                                this.g = a;
+                                this.h = b;
+                                this.J = c;
+                                this.c = 47;
+                                this.b = 21;
+                                this.p = new Image;
+                                this.p.src = "bunsen11-hp-sprite.png";
+                                this.ca = this.m = this.ba = 0;
+                                this.d = !1;
+                                this.Ja = Math.sqrt(this.b * this.b + this.c * this.c) / 2;
+                                this.Ia = Math.atan(this.b / this.c)
+                            };
+                            v.prototype.i = function() {
+                                if (this.d || !(this.m == 0 && this.ba == 0)) {
+                                    this.ca += u;
+                                    var a = (0, google.doodle.mod)(Math.floor(this.ca / Math.PI / 4), 2) == 0 ? 0 : this.ca;
+                                    a > 0 && this.J.La();
+                                    this.m = Math.sin(a) * t;
+                                    this.ba = this.Ja * Math.cos(Math.PI / 2 - Math.abs(this.m) - this.Ia) - this.b / 2
+                                }
+                            };
+                            v.prototype.k = function() {
+                                var a = google.doodle.bunsen.canvas;
+                                a.save();
+                                a.translate(this.g + this.c / 2, this.h + this.b / 2 - this.ba);
+                                a.rotate(this.m);
+                                a.drawImage(this.p, 36, 968, this.c, this.b, -this.c / 2, -this.b / 2, this.c, this.b);
+                                a.restore()
+                            };
+                            var w = Math.PI / 55,
+                            x = -Math.PI / 2,
+                            y = function(a, b) {
+                                this.g = a;
+                                this.h = b;
+                                this.b = this.c = 16;
+                                this.p = new Image;
+                                this.p.src = "bunsen11-hp-sprite.png";
+                                this.m = x;
+                                this.Ma = 0;
+                                this.d = !1
+                            };
+                            y.prototype.i = function() {
+                                if (this.d && !(this.Ma++<20) && (this.m += w, this.m > 0)) this.m = 0,
+                                this.d = !1
+                            };
+                            y.prototype.k = function() {
+                                var a = google.doodle.bunsen.canvas;
+                                a.save();
+                                a.translate(this.g + this.c / 2, this.h + this.b / 2);
+                                a.rotate(this.m);
+                                a.drawImage(this.p, 87, 971, this.c, this.b, -this.c / 2, -this.b / 2, this.c, this.b);
+                                a.restore()
+                            };
+                            var z = function(a, b) {
+                                this.g = a;
+                                this.h = b;
+                                this.c = 31;
+                                this.b = 35;
+                                this.d = !1;
+                                this.p = new Image;
+                                this.p.src = "bunsen11-hp-sprite.png";
+                                this.z = !1;
+                                this.r = 0;
+                                this.Q = 1
+                            };
+                            z.prototype.i = function() {
+                                if (this.d || this.z) {
+                                    this.r += 0.05;
+                                    if (this.r > 1) this.r = 1,
+                                    this.V = !0;
+                                    if (this.V && (this.Q -= 0.05, this.Q < 0)) this.z = this.V = !1
+                                }
+                            };
+                            z.prototype.k = function() {
+                                var a = google.doodle.bunsen.canvas;
+                                a.save();
+                                if (this.z) {
+                                    var b = a.globalAlpha;
+                                    a.globalAlpha = this.Q;
+                                    a.drawImage(this.p, 0, 950, this.c, this.b, this.g + this.c - this.c * this.r, this.h + this.b - this.b * this.r, this.c * this.r, this.b * this.r);
+                                    a.globalAlpha = b
+                                }
+                                a.restore()
+                            };
+                            z.prototype.La = function() {
+                                if (!this.z) this.r = 0,
+                                this.Q = 1,
+                                this.V = !1,
+                                this.z = !0
+                            };
+                            eval("google.doodle.mod = (function(a,n){return a" + "%%".charAt(0) + "n;})");
+                            var A = function() {
+                                var a = google.doodle.bunsen.canvas;
+                                a.moveTo(20, 0);
+                                a.lineTo(62, 0);
+                                a.lineTo(67, 10);
+                                a.lineTo(61, 27);
+                                a.lineTo(5, 27);
+                                a.lineTo(20, 0)
+                            },
+                            B = function(a) {
+                                return function() {
+                                    google.doodle.bunsen.canvas.arc(a, a, a, 0, 2 * Math.PI, !0)
+                                }
+                            },
+                            C = function() {
+                                var a = google.doodle.bunsen.canvas;
+                                a.moveTo(0, 0);
+                                a.lineTo(13, 0);
+                                a.lineTo(13, 100);
+                                a.arcTo(8, 107, 0, 100, 10);
+                                a.lineTo(0, 0)
+                            },
+                            D = function() {
+                                var a = document.getElementById("hplogo");
+                                this.background = a.getElementsByTagName("img")[0];
+                                this.canvas = a.getElementsByTagName("canvas")[0].getContext("2d");
+                                this.Ga = a.getElementsByTagName("div")[1];
+                                this.R = new n(0, 1, 0.2);
+                                this.za = 0;
+                                this.P = 1800;
+                                this.W = 40;
+                                this.A = new s(131, 103, 13, 50, l);
+                                this.A.ua(this.R.a);
+                                this.L = new o("#2341af", 104, 6, 53, 12, 40, 15);
+                                this.ka = new o("#2341af", 27, 125, 45, 0, 37, 6);
+                                this.qa = new o("#c11b1b", 153, 76, 72, 18, 40, 40, A);
+                                this.Ca = new o("#efd518", 218, 79, 60, 10, 60, 45, B(30));
+                                this.X = new o(j[0], 360, 37, 15, 20, 107, 45, C);
+                                this.na = !1;
+                                this.pa = new o("#c11b1b", 390, 56, 42, 0, 42, 0, B(21));
+                                this.T = new p("#2341af", [[101, 27, 12], [95, 29, 6], [97, 37, 6], [84, 25, 6], [91, 41, 6], [78, 30, 6], [86, 46, 6], [74, 34, 6], [81, 49, 6], [69, 37, 6], [76, 52, 6], [64, 40, 6], [71, 56, 6], [59, 44, 6], [67, 60, 6], [54, 48, 6], [56, 55, 8], [53, 60, 6], [50, 69, 8], [50, 124, 10], [50, 160, 10]]);
+                                this.ja = new p("#efd518", [[251, 141, 0], [251, 151, 9], [255, 157, 7], [265, 157, 6], [276, 157, 30], [291, 157, 15]]);
+                                this.Y = new p("#efd518", [[338, 155, 0], [344, 155, 4], [348, 150, 15], [349, 129, 14], [353, 125, 4], [359, 125, 8]]);
+                                this.ra = new p("#c11b1b", [[398, 121, 0], [398, 114, 7], [398, 99, 15], [398, 93, 6]]);
+                                this.sa = new p("#c11b1b", [[398, 121, 0], [398, 114, 7], [441, 99, 15], [447, 93, 6], [448, 89, 4], [447, 85, 4], [445, 82, 3], [442, 80, 2], [430, 80, 1]]);
+                                this.S = new r(this.L);
+                                this.S.start();
+                                this.ia = new r(this.Ca);
+                                this.J = new z(253, 34);
+                                this.oa = new v(290, 49, this.J);
+                                this.Aa = new y(263, 149);
+                                this.ya = [this.A, this.oa, this.J, this.L, this.ka, this.qa, this.Ca, this.X, this.pa, this.T, this.ja, this.Y, this.ra, this.sa, this.S, this.ia, this.Aa]
+                            },
+                            E = function() {
+                                try {
+                                    var a = google.doodle.bunsen;
+                                    if (a.background.complete) {
+                                        a.canvas.clearRect(0, 0, 450, 187);
+                                        a.za++;
+                                        a.P--;
+                                        google.doodle.bunsen.Ga.style.backgroundPosition = "0 -" + (190 + 190 * (0, google.doodle.mod)(Math.round(a.za / 3), 4)) + "px";
+                                        a.L.Fa(a.R.a);
+                                        var b = a.L.e.a;
+                                        a.T.da(b > 18);
+                                        a.T.Z() && a.ka.U(0.4);
+                                        a.qa.e.set(36 - (b - 18) * 1.5);
+                                        if (b > 18) a.ia.start(),
+                                        a.ja.da(!0),
+                                        a.Aa.d = !0;
+                                        if (a.ja.Z()) a.Y.da(!0),
+                                        a.oa.d = a.J.d = b > 18;
+                                        if (a.Y.Z()) {
+                                            if (!a.na) a.X.Na(j),
+                                            a.na = !0;
+                                            a.X.U(0.5)
+                                        }
+                                        for (var c = 0,
+                                        d; d = a.ya[c++];) d.i();
+                                        b = (b - 12) / 14 * 50;
+                                        a.ra.wa(b);
+                                        a.sa.wa(b);
+                                        a.pa.e.set(b - 20);
+                                        for (c = 0; d = a.ya[c++];) d.k();
+                                        if (a.P > 0) a.fa = setTimeout(E, a.W)
+                                    } else setTimeout(E, a.W)
+                                } catch(i) {
+                                    f(i)
+                                }
+                            },
+                            F = function(a) {
+                                return [(a.clientX || a.targetTouches && a.targetTouches[0].clientX || 0) + (document.body.scrollLeft || document.documentElement.scrollLeft || 0), (a.clientY || a.targetTouches && a.targetTouches[0].clientY || 0) + (document.body.scrollTop || document.documentElement.scrollTop || 0)]
+                            },
+                            G = function(a) {
+                                var b = google.doodle.bunsen,
+                                c = F(a),
+                                a = c[0];
+                                b.R.set((window.innerHeight - c[1]) / window.innerHeight);
+                                b.A.Ba = (a - window.innerWidth / 2) / window.innerWidth;
+                                c = b.R.a;
+                                b.A.ua(c);
+                                b.A.ta(a / window.innerWidth);
+                                b.S.xa(c);
+                                b.ia.xa(c);
+                                if (b.P == 0) b.fa = setTimeout(E, b.W);
+                                b.P = 1800
+                            },
+                            H = function(a) {
+                                var b = document.getElementById("hplogo"),
+                                c,
+                                c = b,
+                                d = 0;
+                                do d += c.offsetLeft;
+                                while (c = c.offsetParent);
+                                c = d;
+                                d = 0;
+                                do d += b.offsetTop;
+                                while (b = b.offsetParent);
+                                b = d;
+                                d = F(a);
+                                d[0] >= c && d[0] <= c + 465 && d[1] >= b && d[1] <= b + 190 && a.preventDefault()
+                            },
+                            I = function() {
+                                clearTimeout(google.doodle.bunsen.fa);
+                                document.removeEventListener("mousemove", G, !1);
+                                document.removeEventListener("touchmove", G, !1);
+                                document.removeEventListener("touchstart", H, !1);
+                                google.doodle.bunsen = null
+                            },
+                            J = function() {
+                                if (! (google.doodle.bunsen instanceof D) && document.getElementById("hplogo")) try {
+                                    google.doodle.bunsen = new D,
+                                    document.addEventListener("mousemove", G, !1),
+                                    document.addEventListener("touchstart", H, !1),
+                                    document.addEventListener("touchmove", G, !1),
+                                    E()
+                                } catch(a) {
+                                    f(a)
+                                }
+                            };
+
+
+                            J()
+                        } catch(K) {
+                            f(K)
+                        };
+                    })();
+                </script>
+
+            </body>
+            </html>
+            
+
+
+            

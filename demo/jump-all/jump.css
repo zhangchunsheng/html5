@@ -1,0 +1,21 @@
+
+.viewport {
+background-image : url(./res/bg.png);
+background-position : left bottom;
+}
+.mainmenu {
+	
+background-image : url(./res/bg.png);
+background-position : left bottom;
+}
+
+.gameover {	
+background-image : url(./res/bg.png);
+background-position : left bottom;
+}
+
+.helppage {	
+background-image : url(./res/bg.png);
+background-position : left bottom;
+}
+

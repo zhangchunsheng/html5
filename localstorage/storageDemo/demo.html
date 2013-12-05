@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3c.org/TR/html4/strict.dtd"> 
+<html> 
+	<head> 
+		<title>localStorage Demo</title> 
+		<style type="text/css"> 
+		#panel {
+			width:100%;
+			height:100%;
+			position:absolute;
+			background: gray;
+			padding:0;
+			margin:0;
+			border:0;
+			overflow:hidden;
+		}
+		body {
+			padding:0;
+			margin:0;
+		}
+		#actor {
+			width:100%;
+			height:100%;
+			position:absolute;
+			left:100px;
+			top:100px;
+		}
+		</style> 
+		<script type="text/javascript" src="mootools.js"></script>
+		<script type="text/javascript" src="storage.js"></script>
+		<script>
+		//storage.reset();
+		//alert(pageId)
+		var sizeKey ="size001";
+		var moveKey ="move001";
+		var imgKey ="move001";
+		var dim  = { x : 0, y : 0}; // зјБъ
+		var KEY  = {UP : 119 , DOWN:115,LEFT:97,RIGHT:100};
+		var STEP = 10 ;
+		var setWH = function() {
+			if(pageId == 1) {
+				storage.set(sizeKey,{x:document.body.scrollWidth,y:document.body.scrollHeight});
+			} 
+		}
+		storage.ob(sizeKey , function(data) {
+			if(pageId == 2) {
+				var WH = storage.get(sizeKey);
+				dim.x = WH.x;
+			} else if(pageId == 3) {
+				var WH = storage.get(sizeKey);
+				dim.y = WH.y;
+			} else if(pageId == 4) {
+				var WH = storage.get(sizeKey);
+				dim.x = WH.x;
+				dim.y = WH.y;
+			}
+		});
+		var init = function() {
+			setWH();
+			$("lab").innerHTML = pageId;
+		}
+		var keyPress = function(e) {
+			var offset = {};
+			if(e.code == KEY.UP) {
+				offset = {x : 0 , y : -STEP} ;
+			}else if(e.code == KEY.DOWN) {
+				offset = {x : 0, y : STEP} ;
+			}if(e.code == KEY.LEFT) {
+				offset = {x : -STEP, y : 0} ;
+			}else if(e.code == KEY.RIGHT) {
+				offset = {x : STEP , y : 0} ;
+			}
+			var pos = {
+						x: offset.x +  $("actor").getPosition().x + dim.x,
+						y: offset.y +  $("actor").getPosition().y + dim.y
+					 }
+			storage.set(imgKey , pos);
+		}
+		storage.ob(imgKey , function(data){
+			var e = $("actor").style;
+			e.left = (data.x - dim.x)+"px";
+			e.top = (data.y - dim.y)+"px";
+		})
+		window.addEvent("domready",init);
+		window.addEvent("resize",setWH);
+		window.addEvent("keypress",keyPress);
+
+	    </script>
+	</head> 
+	<body> 
+		<div id="panel">
+			<div id="lab"></div>
+			<div id="actor"><img src=demo.jpg></div>
+		</div>
+		
+	</body> 
+</html> 

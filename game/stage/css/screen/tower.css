@@ -1,0 +1,36 @@
+/*
+	tower style
+	z-index:20
+*/
+
+.tower{
+	z-index:20;
+}
+
+
+
+.tower_normal{
+	background-image:url(../../images/tower_normal.png);
+	background-position:center;
+	background-repeat:no-repeat;
+}
+.tower_ice{
+	background-image:url(../../images/tower_ice.png);
+	background-position:center;
+	background-repeat:no-repeat;
+}
+.tower_sniper{
+	background-image:url(../../images/tower_sniper.png);
+	background-position:center;
+	background-repeat:no-repeat;
+}
+.tower_range{
+	background-image:url(../../images/tower_normal.png);
+	background-position:center;
+	background-repeat:no-repeat;
+}
+.tower_poison{
+	background-image:url(../../images/tower_poison.png);
+	background-position:center;
+	background-repeat:no-repeat;
+}

@@ -1,0 +1,9 @@
+/*
+	map style
+	z-index:10
+*/
+
+.map{
+	z-index:10;
+	background-image:url(../../images/map.gif);
+}

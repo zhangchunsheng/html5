@@ -1,0 +1,555 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script type="text/javascript" src="vsys0.4.1.js"></script>
+		<title>snake</title>
+		<script type="text/javascript">
+			var canvas;
+			var canvasPos = {
+				"width" : 500,
+				"height" : 500
+			};
+			
+			var ACT_UP = 1, ACT_DOWN = 1 << 1, ACT_LEFT = 1 << 2, ACT_RIGHT = 1 << 3;
+			
+			function Displayable(x, y, width, height) {
+				this.width = width;
+				this.height = height;
+				this.x = x;
+				this.y = y;
+			};
+			
+			Displayable.prototype.move = function (xd, yd) {
+				this.x + xd;
+				this.y + yd;
+			};
+			
+			Displayable.prototype.moveTo = function (x, y) {
+				this.x = x;
+				this.y = y;
+			};
+			
+			function Joint(x, y, width , height, direction) {
+				this.base(x, y , width, height);
+				this.direction = direction;
+				this.lastPos = {"x": x, "y": y, "direction": direction};
+				this.show = false;
+			};
+			
+			Joint.MOVEUP = 1;
+			
+			Joint.MOVERIGHT = 2;
+			
+			Joint.MOVEDOWN = 3;
+			
+			Joint.MOVELEFT = 4;
+			
+			Joint.prototype = new Displayable(0, 0, 0, 0);
+			
+			Joint.prototype.base = Displayable;
+			
+			Joint.prototype.constructor = Joint;
+			
+			Joint.prototype.move = function (speed) {
+				switch(this.direction)
+				{
+				case Joint.MOVEUP:
+					this.y -= speed;
+					break;
+				case Joint.MOVEDOWN:
+					this.y += speed;
+					break;
+				case Joint.MOVELEFT:
+					this.x -= speed;
+					break;
+				case Joint.MOVERIGHT:
+					this.x += speed;
+					break;
+				}
+			};
+			
+			function Snake(x, y, size) {
+				this.joints = [];
+				this.size = size;
+				this.head = 0;
+				this.joints.push(new Joint(x, y, size, size, Joint.MOVERIGHT));
+				this.headJoint = this.joints[this.head];
+			};
+			
+			Snake.prototype.turnLeft = function () {
+				this.joints[this.head].direction = Joint.MOVELEFT;
+			};
+			
+			Snake.prototype.turnRight = function () {
+				this.joints[this.head].direction = Joint.MOVERIGHT;
+			};
+			
+			Snake.prototype.turnUp = function () {
+				this.joints[this.head].direction = Joint.MOVEUP;
+			};
+			
+			Snake.prototype.turnDown = function () {
+				this.joints[this.head].direction = Joint.MOVEDOWN;
+			};
+			
+			Snake.prototype.move = function (speed) {
+				var length = this.joints.length;
+				for(var i=0;i<length;++i)
+				{
+					if(i != this.head)
+					{
+						var preJoint = this.joints[i - 1];
+						var joint = this.joints[i];
+						joint.x = preJoint.lastPos.x;
+						joint.y = preJoint.lastPos.y;
+						this.joints[i - 1].lastPos = {
+							"x": this.joints[i - 1].x,
+							"y": this.joints[i - 1].y,
+							"direction": this.joints[i - 1].direction
+						};
+					}
+					else
+					{
+						this.joints[i].move(speed);
+					}
+					if(length == 1 || i == length - 1)
+						this.joints[i].lastPos = {
+							"x": this.joints[i].x,
+							"y": this.joints[i].y,
+							"direction": this.joints[i].direction
+						};
+					if(this.joints[i].x < 0)
+						this.joints[i].x = canvasPos.clientWidth - this.joints[i].width;
+					else if(this.joints[i].x + this.joints[i].width > canvasPos.width)
+						this.joints[i].x = 0;
+					if(this.joints[i].y < 0)
+						this.joints[i].y = canvasPos.clientHeight - this.joints[i].height;
+					else if(this.joints[i].y + this.joints[i].height > canvasPos.height)
+						this.joints[i].y = 0;
+				}
+			};
+			
+			Snake.prototype.lengthen = function () {
+				var lastJoint = this.joints[this.joints.length - 1];
+				switch(lastJoint.direction)
+				{
+				case Joint.MOVEUP:
+					this.joints.push(new Joint(lastJoint.x, lastJoint.y + lastJoint.height, lastJoint.width, lastJoint.height, lastJoint.direction));
+					break;
+				case Joint.MOVEDOWN:
+					this.joints.push(new Joint(lastJoint.x, lastJoint.y - lastJoint.height, lastJoint.width, lastJoint.height, lastJoint.direction));
+					break;
+				case Joint.MOVELEFT:
+					this.joints.push(new Joint(lastJoint.x + lastJoint.width, lastJoint.y, lastJoint.width, lastJoint.height, lastJoint.direction));
+					break;
+				case Joint.MOVERIGHT:
+					this.joints.push(new Joint(lastJoint.x - lastJoint.width, lastJoint.y, lastJoint.width, lastJoint.height, lastJoint.direction));
+					break;
+				}
+			};
+			
+			var size = 10;
+			var snake_cur_length = 0;
+			var apple_cur_length = 0;
+			var snake = new Snake(0, 0, size);
+			var apple = {
+				"newApple" : false
+			};
+			
+			function reset()
+			{
+				if(speedIntervalId)
+					clearInterval(speedIntervalId);
+				if(intervalId)
+					clearInterval(intervalId);
+				clearChildNodes(canvas);
+				lastUpdateScore = 0;
+				score = 0;
+				doubleSpeed = false;
+				keyCodes = 0;
+				var options = c("div");
+				options.id = "options";
+				var h1 = c("h1");
+				h1.innerHTML = "--蛇身尺寸--";
+				options.appendChild(h1);
+				var snakeSizes = [["微小", 5], ["正常", 10], ["特大", 20]];
+				document.body.appendChild(options);
+				var handle = options.doModal();
+				handle.cleanStyle();
+				function snakeSizeClick(newSize) {
+					size = newSize;
+					snake_cur_length = 0;
+				 	apple_cur_length = 0;
+					snake = new Snake(0, 0, size);
+					delay = 100;
+					snake.lengthen();
+					snake.lengthen();
+					randomApple();
+					var keyDownTime = 0;
+					
+					speedIntervalId = setInterval(function () {
+						if(keyCodes != 0)
+							++ keyDownTime;
+						else
+						{
+							if(doubleSpeed)
+							{
+								doubleSpeed = false;
+								start(delay);
+							}
+							keyDownTime = 0;
+						}
+						if(keyDownTime == 50)
+						{
+							tip("speedGo", "加速!", {"x": snake.headJoint.x + snake.headJoint.width + 4, "y": snake.headJoint.y}, 2000);
+							doubleSpeed = true;
+							start(delay / 2);
+						}
+					}, 10);
+					start(delay);
+				};
+				for(var i=0;i<3;++i)
+				{
+					var div = c("div");
+					div.id = "option" + i;
+					div.innerHTML = snakeSizes[i][0];
+					options.appendChild(div);
+					div.snakeSize = snakeSizes[i][1]
+					div.onclick = function () {
+						snakeSizeClick(this.snakeSize);
+						handle.closer();
+					}
+				}
+			};
+			
+			function randomApple() {
+				apple.x = ( parseInt( Math.random() * canvasPos.width / size - 1) ) * size;
+				apple.y = ( parseInt( Math.random() * canvasPos.height / size - 1) ) * size;
+				apple.width = size;
+				apple.height = size;
+				apple.newApple = true;
+				switch(parseInt(Math.random() * 20))
+				{
+				/*case 0:
+					apple.score = 150;
+					break;
+				case 1:
+					apple.score = 150;
+					break;
+				case 2:
+					apple.score = 300;
+					break;*/
+				default:
+					apple.score = 100;
+					break;
+				}
+			};
+			
+			function paint() {
+				var jointsLength = snake.joints.length;
+				if(jointsLength > snake_cur_length)
+				{
+					var newJoints = snake.joints.slice(snake_cur_length - jointsLength);
+					var newJointsLength = newJoints.length;
+					for(var i=0;i<newJointsLength;++i)
+					{
+						var joint = c("div");
+						joint.style.position = "absolute";
+						joint.style.overflow = "hidden";
+						joint.style.left = newJoints[i].x + "px";
+						joint.style.top = newJoints[i].y + "px";
+						joint.style.width = newJoints[i].width + "px";
+						joint.style.height = newJoints[i].height + "px";
+						var idnum = snake_cur_length + i;
+						joint.id = idnum + "_joint";
+						if(newJointsLength == jointsLength && i == 0)
+							joint.className = "snake_head";
+						else
+						{
+							if(idnum % 2 == 0)
+								joint.className = "joint_even";
+							else
+							{
+								joint.className = "joint_odd";
+							}
+						}
+						canvas.appendChild(joint);
+					}
+					snake_cur_length = snake.joints.length;
+				}
+				if(apple.newApple)
+				{
+					var appleDiv = c("div");
+					appleDiv.style.position = "absolute";
+					appleDiv.style.overflow = "hidden";
+					appleDiv.style.left = apple.x + "px";
+					appleDiv.style.top = apple.y + "px";
+					appleDiv.style.width = size + "px";
+					appleDiv.style.height = size + "px";
+					appleDiv.id = "apple";
+					appleDiv.className = "apple" + apple.score;
+					canvas.appendChild(appleDiv);
+					apple.newApple = false;
+				}
+				for(var i=0;i<jointsLength;++i)
+				{
+					var joint = g("#" + i+ "_joint");
+					joint.style.left = snake.joints[i].x + "px";
+					joint.style.top = snake.joints[i].y + "px";
+				}
+			};
+			
+			var keyCodes = 0;
+			var delay = 100;
+			var intervalId;
+			function start(speed) {
+				if(intervalId)
+					clearInterval(intervalId);
+				intervalId = setInterval(function () {
+					snake.move(size);
+					eated();
+					jointCollisionDetection();
+					paint();
+					if(delay > 10)
+					{
+						if(score - lastUpdateScore == 1000)
+						{
+							tip("updateSpeed", "提速!", {"x": snake.headJoint.x, "y": snake.headJoint.y + snake.headJoint.height + 4}, 3000);
+							lastUpdateScore = score;
+							delay -= 10;
+							if(doubleSpeed)
+								start(delay / 2);
+							else
+							{
+								start(delay);
+							}
+						}						
+					}
+				}, speed);
+			};
+			
+			var lastUpdateScore = 0;
+			var score = 0;
+			function jointCollisionDetection()
+			{
+				var joints = snake.joints;
+				var length = joints.length;
+				for(var i=1;i<length;++i)
+				{
+					if ((snake.headJoint.x >= joints[i].x) && (( snake.headJoint.x + snake.headJoint.width ) <= (joints[i].x + joints[i].width)) &&
+							( snake.headJoint.y >= joints[i].y ) &&
+							(( snake.headJoint.y + snake.headJoint.height ) <= (joints[i].y + joints[i].height))) 
+					{
+						alert("最终得分: " + score);
+						reset();
+					}
+				}	
+			};
+			
+			function eated() {
+				if((( snake.headJoint.x + snake.headJoint.width ) > apple.x ) && ( snake.headJoint.x < ( apple.x + apple.width ))
+						&& (( snake.headJoint.y + snake.headJoint.height ) > apple.y ) && ( snake.headJoint.y < ( apple.y + apple.height )))
+				{
+					score += apple.score;
+					tip("showScore", "socre: " + score, apple, 1000);
+					canvas.removeChild(g("#apple"));
+					snake.lengthen();
+					randomApple();
+				}
+			};
+			
+			function tip(type, msg, pos, time) {
+				var showScore = c("span");
+				showScore.className = type;
+				showScore.style.position = "absolute";
+				showScore.style.top = pos.y + "px";
+				showScore.style.left = pos.x + "px";
+				showScore.innerHTML = msg;
+				canvas.appendChild(showScore);
+				showScore.fade(100, 0, 5, time, function () {canvas.removeChild(showScore);})
+			};
+			
+			function keydown(e) {
+				var event = e || window.event;
+				switch(e.keyCode)
+				{
+				case 87: 
+					if(snake.headJoint.direction != Joint.MOVEUP && snake.joints[0].direction != Joint.MOVEDOWN)
+							snake.turnUp();
+					keyCodes |= ACT_UP;
+					return;
+				case 83:
+					if(snake.headJoint.direction != Joint.MOVEUP && snake.joints[0].direction != Joint.MOVEDOWN)
+							snake.turnDown();
+					keyCodes |= ACT_DOWN;
+					return;
+				case 65:
+					if(snake.headJoint.direction != Joint.MOVELEFT && snake.headJoint.direction != Joint.MOVERIGHT)
+							snake.turnLeft();
+					keyCodes |= ACT_LEFT;
+					return;
+				case 68:
+					if(snake.headJoint.direction != Joint.MOVELEFT && snake.headJoint.direction != Joint.MOVERIGHT)
+							snake.turnRight();
+					keyCodes |= ACT_RIGHT;
+					return;
+					//
+				case 38: 
+					if(snake.headJoint.direction != Joint.MOVEUP && snake.joints[0].direction != Joint.MOVEDOWN)
+							snake.turnUp();
+					keyCodes |= ACT_UP;
+					return;
+				case 40:
+					if(snake.headJoint.direction != Joint.MOVEUP && snake.joints[0].direction != Joint.MOVEDOWN)
+							snake.turnDown();
+					keyCodes |= ACT_DOWN;
+					return;
+				case 37:
+					if(snake.headJoint.direction != Joint.MOVELEFT && snake.headJoint.direction != Joint.MOVERIGHT)
+							snake.turnLeft();
+					keyCodes |= ACT_LEFT;
+					return;
+				case 39:
+					if(snake.headJoint.direction != Joint.MOVELEFT && snake.headJoint.direction != Joint.MOVERIGHT)
+							snake.turnRight();
+					keyCodes |= ACT_RIGHT;
+					return;
+				}
+			};
+			
+			function keyup(e) {
+				var event = e || window.event;
+				switch(e.keyCode)
+				{
+				case 87: 
+					keyCodes ^= ACT_UP;
+					break;
+				case 83:
+					keyCodes ^= ACT_DOWN;
+					break;
+				case 65:
+					keyCodes ^= ACT_LEFT;
+					break;
+				case 68:
+					keyCodes ^= ACT_RIGHT;
+					break;
+				case 38: 
+					keyCodes ^= ACT_UP;
+					break;
+				case 40:
+					keyCodes ^= ACT_DOWN;
+					break;
+				case 37:
+					keyCodes ^= ACT_LEFT;
+					break;
+				case 39:
+					keyCodes ^= ACT_RIGHT;
+					break;
+				}
+			};
+			
+			function print(msg) {
+				g("#msg").innerHTML = msg;
+			};
+			
+			var doubleSpeed = false;
+			var speedIntervalId;
+			onload = function () {
+				canvas = g("#canvas");
+				canvas.style.width = canvasPos.width + "px";
+				canvas.style.height = canvasPos.height + "px";
+				canvasPos = getPos(canvas);
+				reset();
+			};
+		</script>
+		<style type="text/css">
+			.snake_head {
+				background-color: #ff0000;
+			}
+			
+			.joint_even {
+				background-color: #cccccc;
+			}
+			
+			.joint_odd {
+				background-color: #ffff00;
+			}
+			
+			.apple100 {
+				background-color: #000000;
+			}
+			
+			.apple150 {
+				background-color: #B452CD;
+			}
+			
+			.apple300 {
+				background-color: #262626;
+			}
+
+			#canvas {
+				position: relative;
+				width: 1024px;
+				height: 576px;
+				border: 1px solid #cccccc;
+				margin: 0 auto;
+			}
+			
+			.vsys_modal_topBar {
+				display: none;
+			}
+			
+			span {
+				white-space: nowrap;
+				font-size: 12px;
+				z-index: 999;
+			}
+			
+			.showScore {
+				font-weight: bold;
+			}
+			
+			.speedGo {
+				font-style: italic;
+			}
+			
+			.updateSpeed {
+				font-style: italic;
+			}
+			
+			#options {
+				width: 320px;
+				height: 128px;
+				border: 1px solid #cccccc;
+				background-color: #ffffff;
+				padding: 8px;
+			}
+			
+			#options h1 {
+				font-size: 12px;
+				text-align: center;	
+			}
+			
+			#options div {
+				background-color: #FFFFE0;
+				border: 1px solid #cccccc;
+				width: 88px;
+				height: 50px;
+				float: left;
+				text-align: center;
+				cursor: pointer;
+				padding-top: 32px;
+			}
+			
+			#option1 {
+				margin-left: 24px;
+				margin-right: 24px;
+			}
+		</style>
+	</head>
+	<body onkeydown="keydown(event);" onkeyup="keyup(event);">
+		<div id="canvas"></div>
+		<label id="msg"></label>
+	</body>
+</html>
