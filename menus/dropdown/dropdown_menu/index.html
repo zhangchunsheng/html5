@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Dropdown Menu With JQuery</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+
+$(function(){
+	$('.dropdown').mouseenter(function(){
+		$('.sublinks').stop(false, true).hide();
+	
+		var submenu = $(this).parent().next();
+
+		submenu.css({
+			position:'absolute',
+			top: $(this).offset().top + $(this).height() + 'px',
+			left: $(this).offset().left + 'px',
+			zIndex:1000
+		});
+		
+		submenu.stop().slideDown(300);
+		
+		submenu.mouseleave(function(){
+			$(this).slideUp(300);
+		});
+	});
+});
+</script>
+<style type="text/css">
+
+/* CSS For Dropdown Menu Start */
+ul
+{
+  list-style:none;
+  padding:0px;
+  margin:0px
+}
+
+ul li
+{
+  display:inline;
+  float:left;
+}
+
+ul li a
+{
+  color:#ffffff;
+  background:#990E00;
+  margin-right:5px;
+  font-weight:bold;
+  font-size:12px;
+  font-family:verdana;
+  text-decoration:none;
+  display:block;
+  width:100px;
+  height:25px;
+  line-height:25px;
+  text-align:center;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  border: 1px solid #560E00;
+}
+
+ul li a:hover
+{
+  color:#cccccc;
+  background:#560E00;
+  font-weight:bold;
+  text-decoration:none;
+  display:block;
+  width:100px;
+  text-align:center;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  border: 1px solid #000000;
+}
+
+ul li.sublinks a
+{
+  color:#000000;
+  background:#f6f6f6;
+  border-bottom:1px solid #cccccc;
+  font-weight:normal;
+  text-decoration:none;
+  display:block;
+  width:100px;
+  text-align:center;
+  margin-top:2px;
+}
+
+ul li.sublinks a:hover
+{
+  color:#000000;
+  background:#FFEFC6;
+  font-weight:normal;
+  text-decoration:none;
+  display:block;
+  width:100px;
+  text-align:center;
+}
+
+ul li.sublinks
+{
+	display:none;
+}
+
+/* CSS For Dropdown Menu End */
+
+
+
+#container
+{
+  margin:0px auto;
+  width:570px;
+}
+
+.clear
+{
+  clear:both;
+}
+
+.left
+{
+  float:left;
+}
+
+.right
+{
+  float:right;
+}
+</style>
+</head>
+
+<body>
+
+  <div id="container" style="margin-top:40px;">
+	
+	<!-- First Menu Start -->
+	<ul>
+		<li><a href="#" class="dropdown">Menu One</a></li>
+		
+		<li class="sublinks">
+			<a href="#">Link 1</a>
+			<a href="#">Link 2</a>
+			<a href="#">Link 3</a>
+			<a href="#">Link 4</a>
+			<a href="#">Link 5</a>
+		</li>
+		
+	</ul>
+	<!-- First Menu End -->
+
+	<!-- Second Menu Start -->
+	<ul>
+		<li><a href="#" class="dropdown">Menu Two</a></li>
+		
+		<li class="sublinks">
+			<a href="#">Link 1</a>
+			<a href="#">Link 2</a>
+			<a href="#">Link 3</a>
+			<a href="#">Link 4</a>
+			<a href="#">Link 5</a>
+		</li>
+		
+	</ul>
+	<!-- Second Menu End -->
+
+	<!-- Third Menu Start -->
+	<ul>
+		<li><a href="#" class="dropdown">Menu Three</a></li>
+		
+		<li class="sublinks">
+			<a href="#">Link 1</a>
+			<a href="#">Link 2</a>
+			<a href="#">Link 3</a>
+			<a href="#">Link 4</a>
+			<a href="#">Link 5</a>
+		</li>
+		
+	</ul>
+	<!-- Third Menu End -->
+
+	<!-- Fourth Menu Start -->
+	<ul>
+		<li><a href="#" class="dropdown">Menu Four</a></li>
+		
+		<li class="sublinks">
+			<a href="#">Link 1</a>
+			<a href="#">Link 2</a>
+			<a href="#">Link 3</a>
+			<a href="#">Link 4</a>
+			<a href="#">Link 5</a>
+		</li>
+		
+	</ul>
+	<!-- Fourth Menu End -->
+
+	<!-- Fifth Menu Start -->
+	<ul>
+		<li><a href="#" class="dropdown">Menu Five</a></li>
+		
+		<li class="sublinks">
+			<a href="#">Link 1</a>
+			<a href="#">Link 2</a>
+			<a href="#">Link 3</a>
+			<a href="#">Link 4</a>
+			<a href="#">Link 5</a>
+		</li>
+		
+	</ul>
+	<!-- Fifth Menu End -->
+	
+  
+	<!-- Back to iShift link -->
+	</div>
+	<br clear="all"/>
+	<div align="center" style="margin-top:300px; color:#666666;font-weight:bold;font-size:12px;font-family:verdana;">
+		<p>Return Back to <a style="color:#990E00;" href="http://www.instantshift.com/">Instantshift.com</a></p>
+	</div>
+  
+</body>
+</html>

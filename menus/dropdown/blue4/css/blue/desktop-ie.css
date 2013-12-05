@@ -1,0 +1,376 @@
+@charset "utf-8";
+/*** General ********************/
+a, p, h3, h4, h5, .one li a {
+	font-family:'titilliumregular', Palatino, Georgia, serif;
+}
+a, h3, h4, h5, .one li a{
+	text-transform: uppercase;
+}
+a{
+	display:block;
+	text-decoration: none;
+}
+i {
+	display: block;
+	padding: 0 5px;
+	float: none;
+}
+li {
+	list-style: none;
+}
+p {
+	font-size: 14px;
+	line-height: 23px;
+}
+input,
+textarea{
+	display:block;
+	border:none;
+}
+h3 {
+	font-size: 20px;
+}
+h4 {
+	font-size: 18px;
+}
+h5 {
+	font-size: 16px;
+}
+h6{
+	font-family: Cambria, Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
+	font-size:13px;
+	font-style:italic;
+	line-height: 20px;
+}
+img {
+	padding: 5px;
+	
+	box-shadow: 1px 1px 4px rgba(102,102,102,.4);
+}
+.light-color{ /*Used in link box, product box...*/
+	border-radius:3px;
+}
+
+/* For Phone & Tablet */
+.nav i.icon-chevron-down {
+	display: none;
+	visibility: hidden;
+}
+
+/* Start .nav Class ****************/
+.nav {
+	display: block;
+	position: relative;
+	width: 1100px;
+	height:62px;
+	margin: 40px auto;
+	padding:0 20px;
+	
+	border-top: 6px solid;
+	border-bottom: 2px solid;
+	border-radius: 3px;
+}
+.nav li {
+	position: relative;
+}
+.nav > li {
+	display: block;
+	float:left;
+	
+	transition: background-color .5s;
+	-ms-transition: background-color .5s;
+}
+.nav > li:hover {
+	cursor: pointer;
+}
+.nav li a{
+	padding: 21px 15px;
+	font-size: 15px;
+}
+.nav li a i {
+	padding: 0 6px 0 0;
+	font-size: 19px;
+}
+/* End .nav Class ********************/
+
+/* Start .one Class ******************/
+.nav .one {
+	display: block;
+	position: absolute;
+	visibility: hidden;
+	top: 100%;
+	left: 0%;
+	
+	box-shadow: 1px 1px 1px rgba(102,102,102,.2);
+	opacity: 0;
+}
+.one > li {
+	float: none;
+	width: 180px;
+	height: 44px;
+}
+.one > li a{
+	padding: 13px 0 9px 30px;
+	
+	line-height: 20px;
+	font-size: 12px;
+	letter-spacing: 1px;
+}
+.one li i.icon-chevron-right {
+	float:right;
+	
+	font-size: 12px;
+	margin:3px 15px 0 0;
+}
+
+/* End .one Class *******************/
+
+/* Start .one#sub-menu **************/
+.one#sub-menu,
+.one#sub-menu2{
+	left: 80%;
+	top: 0%;
+}
+
+.one li .one#sub-menu,
+.one#sub-menu li .one#sub-menu2{
+	transition:opacity .3s ease-in;
+	-ms-transition:opacity .3s ease-in;
+	
+	opacity: 0;
+	-webkit-opacity: 0;
+	-moz-opacity: 0;
+}
+.one#menu li:hover > .one#sub-menu,
+.one#sub-menu li:hover > .one#sub-menu2{
+	left: 100%;
+	top: 0%;
+	visibility: visible;
+	
+	opacity: 1;
+	-webkit-opacity: 1;
+	-moz-opacity: 1;
+}
+/* End .one#sub-menu ***************/
+
+/*** Start Home ********************/
+#home {
+	left:0px;
+	overflow:hidden;
+}
+#home li {
+	width: 260px;
+	height: 270px;
+	padding: 10px;
+}
+#home li p{
+	padding: 5px 8px;
+	text-align:justify;
+}
+/*** End Home ********************/
+
+/*** Start About *****************/
+#about {
+	left:-100px;
+	overflow:hidden;
+}
+#about li {
+	width: 550px;
+	height: 300px;
+	padding: 10px;
+}
+#about li p{
+	padding: 5px 8px;
+	text-align:justify;
+}
+#about img {
+	float: right;
+	margin: 30px 5px 5px 20px;
+}
+#about h6{
+	margin:15px 20px 10px 20px;
+	padding:10px;
+}
+#about h6 i{
+	font-size:11px;
+}
+/*** End About ********************/
+
+/*** Start links ******************/
+#links {
+	left:-215px;
+	overflow:hidden;
+}
+#links > li {
+	width: 1060px;
+	height: 250px;
+	padding: 2px 0px 16px 10px;
+}
+#links li i {
+	font-size: 12px;
+}
+#links .link-block{
+	width: 17%;
+	float: left;
+	padding: 0 5px 30px 5px;
+	margin: 10px 0 7px 16px;
+}
+#links h5 {
+	padding: 10px 0 6px 8px;
+	margin: 0 12px 10px 12px;
+	border-bottom: 1px dotted;
+}
+#links h5 i {
+	font-size: 20px;
+}
+#links .link-block li a {
+	font-family: Cambria, Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
+	text-transform:capitalize;
+
+	font-style: italic;
+	font-size: 13px;
+	padding: 0 0 0 6px;
+	
+	transition: padding-left .3s;
+	-ms-transition: padding-left .3s;
+}
+#links .link-block li:hover a {
+	padding-left: 14px;
+}
+/*** End links *********************/
+
+/*** Start Products ****************/
+#products{
+	left:-300px;
+	overflow:hidden;
+}
+#products li{
+	width:745px;
+	height:480px;
+	padding:5px 0px 20px 10px;
+}
+#products h3{
+	margin:4px 0 0 10px;
+}
+.product{
+	width:190px;
+	
+	margin:15px 6px;
+	padding:5px 10px;
+	float:left;
+	box-shadow: 1px 1px 4px rgba(102,102,102,.4);
+}
+.product img{
+	width:110px;
+	height:100px;
+
+	padding:5px;
+	margin:5px 0 10px 34px;
+}
+#preamble{
+	clear:left;
+}
+#preamble h6{
+	margin:15px 30px 10px 20px;
+	padding:10px;
+}
+/*** End Products *******************/
+
+/*** Start Contact ******************/
+li#right{
+	float:right;
+}
+#contact {
+	left:-505px;
+	width: 650px;
+	overflow:hidden;
+}
+#contact li {
+	height: 270px;
+	padding: 10px;
+}
+/*Part-Left*/
+#contact li#part-left{
+	width:300px;
+	float:left;
+}
+#contact > li#part-left p {
+	margin-left: 10px;
+	padding-top:5px;
+}
+#contact > li#part-left p i{
+	font-size:14px;
+}
+/*Part-Right*/
+#contact li#part-right{
+	width:300px;
+	float:right;
+	padding-left:15px;
+}
+#contact li#part-right input{
+	width:90%;
+	height:27px;
+}
+#contact li#part-right textarea{
+	width:90%;
+	height:80px;
+}
+#contact li#part-right p{
+	display:block;
+	font:14px;
+	padding:3px 0;
+}
+#contact li#part-right input#send{
+	width:70px;
+	height:27px;
+	margin-top:10px;
+	margin-left:20px;
+	box-shadow:none;
+}
+
+/*Social Network*/
+#h4-social {
+	margin: 30px 0 10px 5px;
+}
+#contact li#part-left > a {
+	height: 50px;
+	width: 48px;
+	padding: 0;
+	margin: 0;
+	float: left;
+}
+#contact li#part-left a > i {
+	font-size: 40px;
+	margin: 0 1px;
+	padding: 0;
+	
+	transition: font-size .3s;
+	-ms-transition: font-size .3s;
+}
+#contact li#part-left a:hover i {
+	font-size: 43px;	
+}
+#contact li#part-left:hover a{
+	background-color:transparent;
+}
+/*** End Contact **********************/
+
+/*** Color And Background *************/
+.nav{                                   
+	border-color: #4EA9FF;                       /*Main Color*/              
+}
+#links h5{                                       /*Dashed Border in and link headers*/
+	border-bottom-color:#CDCDCD;
+}
+.light-color,
+#contact li#part-right input#send{
+	background-color:#81C1FF;                    /*light Main Color*/
+}
+img {
+	background-color:#E7E7E7;
+}
+.one li:hover > a {
+	color: #FFFFFF;
+	background-color:rgb(161, 161, 161);      /*Gray Color*/
+}
+

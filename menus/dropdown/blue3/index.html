@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery渐变多级下拉导航 - 站长素材</title>
+<link rel="stylesheet" type="text/css" href="../css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/superfish.css" />
+<link rel="stylesheet" type="text/css" href="css/superfish-vertical.css" />
+<link rel="stylesheet" type="text/css" href="css/superfish-navbar.css" />
+<style type="text/css">
+.demo{padding:40px 80px; margin:30px auto}
+.demo h3{line-height:30px; font-size:14px}
+.clear{clear:left}
+</style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/hoverIntent.js"></script>
+<script type="text/javascript" src="js/superfish.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("ul.sf-menu,ul.sf-navbar").superfish();
+	$("ul.sf-vertical").superfish({
+	        animation:{opacity:'show',height:'show'},
+			speed:'fast'
+	});
+});
+</script>
+</head>
+
+<body>
+<div id="header">
+
+<div id="main">
+   <div class="demo">
+      <h3>Demo1：横向菜单</h3>
+      <ul class="sf-menu">
+          <li><a href="http://www.whgglb.com">首页</a></li>
+          <li><a href="#">新闻</a>
+             <ul>
+                 <li><a href="#">国内</a>
+                     <ul>
+                         <li><a href="#">menu item1</a></li>
+                         <li><a href="#">menu item2</a>
+                              <ul>
+                                  <li><a href="#">Sub menu1</a></li>
+                                  <li><a href="#">Sub menu2</a></li>
+                              </ul>
+                         </li>
+                         <li><a href="#">menu item3</a></li>
+                     </ul>
+                 </li>
+                 <li><a href="#">国际</a></li>
+                 <li><a href="#">社会</a></li>
+                 <li><a href="#">体育</a>
+                     <ul>
+                         <li><a href="#">NBA</a></li>
+                         <li><a href="#">世界杯</a></li>
+                         <li><a href="#">足球反黑</a></li>
+                     </ul>
+                 </li>
+                 <li><a href="#">财经</a></li>
+             </ul>
+          </li>
+          <li><a href="#">短信</a>
+             <ul>
+                 <li><a href="#">短信</a></li>
+                 <li><a href="#">彩信</a></li>
+                 <li><a href="#">彩铃</a></li>
+                 <li><a href="#">SP</a></li>
+             </ul>
+          </li>
+          <li><a href="#">娱乐</a>
+             <ul>
+                 <li><a href="#">明星</a></li>
+                 <li><a href="#">电影</a>
+                     <ul>
+                         <li><a href="#">动作</a></li>
+                         <li><a href="#">科幻</a></li>
+                         <li><a href="#">恐怖</a></li>
+                     </ul>
+                 </li>
+                 <li><a href="#">电视</a></li>
+                 <li><a href="#">视频</a></li>
+                 <li><a href="#">大片</a></li>
+                 <li><a href="#">综艺</a></li>
+             </ul>
+          </li>
+          <li><a href="#">商城</a></li>
+      </ul>
+   </div>
+   <div class="clear"></div>
+   <br/><br/><br/>
+   <div class="demo">
+      <h3>Demo2：纵向菜单</h3>
+      <ul class="sf-menu sf-vertical">
+          <li><a href="#">首页</a></li>
+          <li><a href="#">新闻</a>
+             <ul>
+                 <li><a href="#">国内</a>
+                     <ul>
+                         <li><a href="#">menu item1</a></li>
+                         <li><a href="#">menu item2</a>
+                              <ul>
+                                  <li><a href="#">Sub menu1</a></li>
+                                  <li><a href="#">Sub menu2</a></li>
+                              </ul>
+                         </li>
+                         <li><a href="#">menu item3</a></li>
+                     </ul>
+                 </li>
+                 <li><a href="#">国际</a></li>
+                 <li><a href="#">社会</a></li>
+                 <li><a href="#">体育</a>
+                     <ul>
+                         <li><a href="#">NBA</a></li>
+                         <li><a href="#">世界杯</a></li>
+                         <li><a href="#">足球反黑</a></li>
+                     </ul>
+                 </li>
+                 <li><a href="#">财经</a></li>
+             </ul>
+          </li>
+          <li><a href="#">短信</a>
+             <ul>
+                 <li><a href="#">短信</a></li>
+                 <li><a href="#">彩信</a></li>
+                 <li><a href="#">彩铃</a></li>
+                 <li><a href="#">SP</a></li>
+             </ul>
+          </li>
+          <li><a href="#">娱乐</a>
+             <ul>
+                 <li><a href="#">明星</a></li>
+                 <li><a href="#">电影</a>
+                     <ul>
+                         <li><a href="#">动作</a></li>
+                         <li><a href="#">科幻</a></li>
+                         <li><a href="#">恐怖</a></li>
+                     </ul>
+                 </li>
+                 <li><a href="#">电视</a></li>
+                 <li><a href="#">视频</a></li>
+                 <li><a href="#">大片</a></li>
+                 <li><a href="#">综艺</a></li>
+             </ul>
+          </li>
+          <li><a href="#">商城</a></li>
+      </ul>
+   </div>
+   <div class="clear"></div>
+   <div class="demo">
+      <h3>Demo3：横向菜单-条状子菜单</h3>
+      <ul class="sf-menu sf-navbar">
+          <li><a href="#">首页</a></li>
+          <li><a href="#">新闻</a>
+             <ul>
+                 <li><a class="sf-with-ul" href="#">国内</a></li>
+                 <li><a href="#">国际</a></li>
+                 <li><a href="#">社会</a></li>
+                 <li><a href="#">体育</a></li>
+                 <li><a href="#">财经</a></li>
+             </ul>
+          </li>
+          <li><a href="#">短信</a>
+             <ul>
+                 <li><a href="#">短信</a></li>
+                 <li><a href="#">彩信</a></li>
+                 <li><a href="#">彩铃</a></li>
+                 <li><a href="#">SP</a></li>
+             </ul>
+          </li>
+          <li><a href="#">娱乐</a>
+             <ul>
+                 <li><a href="#">if no subitems, duplicate parent item href and use this as descriptive label</a></li>
+             </ul>
+          </li>
+          <li><a href="#">商城</a></li>
+      </ul>
+   </div>
+   
+   <br/>
+   <br/>
+   <br/>
+</div>
+<div style="text-align:center;clear:both">
+<p>适用浏览器：IE8、360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗. </p>
+<p>来源：<a href="http://sc.chinaz.com/" target="_blank">站长素材</a></p>
+</div>
+</body>
+</html>

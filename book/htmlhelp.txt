@@ -1,0 +1,139 @@
+http://www.htmlhelp.com/reference/css/structure.html
+Basic Syntax
+
+Rules
+
+Selectors
+
+Any HTML element is a possible CSS1 selector. The selector is simply the element that is linked to a particular style. For example, the selector in
+
+P { text-indent: 3em }
+is P.
+
+Class Selectors
+
+A simple selector can have different classes, thus allowing the same element to have different styles. For example, an author may wish to display code in a different color depending on its language:
+
+code.html { color: #191970 }
+code.css  { color: #4b0082 }
+The above example has created two classes, css and html for use with HTML's CODE element. The CLASS attribute is used in HTML to indicate the class of an element, e.g.,
+
+<P CLASS=warning>Only one class is allowed per selector.
+For example, code.html.proprietary is invalid.</p>
+Classes may also be declared without an associated element:
+
+.note { font-size: small }
+In this case, the note class may be used with any element.
+
+A good practice is to name classes according to their function rather than their appearance. The note class in the above example could have been named small, but this name would become meaningless if the author decided to change the style of the class so that it no longer had a small font size.
+
+ID Selectors
+
+ID selectors are individually assigned for the purpose of defining on a per-element basis. This selector type should only be used sparingly due to its inherent limitations. An ID selector is assigned by using the indicator "#" to precede a name. For example, an ID selector could be assigned as such:
+
+#svp94O { text-indent: 3em }
+This would be referenced in HTML by the ID attribute:
+
+<P ID=svp94O>Text indented 3em</P>
+Contextual Selectors
+
+Contextual selectors are merely strings of two or more simple selectors separated by white space. These selectors can be assigned normal properties and, due to the rules of cascading order, they will take precedence over simple selectors. For example, the contextual selector in
+
+P EM { background: yellow }
+is P EM. This rule says that emphasized text within a paragraph should have a yellow background; emphasized text in a heading would be unaffected.
+
+Declarations
+
+Properties
+
+A property is assigned to a selector in order to manipulate its style. Examples of properties include color, margin, and font.
+
+Values
+
+The declaration value is an assignment that a property receives. For example, the property color could receive the value red.
+
+Grouping
+
+In order to decrease repetitious statements within style sheets, grouping of selectors and declarations is allowed. For example, all of the headings in a document could be given identical declarations through a grouping:
+
+H1, H2, H3, H4, H5, H6 {
+  color: red;
+  font-family: sans-serif }
+Inheritance
+
+Virtually all selectors which are nested within selectors will inherit the property values assigned to the outer selector unless otherwise modified. For example, a color defined for the BODY will also be applied to text in a paragraph.
+
+There are some cases where the inner selector does not inherit the surrounding selector's values, but these should stand out logically. For example, the margin-top property is not inherited; intuitively, a paragraph would not have the same top margin as the document body.
+
+Comments
+
+Comments are denoted within style sheets with the same conventions that are used in C programming. A sample CSS1 comment would be in the format:
+
+/* COMMENTS CANNOT BE NESTED */
+Pseudo-classes and Pseudo-elements
+
+Pseudo-classes and pseudo-elements are special "classes" and "elements" that are automatically recognized by CSS-supporting browsers. Pseudo-classes distinguish among different element types (e.g., visited links and active links represent two types of anchors). Pseudo-elements refer to sub-parts of elements, such as the first letter of a paragraph.
+
+Rules with pseudo-classes or pseudo-elements take the form
+
+selector:pseudo-class { property: value }
+or
+
+selector:pseudo-element { property: value }
+Pseudo-classes and pseudo-elements should not be specified with HTML's CLASS attribute. Normal classes may be used with pseudo-classes and pseudo-elements as follows:
+
+selector.class:pseudo-class { property: value }
+or
+
+selector.class:pseudo-element { property: value }
+Anchor Pseudo-classes
+
+Pseudo-classes can be assigned to the A element to display links, visited links and active links differently. The anchor element can give the pseudo-classes link, visited, or active. A visited link could be defined to render in a different color and even a different font size and style.
+
+An interesting effect could be to have a currently selected (or "active") link display in a slightly larger font size with a different color. Then, when the page is re-selected the visited link could display in a smaller font size with a different color. The sample style sheet might look like this:
+
+A:link    { color: red }
+A:active  { color: blue; font-size: 125% }
+A:visited { color: green; font-size: 85% }
+First Line Pseudo-element
+
+Often in newspaper articles, such as those in the Wall Street Journal, the first line of text in an article is displayed in bold lettering and all capitals. CSS1 has included this capability as a pseudo-element. A first-line pseudo-element may be used in any block-level element (such as P, H1, etc.). An example of a first-line pseudo-element would be:
+
+P:first-line {
+  font-variant: small-caps;
+  font-weight: bold }
+First Letter Pseudo-element
+
+The first-letter pseudo-element is used to create drop caps and other effects. The first letter of text within an assigned selector will be rendered according to the value assigned. A first-letter pseudo-element may be used in any block-level element. For example:
+
+P:first-letter { font-size: 300%; float: left }
+would create a drop cap three times the normal font size.
+
+Cascading Order
+
+When multiple style sheets are used, the style sheets may fight over control of a particular selector. In these situations, there must be rules as to which style sheet's rule will win out. The following characteristics will determine the outcome of contradictory style sheets.
+
+! important
+Rules can be designated as important by specifying ! important. A style that is designated as important will win out over contradictory styles of otherwise equal weight. Likewise, since both author and reader may specify important rules, the author's rule will override the reader's in cases of importance. A sample use of the ! important statement:
+
+BODY { background: url(bar.gif) white;
+       background-repeat: repeat-x ! important }
+Origin of Rules (Author's vs. Reader's)
+As was previously mentioned, both authors and readers have the ability to specify style sheets. When rules between the two conflict, the author's rules will win out over reader's rules of otherwise equal weight. Both author's and reader's style sheets override the browser's built-in style sheets.
+
+Authors should be wary of using ! important rules since they will override any of the user's ! important rules. A user may, for example, require large font sizes or special colors due to vision problems, and such a user would likely declare certain style rules to be ! important, since some styles are vital for the user to be able to read a page. Any ! important rules will override normal rules, so authors are advised to use normal rules almost exclusively to ensure that users with special style needs are able to read the page.
+
+Selector Rules: Calculating Specificity
+Style sheets can also override conflicting style sheets based on their level of specificity, where a more specific style will always win out over a less specific one. It is simply a counting game to calculate the specificity of a selector.
+
+Count the number of ID attributes in the selector.
+Count the number of CLASS attributes in the selector.
+Count the number of HTML tag names in the selector.
+Finally, write the three numbers in exact order with no spaces or commas to obtain a three digit number. (Note, you may need to convert the numbers to a larger base to end up with three digits.) The final list of numbers corresponding to selectors will easily determine specificity with the higher numbers winning out over lower numbers. Following is a list of selectors sorted by specificity:
+
+#id1         {xxx} /* a=1 b=0 c=0 --> specificity = 100 */
+UL UL LI.red {xxx} /* a=0 b=1 c=3 --> specificity = 013 */
+LI.red       {xxx} /* a=0 b=1 c=1 --> specificity = 011 */
+LI           {xxx} /* a=0 b=0 c=1 --> specificity = 001 */
+Order of Specification
+To make it easy, when two rules have the same weight, the last rule specified wins.

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="CSS-only alternative for select - Tutorial Demo" />
+<meta name="keywords" content="forms select radio" />
+<meta name="author" content="PeHaa for PEPSized" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>css3绿色下拉菜单 - 站长素材</title>
+<link href='http://fonts.googleapis.com/css?family=Unica+One' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="screen.css"  media="screen" title="no title" >
+
+
+<!-- custom modernizr build -->
+<script src="modernizr.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<!--[if (IE 8)]>
+<script>
+	$(document).ready(function(){
+		$(".radio-options li").bind("click", function() {
+			$(this).siblings(".checked").removeClass("checked");
+			$(this).addClass("checked");
+			});
+	});
+</script>
+<![endif]-->
+<script>
+$(document).ready(function(){
+	if (Modernizr.touch) {
+			$(".radio-options").bind("click", function(event) {
+				if (!($(this).parent('.radio-container').hasClass("active")))	{
+				$(this).parent('.radio-container').addClass("active"); 
+				event.stopPropagation();
+				}
+			});	
+	$(".toggle").bind("click", function(){ 
+		$(this).parents('.radio-container').removeClass("active"); 
+		return false;
+		 });  
+	}
+})
+</script>
+
+</head>
+
+<body>
+
+<section class="form">
+	<h1>Everyone's Irish on March 17th</h1>
+	<form>
+		<fieldset class="radio-container">
+			<div class="radio-options">
+				<div class="toggle">Choose your beer</div>
+				<ul>
+					<li>
+						<input type="radio" name="my-beer" id="choice1" value="choice1">
+						<label for="choice1">Cul Dorcha</label>
+					</li>
+					<li>
+						<input type="radio" name="my-beer" id="choice2" value="choice2">
+						<label  for="choice2">Rowers Red Ale</label>
+					</li>
+					<li>
+						<input type="radio" name="my-beer" id="choice3" value="choice3">
+						<label for="choice3">Belfast Ale</label>
+					</li>
+						<li>
+							<input type="radio" name="my-beer" id="choice4" value="choice4">
+							<label for="choice4">O'Hara Irish Stout</label>
+						</li>
+				</ul>	
+			</div>
+		</fieldset>
+	</form>
+		
+		<p><span>Saint Patrick's Day</span> or the Feast of Saint Patrick (Irish: Lá Fhéile Pádraig, "the Day of the Festival of Patrick") is a cultural and religious holiday celebrated on 17 March. It is named after Saint Patrick, the most commonly recognised of the patron saints of Ireland.</p>
+		<p><span>Saint Patrick's Day</span> was made an official feast day in the early seventeenth century and is observed by the Catholic Church, the Anglican Communion (especially the Church of Ireland),[3] the Eastern Orthodox Church and Lutheran Church.</p> 
+			<p>For Christians, the day commemorates Saint Patrick and the arrival of Christianity in Ireland.[2] However, it has also become a celebration of Irishness and Irish culture in general, source Wikipedia.</p>
+</section>
+<div style="text-align:center;clear:both">
+<p>适用浏览器：FireFox、Chrome、Opera、傲游、搜狗. 不支持IE8、360、Safari、世界之窗。</p>
+<p>来源：<a href="http://sc.chinaz.com/" target="_blank">站长素材</a></p>
+</div>
+</body>
+</html>
