@@ -1,0 +1,9 @@
+Note that for this example to work, you will need to first register a new application with Yahoo[1]
+and then add your application ID to the top of script.js. Read the tutorial[2] for more info.
+
+[1] - https://developer.apps.yahoo.com/dashboard/createKey.html
+[2] - http://tutorialzine.com/2012/05/weather-forecast-geolocation-jquery/
+
+
+Happy learning!
+- Martin

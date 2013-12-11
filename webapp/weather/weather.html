@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>HTML5 天气预报</title>
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+		<script type="text/javascript" src="http://maps.google.com/maps?file=api&v=2&key=ABQIAAAAZNVcM3B5rUU5SJeXURUaBxTBfUk9TZrBRaIteybtnU2KziHEpRTn4b5CncoKZUG6YvDa1nKeST_Y5A"></script>
+		<script type="text/javascript" src="js/jquery-1.6.1.min.js"></script>
+		<script type="text/javascript" src="js/weather.js"></script>
+		<link type="text/css" rel="stylesheet" href="css/style.css"/>
+		</head>
+	<body>
+
+	<div id="weather-main">
+		<div id="city" class="fl"></div>
+		<div id="layout" class="fl">
+			<span id="pic"></span>
+			<span id="temperature"></span>
+		</div>
+		<div class="clr"></div>
+	</div>
+
+	<div id="showBox"></div>
+
+	<div id="showSelectCity">
+		<div class="opt">
+			<span>选择您所在的地区：</span>
+			<select id="cityList"></select>
+			<select id="subCityList"></select>
+			<div>
+			<button class="ok">保存</button>
+			<button class="cancel">取消</button>
+			</div>
+		</div>
+		<div class="clr footset"><a href="javascript:;" class="back">&lt;&lt;返回</a></div>
+	</div>
+	</body>
+</html>
