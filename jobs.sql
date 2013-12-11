@@ -20,3 +20,5 @@ CREATE TABLE images(
 	`data` MEDIUMBLOB
 );
 SELECT * FROM images;
+
+SELECT cityCode,cityName,spellName FROM weather_citys;

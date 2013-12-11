@@ -76,11 +76,46 @@ def insertData():
 			cityName = cityInfo[1];
 			spellName = p.get_pinyin(cityName.decode("utf-8"), '');
 			sql = "insert into weather_citys(cityCode,cityName,spellName,date,bz) values ('%s','%s','%s','%s','%s')" % (cityCode,cityName,spellName.encode("utf-8"),date,bz);
-			print sql;
 			cursor.execute(sql);
 			conn.commit();
 
 		file.close();
+		cursor.close();
+		conn.close();
+	except (mdb.Error, IOError), e:
+		print "Error %d: %s" % (e.args[0], e.args[1]);
+		sys.exit(1);
+		
+def export():
+	print "export";
+	try:
+		file = open("citys.json", "w");# w a wb二进制
+		
+		cursor = conn.cursor();
+			
+		cursor.execute("SET NAMES utf8");
+		cursor.execute("SET CHARACTER_SET_CLIENT=utf8");
+		cursor.execute("SET CHARACTER_SET_RESULTS=utf8");
+		sql = "SELECT cityCode,cityName,spellName FROM weather_citys";
+		cursor.execute(sql);
+		file.write("[{\n");
+		i = 1;
+		numrows = int(cursor.rowcount);
+		info = "";
+		for row in cursor.fetchall():
+			cityCode = row[0];
+			cityName = row[1];
+			spellName = row[2];
+			info = "\tcityCode:" + cityCode + ",\n";
+			info += "\tcityName:" + cityName + ",\n";
+			info += "\tspellName:" + spellName + "\n";
+			if i < numrows:
+				info += "}, {\n";
+			i = i + 1;
+			file.write(info);
+			
+		file.write("}]");
+		file.close();	
 		cursor.close();
 		conn.close();
 	except (mdb.Error, IOError), e:
@@ -95,3 +130,5 @@ if __name__ == "__main__":
 		test();
 	elif(methodName == "insertData"):
 		insertData();
+	elif(methodName == "export"):
+		export();
