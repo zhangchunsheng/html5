@@ -1,15 +1,15 @@
 @echo off
 if "%1"=="sayHello" (
-	python citys.py sayHello
+	python cities.py sayHello
 ) else if "%1"=="test" (
-	python citys.py test
+	python cities.py test
 ) else if "%1"=="insertData" (
-	python citys.py insertData
+	python cities.py insertData
 ) else if "%1"=="export" (
-	python citys.py export
+	python cities.py export
 ) else if "%1"=="help" (
-	echo citys command:
-	echo citys sayHello
+	echo cities command:
+	echo cities sayHello
 	echo usable command:
 	echo     sayHello
 	echo     test

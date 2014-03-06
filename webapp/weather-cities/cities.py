@@ -30,7 +30,7 @@ def test():
 		print "Database verson : %s " % data
 		
 		# execute SQL select statement
-		cur.execute("select * from weather_citys");
+		cur.execute("select * from weather_cities");
 		# commit your changes
 		conn.commit();
 		
@@ -42,7 +42,7 @@ def test():
 			row = cur.fetchone()
 			print row
 			
-		cur.execute("select cityCode from weather_citys");
+		cur.execute("select cityCode from weather_cities");
 		for row in cur.fetchall():
 			print row[0]
 	finally:
@@ -55,11 +55,11 @@ conn = mdb.connect('localhost', 'root', 'root', 'shenglong-electricv');
 def insertData():
 	print "insertData";
 	try:
-		file = open("citys.txt", "r");# w a wb二进制
+		file = open("cities.txt", "r");# w a wb二进制
 		
 		cursor = conn.cursor();
 		
-		sql = "truncate table weather_citys";
+		sql = "truncate table weather_cities";
 		cursor.execute(sql);
 		cursor.execute("SET NAMES utf8");
 		cursor.execute("SET CHARACTER_SET_CLIENT=utf8");
@@ -75,7 +75,7 @@ def insertData():
 			cityCode = cityInfo[0];
 			cityName = cityInfo[1];
 			spellName = p.get_pinyin(cityName.decode("utf-8"), '');
-			sql = "insert into weather_citys(cityCode,cityName,spellName,date,bz) values ('%s','%s','%s','%s','%s')" % (cityCode,cityName,spellName.encode("utf-8"),date,bz);
+			sql = "insert into weather_cities(cityCode,cityName,spellName,date,bz) values ('%s','%s','%s','%s','%s')" % (cityCode,cityName,spellName.encode("utf-8"),date,bz);
 			cursor.execute(sql);
 			conn.commit();
 
@@ -89,14 +89,14 @@ def insertData():
 def export():
 	print "export";
 	try:
-		file = open("citys.json", "w");# w a wb二进制
+		file = open("cities.json", "w");# w a wb二进制
 		
 		cursor = conn.cursor();
 			
 		cursor.execute("SET NAMES utf8");
 		cursor.execute("SET CHARACTER_SET_CLIENT=utf8");
 		cursor.execute("SET CHARACTER_SET_RESULTS=utf8");
-		sql = "SELECT cityCode,cityName,spellName FROM weather_citys";
+		sql = "SELECT cityCode,cityName,spellName FROM weather_cities";
 		cursor.execute(sql);
 		file.write("[{\n");
 		i = 1;
