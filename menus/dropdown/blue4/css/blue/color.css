@@ -1,0 +1,61 @@
+@charset "utf-8";
+body {
+	background-image:url(../../images/bg.jpg);
+	background-repeat:repeat;
+}
+a, i , p{
+	color:#ffffff;
+}
+h3, h4, h5, .one i, p strong, p i{             /*Gray Color*/
+	color:#666666;                    
+}
+/* primary colors */
+.nav{                                   
+	background: #636363; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover,  #636363 0%, #606060 47%, #5c5c5c 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#636363), color-stop(47%,#606060), color-stop(100%,#5c5c5c)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  #636363 0%,#606060 47%,#5c5c5c 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  #636363 0%,#606060 47%,#5c5c5c 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  #636363 0%,#606060 47%,#5c5c5c 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  #636363 0%,#606060 47%,#5c5c5c 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#636363', endColorstr='#5c5c5c',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	
+	border-color: #4EA9FF;                      /*Main Color*/              
+}
+.nav li:hover,
+.nav li:hover ul.one{          
+	background: #4EA9FF;                        /*Main Color*/
+}
+.nav:hover a,
+.nav:hover a i{                               
+	color:#4EA9FF;                               /*Main Color*/
+}
+.nav li:hover a,
+.nav li:hover a i{
+	color:#FFFFFF;
+}
+.one > li,
+#links h5{                                       /*Dashed Border in DropDown menu and link header*/
+	border-bottom-color:rgba(51,51,51,.1);
+}
+.one li:hover > a {
+	color: #FFFFFF;
+	background-color:rgba(161, 161, 161,.3);      /*Gray Color*/
+}
+em{                                               /*Red Star*/
+	color:#FF0000;
+}
+.light-color{
+	background-color: rgba(155, 206, 255,.4);    /*light Main Color*/
+}
+#contact li#part-right input#send{
+	background-color:rgba(155, 206, 255,.8);     /*light Main Color*/
+}
+#contact li#part-right input,
+#contact li#part-right textarea,
+#links .link-block{
+	border-color:rgba(51,51,51,.2);
+}
+img {
+	background-color:rgba(255,255,255,.3);
+}

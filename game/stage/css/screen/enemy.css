@@ -1,0 +1,48 @@
+/*
+	enemy style
+	z-index:30
+*/
+
+.enemy{
+	z-index:30;
+}
+
+
+	.enemy .enemy_hp{
+		width:50px;
+		height:5px;
+		font-size:0px;
+		border:1px solid #063;
+		overflow:hidden;
+		position:relative;
+		margin:auto;
+		margin-top:-10px;
+		margin-left:-10px;
+	}
+		.enemy .enemy_hp div{
+			background-color:#C00;
+			height:5px;
+		}
+
+.enemy_type_e{
+	background-image:url(../../images/e_e.gif);
+}
+.enemy_type_d{
+	background-image:url(../../images/e_d.gif);
+}
+.enemy_type_c{
+	background-image:url(../../images/e_c.gif);
+}
+
+	.enemy_down{
+		background-position:-0px;
+	}
+	.enemy_up{
+		background-position:-24px;
+	}
+	.enemy_left{
+		background-position:-48px;
+	}
+	.enemy_right{
+		background-position:-72px;
+	}

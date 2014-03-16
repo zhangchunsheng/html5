@@ -1,0 +1,114 @@
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>  
+
+
+<table id="detailTable">
+					<tr> 
+						<td colspan="10" class="infobar">saleInvoiceDetail</td>
+					</tr>
+					
+					<tr>
+						<td>No.</td>
+						<td>GoodName</td>
+						<td>GoodSpec</td>
+						<td>measureUnit</td>
+						<td>quantity</td>
+						<td>unitPrice</td>
+						<td>amount</td>
+						<td>taxRate</td>
+						<td>tax</td>
+						<td>Operation <input type="button" value="Add" class="button" onclick="addRow()"/> </td>
+					</tr>
+					
+					<tr id = "hiddenRow" style="display:none">
+								<td></td>
+					  		<td><input name = "saleInvoiceDetails@goodsName" value = "" /> </td>
+					  		<td><input name = "saleInvoiceDetails@goodsSpec" value = "" /> </td>
+					  		<td><input name = "saleInvoiceDetails@measureUnit" value = "" /> </td>
+					  		<td><input name = "saleInvoiceDetails@quantity" value = "" /> </td>
+					  		<td><input name = "saleInvoiceDetails@unitPrice" value = "" /> </td>
+					  		<td><input name = "saleInvoiceDetails@amount" value = "" /> </td>
+					  		<td><input name = "saleInvoiceDetails@taxRate" value = "" /> </td>
+					  		<td><input name = "saleInvoiceDetails@tax" value = "" /> </td>
+					  		<td><input type="button" value="delete" class="button" onclick="deleteRow(this)"/>  </td>
+					</tr>
+					
+						<tr>
+							<td>1</td>
+							<td><input name = "" value = "Telephone" /> </td>
+							<td><input name = "" value = "fdsa" /> </td>
+							<td><input name = "" value = "1" /> </td>
+							<td><input name = "" value = "4" /> </td>
+							<td><input name = "" value = "23.0" /> </td>
+							<td><input name = "" value = "25.0" onchange = "checkValue(this)"/> </td>
+							<td><input name = "" value = "2.9" /> </td>
+							<td><input name = "" value = "245.0" /> </td>
+							<td><input type="button" value="delete" class="button" onclick="deleteRow(this)"/>  </td>
+						</tr>
+						
+						<tr>
+							<td>2</td>
+							<td><input name = "" value = "Telephone" /> </td>
+							<td><input name = "" value = "fdsa" /> </td>
+							<td><input name = "" value = "1" /> </td>
+							<td><input name = "" value = "4" /> </td>
+							<td><input name = "" value = "23.0"  /> </td>
+							<td><input name = "" value = "25.0" onchange = "checkValue(this)"/> </td>
+							<td><input name = "" value = "2.9" /> </td>
+							<td><input name = "" value = "245.0" /> </td>
+							<td><input type="button" value="delete" class="button" onclick="deleteRow(this)"/>  </td>
+						</tr>
+					
+					
+</table>	
+
+<script>
+		
+		
+		//===================================
+	
+		var table = jQuery("#detailTable"); //document.getElementById("detailTable");
+		var hiddenRowEle = jQuery("#hiddenRow");//document.getElementById("hiddenRow");
+		var rowIndex = jQuery("table#detailTable tbody tr").length  -  3 ; //jQuery(table) // jQuery("#detailTable table tbody tr").length + 2;//table.tBodies[0].children.length - 2; //如何用jquery得到table的行数？
+		
+		
+		
+		function setNoColumn(){
+			jQuery("table#detailTable  tbody tr").each(function(i,n){ 
+					if(i >= 3 ){
+						var firstCell = $(this).find("td").eq(0);  //这就是第一列数据 
+			  		firstCell.html(i-2);      //第一列被赋值 
+					}
+			}); 
+		}
+		
+		function addRow(){
+					var newRow = hiddenRowEle.clone(true);
+					jQuery(newRow).show();
+					
+					var innerRowIndex = ++ rowIndex;
+					
+					jQuery(newRow).children().each(function(i,n){ 
+							var inputEle = jQuery(n).children()[0];
+							var nameAttr = jQuery(inputEle).attr("name")+"";
+							
+							var splited = nameAttr.split("@");
+							
+							var newNameAttr = splited[0] + "["+(innerRowIndex) + "]."+  splited[1];
+							
+							jQuery(inputEle).attr("name",newNameAttr);
+					}); 
+					
+					var firstCell = $(newRow).find("td").eq(0);  //这就是第一列数据 
+					firstCell.html( innerRowIndex );   
+					
+					jQuery(table).append(jQuery(newRow));
+		}	
+		
+		function deleteRow(button){
+			var parentRow = button.parentNode.parentNode;
+			jQuery(parentRow).remove();
+			
+			rowIndex --;
+			setNoColumn();
+		}
+</script>

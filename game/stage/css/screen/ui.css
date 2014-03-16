@@ -1,0 +1,27 @@
+/*
+	ui style
+	z-index:60
+*/
+
+.ui{
+	z-index:30;
+}
+
+.ui_tower_normal{
+	background-image:url(../../images/tower_normal_min.gif);
+	width:24px;
+	height:24px;
+	position:static
+}
+.ui_tower_ice{
+	background-image:url(../../images/tower_ice_min.gif);
+	width:24px;
+	height:24px;
+	position:static
+}
+.ui_tower_poison{
+	background-image:url(../../images/tower_poison_min.gif);
+	width:24px;
+	height:24px;
+	position:static
+}

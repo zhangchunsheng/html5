@@ -1,0 +1,55 @@
+*{
+	padding:0;
+	margin:0;
+}
+#carousel{
+	margin:10px;
+	padding:3px;
+	background:#EEE;
+	border:1px solid #CCC;
+	position:relative;/*DO NOT delete this line*/
+}
+#carousel ul{
+	list-style:none;
+}
+#carousel #carouselimg{
+	position:relative;/*fix ie7 overflow bug*/
+	overflow:hidden;
+}
+#carousel #carouselimg #imgcontainer{
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+#carousel #carouselimg img{
+	float:left;/*fix ie6 auto-margin bug*/
+	border:0;
+	/*display:none;*/
+}
+#carousel #carouseltitle{
+	position:absolute;
+	right:0px;
+	bottom:0px;
+	padding:0 0 8px 0;
+}
+#carousel #carouseltitle ul{
+	margin-right:5px;
+}
+#carousel #carouseltitle li{
+	width:16px;
+	height:16px;
+	line-height:16px;
+	font-size:12px;
+	text-align:center;
+	background:#000;
+	color:#FFF;
+	float:left;
+	margin-right:2px;
+	cursor:pointer;
+	opacity:.6;
+	filter:alpha(opacity=60);
+}
+#carousel #carouseltitle .active{
+	background:#0C81CF;
+	color:#FFF;
+}

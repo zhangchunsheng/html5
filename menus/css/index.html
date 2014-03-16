@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>css3图片层叠菜单效果</title>
+	<style type="text/css">
+	body {
+		background: 		#FFFFFF;
+		color: 				#b0b0b0;
+		font: 				11px/16px Verdana, Sans-Serif;
+	}
+	
+	#container {
+		margin: 			100px auto 0 auto;
+		width: 				420px;
+	}
+	
+	ul#navigation {
+		list-style-type: 	none;
+		margin: 			0;
+		padding: 			0;
+		position: 			relative;
+	}
+	
+	ul#navigation li {
+		margin: 			0;
+		padding: 			0;
+	}
+	
+	ul#navigation li a {
+		display: 			block;
+		text-decoration: 	none;
+		text-indent: 		-9999px;
+		position: 			absolute;
+		top: 				0;
+	}
+	
+	ul#navigation li a.one {
+		background: 		url('images/1.png') no-repeat;
+		left: 				0;
+		height: 			225px;
+		width: 				125px;
+		_background: 		none;
+		_filter: 			progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/1.png', sizingMethod='crop');
+	}
+	
+	ul#navigation li a.two {
+		background: 		url('images/2.png') no-repeat;
+		left: 				75px;
+		height: 			233px;
+		width: 				140px;
+		_background: 		none;
+		_filter: 			progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/2.png', sizingMethod='crop');
+	}
+	
+	ul#navigation li a.three {
+		background: 		url('images/3.png') no-repeat;
+		left: 				175px;
+		height: 			223px;
+		width: 				121px;
+		z-index: 			2;
+		_background: 		none;
+		_filter: 			progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/3.png', sizingMethod='crop');
+	}
+	
+	ul#navigation li a.four {
+		background: 		url('images/4.png') no-repeat;
+		left: 				250px;
+		height: 			235px;
+		width: 				146px;
+		_background: 		none;
+		_filter: 			progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/4.png', sizingMethod='crop');
+	}
+	
+	ul#navigation li a.four:hover {
+		background: 		url('images/4-hover.png') no-repeat;
+		_background: 		none;
+		_filter: 			progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/4-hover.png', sizingMethod='crop');
+	}
+	
+	ul#navigation li a:hover {
+		padding: 			0 0 20px 0;
+		top: 				-20px;
+	}
+	</style>
+	</head>
+	<body>
+		<div id="container">
+			<ul id="navigation">
+				<li><a href="#" class="one">1</a></li>
+				<li><a href="#" class="two">2</a></li>
+				<li><a href="http://sc.chinaz.com" class="three">3</a></li>
+				<li><a href="#" class="four">4</a></li>
+			</ul>
+		</div>	
+<div style="text-align:center;clear:both">
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<p>适用浏览器：IE8、360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗. </p>
+</div>
+</body>
+</html>

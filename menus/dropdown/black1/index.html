@@ -1,0 +1,345 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+<script type=text/javascript>
+$(function(){
+	$('#webmenu li').hover(function(){
+		$(this).children('ul').stop(true,true).show('slow');
+	},function(){
+		$(this).children('ul').stop(true,true).hide('slow');
+	});
+	
+	$('#webmenu li').hover(function(){
+		$(this).children('div').stop(true,true).show('slow');
+	},function(){
+		$(this).children('div').stop(true,true).hide('slow');
+	});
+});
+</script>
+<style type="text/css">
+* {
+	margin:0;
+	padding:0;
+}
+body {
+	font-family:Arial, Verdana, Helvetica, sans-serif;
+	font-family:"雅黑宋体", "微软雅黑", "新宋体", "宋体";
+	font-size:1em;
+	font-size:17px;
+	color:#FFF;
+	background:#050505;
+	text-align:left;
+}
+a {
+	color:#FFF;
+	text-decoration:none;
+}
+ul {
+	list-style:none;
+}
+#webmenu {
+	height:37px;
+	background:#333;
+	font-size:1.3em;
+	text-align:center;
+}
+#webmenu a {
+	font-size:0.65em;
+}
+#webmenu li ul {
+	display:none;
+}
+#webmenu li ul li {
+	float:none;
+}
+*html #webmenu li ul li {
+	display:inline;
+}
+#webmenu li ul a {
+	float:none;
+	height:32px;
+	line-height:32px;
+	padding:0 10px;
+	text-transform:capitalize;
+}
+#webmenu .height-auto {
+	line-height:15px;
+	padding:5px 10px;
+}
+.second-menu, .third-menu, .fourth-menu {
+	position:absolute;
+}
+.first-menu li {
+	float:left;
+	position:relative;
+}
+.first-menu a {
+	float:left;
+	display:block;
+	padding:0 20px;
+	height:35px;
+	line-height:35px;
+	background:#333;
+	border-top:1px solid #4a4a4a;
+	border-left:1px solid #4a4a4a;
+	border-bottom:1px solid #242424;
+	border-right:1px solid #242424;
+	font-size:.7em;
+}
+.first-menu a:hover {
+	background:#4698ca;
+	border-top:1px solid #5db1e0;
+	border-left:1px solid #5db1e0;
+}
+.second-menu {
+	top:37px;
+	right:0;
+}
+*html .second-menu {
+	right:-1px;
+}
+.second-menu a {
+	font-size:11px;
+}
+.second-menu a.arrow {
+	background:#3a3a3a url(image/arrow.gif) no-repeat right top;
+}
+.second-menu a.arrow:hover {
+	background:#4698ca url(image/arrow.gif) no-repeat right -32px;
+}
+.second-menu a.arrow-02 {
+	background:#3a3a3a url(image/arrow.gif) no-repeat right -64px;
+}
+.second-menu a.arrow-02:hover {
+	background:#4698ca url(image/arrow.gif) no-repeat right -110px;
+}
+.third-menu, .fourth-menu {
+	width:177px;
+	top:0;
+	left:177px;
+}
+.third-menu a {
+	background:#4c4c4c;
+	font-weight:normal;
+	border-top:1px solid #595959;
+	border-left:1px solid #595959;
+	border-bottom:1px solid #333;
+	border-right:1px solid #333;
+}
+#subMgm {
+	width:177px;
+}
+#subMgm .third-menu {
+	left:177px;
+}
+#subMgm .fourth-menu {
+	left:177px;
+}
+#subMusic, #subNews {
+	width:177px;
+}
+</style>
+</head>
+<body>
+<ul id="webmenu" class="first-menu">
+  <li><a href="#" style="color:#ff0; background:none; border:none;" target="_self">站长素材</a></li>
+  <li><a href="#" target="_self">建立网站</a>
+    <ul style="display: none;" id="subMusic" class="second-menu">
+      <li><a href="#" class="arrow" target="_self">域名空间</a>
+        <ul class="third-menu">
+          <li><a href="http://sc.chinaz.com/">fatcow</a></li>
+          <li><a href="http://sc.chinaz.com/">justhost</a></li>
+          <li><a href="http://sc.chinaz.com/">ipower</a></li>
+          <li><a href="http://sc.chinaz.com/">inmotion</a></li>
+          <li><a href="http://sc.chinaz.com/">ixweb</a></li>
+          <li><a href="http://sc.chinaz.com/">supergreen</a></li>
+          <li><a href="http://sc.chinaz.com/">hostgator</a></li>
+          <li><a href="http://sc.chinaz.com/">powweb</a></li>
+          <li><a href="http://sc.chinaz.com/">startlogic</a></li>
+          <li><a href="http://sc.chinaz.com/">greengeeks</a></li>
+        </ul>
+      </li>
+      <li><a href="#" class="arrow" target="_self">CSS 模版</a>
+        <ul class="third-menu">
+          <li><a href="http://sc.chinaz.com/">zengerden</a></li>
+          <li><a href="http://sc.chinaz.com/">freecsstemplates.org</a></li>
+          <li><a href="http://sc.chinaz.com/">oswd.org</a></li>
+          <li><a href="http://sc.chinaz.com/">opendesigns.org</a></li>
+          <li><a href="http://sc.chinaz.com/">cssplay</a></li>
+          <li><a href="http://sc.chinaz.com/">studiopress</a></li>
+          <li><a href="http://sc.chinaz.com/">styleshout</a></li>
+        </ul>
+      </li>
+      <li><a href="#" class="arrow" target="_self">CSS 学习</a>
+        <ul class="third-menu">
+          <li><a href="http://sc.chinaz.com/">ken's blog</a></li>
+          <li><a href="http://sc.chinaz.com/">ndoherty</a></li>
+          <li><a href="http://sc.chinaz.com/">andy's blog</a></li>
+          <li><a href="http://sc.chinaz.com/">cssplay</a></li>
+        </ul>
+      </li>
+      <li><a href="#" class="arrow" target="_self">博客制作</a>
+        <ul class="third-menu">
+        </ul>
+      </li>
+      <li><a href="#" class="arrow" target="_self">素材下载</a>
+        <ul class="third-menu">
+          <li><a href="http://sc.chinaz.com/">flashden.net</a></li>
+          <li><a href="http://sc.chinaz.com/">站酷</a></li>
+        </ul>
+      </li>
+      <li><a href="#" class="arrow" target="_self">管理维护</a>
+        <ul class="third-menu">
+          <li><a href="http://sc.chinaz.com/">中国站长</a></li>
+          <li><a href="http://sc.chinaz.com/">网页设计师联盟</a></li>
+          <li><a href="http://sc.chinaz.com/">蓝色理想</a></li>
+          <li><a href="http://sc.chinaz.com/">天极网页</a></li>
+          <li><a href="http://sc.chinaz.com/">前沿教室</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#" target="_self">工作生活</a>
+    <ul id="subNews" class="second-menu">
+      <li><a href="#" class="arrow" target="_self">搜索</a>
+        <ul class="third-menu">
+          <li><a href="http://sc.chinaz.com/">百度</a></li>
+          <li><a href="http://sc.chinaz.com/">Google</a></li>
+          <li><a href="http://sc.chinaz.com/">搜狐</a></li>
+        </ul>
+      </li>
+      <li><a href="#" class="arrow" target="_self">新闻</a>
+        <ul class="third-menu">
+          <li><a href="http://sc.chinaz.com/">新浪</a></li>
+          <li><a href="http://sc.chinaz.com/">腾讯</a></li>
+          <li><a href="http://sc.chinaz.com/">搜狐</a></li>
+          <li><a href="http://sc.chinaz.com/">网易</a></li>
+          <li><a href="http://sc.chinaz.com/">凤凰网</a></li>
+        </ul>
+      </li>
+      <li><a href="#" class="arrow" target="_self">招聘</a>
+        <ul class="third-menu">
+          <li><a href="http://sc.chinaz.com/">中华英才网</a></li>
+          <li><a href="http://sc.chinaz.com/">前程无忧</a></li>
+          <li><a href="http://sc.chinaz.com/">智联招聘</a></li>
+          <li><a href="http://sc.chinaz.com/">中国人才热线</a></li>
+          <li><a href="http://sc.chinaz.com/">上海第一招聘</a></li>
+          <li><a href="http://sc.chinaz.com/">528招聘网</a></li>
+          <li><a href="http://sc.chinaz.com/">1010兼职网</a></li>
+        </ul>
+      </li>
+      <li><a href="#" class="arrow" target="_self">网赚</a>
+        <ul class="third-menu">
+          <li><a href="http://sc.chinaz.com/">威客中国</a></li>
+        </ul>
+      </li>
+      <li><a href="#" class="arrow" target="_self">购物</a>
+        <ul class="third-menu">
+          <li><a href="#" class="arrow" target="_self">网站</a>
+            <ul class="fourth-menu">
+              <li><a href="http://sc.chinaz.com/">淘宝网</a></li>
+              <li><a href="http://sc.chinaz.com/">当当网</a></li>
+              <li><a href="http://sc.chinaz.com/">易趣网</a></li>
+              <li><a href="http://sc.chinaz.com/">百度有啊</a></li>
+              <li><a href="http://sc.chinaz.com/">卓越网</a></li>
+              <li><a href="http://sc.chinaz.com/">拍拍网</a></li>
+              <li><a href="http://sc.chinaz.com/">阿里巴巴</a></li>
+              <li><a href="http://sc.chinaz.com/">京东商城</a></li>
+              <li><a href="http://sc.chinaz.com/">锦上添花女装</a></li>
+            </ul>
+          </li>
+          <li><a href="#" class="arrow" target="_self">快递公司</a>
+            <ul class="fourth-menu">
+              <li><a href="http://sc.chinaz.com/">申通快递</a></li>
+              <li><a href="http://sc.chinaz.com/">圆通快递</a></li>
+              <li><a href="http://sc.chinaz.com/">EMS特快专递</a></li>
+              <li><a href="http://sc.chinaz.com/">顺丰快递</a></li>
+              <li><a href="http://sc.chinaz.com/">天天快递</a></li>
+              <li><a href="http://sc.chinaz.com/">中通快递</a></li>
+              <li><a href="http://sc.chinaz.com/">韵达快运</a></li>
+            </ul>
+          </li>
+          <li><a href="#" class="arrow" target="_self">电子支付</a>
+            <ul class="fourth-menu">
+              <li><a href="http://sc.chinaz.com/">支付宝</a></li>
+              <li><a href="http://sc.chinaz.com/">快钱</a></li>
+              <li><a href="http://sc.chinaz.com/">财付通</a></li>
+              <li><a href="http://sc.chinaz.com/">paypal</a></li>
+              <li><a href="http://sc.chinaz.com/">百付宝</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#" class="arrow" target="_self">科技</a>
+        <ul class="third-menu">
+          <li><a href="http://sc.chinaz.com/">专利之家</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#" class="arrow" target="_self">休闲娱乐</a>
+    <ul style="display: none;" id="subMgm" class="second-menu">
+      <li><a href="#" class="arrow" target="_self">游戏</a>
+        <ul class="third-menu">
+          <li><a href="#" class="arrow" target="_self">网络游戏</a>
+            <ul class="fourth-menu">
+              <li><a href="http://sc.chinaz.com/">魔兽世界</a></li>
+              <li><a href="http://sc.chinaz.com/">劲舞团</a></li>
+              <li><a href="http://sc.chinaz.com/">跑跑卡丁车</a></li>
+              <li><a href="http://sc.chinaz.com/">征途</a></li>
+              <li><a href="http://sc.chinaz.com/">问道</a></li>
+              <li><a href="http://sc.chinaz.com/">泡泡堂</a></li>
+              <li><a href="http://sc.chinaz.com/">热血江湖</a></li>
+              <li><a href="http://sc.chinaz.com/">街头篮球</a></li>
+              <li><a href="http://sc.chinaz.com/">梦幻西游</a></li>
+              <li><a href="http://sc.chinaz.com/">QQ飞车</a></li>
+              <li><a href="http://sc.chinaz.com/">冒险岛</a></li>
+              <li><a href="http://sc.chinaz.com/">水浒Q传</a></li>
+              <li><a href="http://sc.chinaz.com/">穿越火线</a></li>
+              <li><a href="http://sc.chinaz.com/">天龙八部</a></li>
+              <li><a href="http://sc.chinaz.com/">诛仙</a></li>
+              <li><a href="http://sc.chinaz.com/">武林外传</a></li>
+              <li><a href="http://sc.chinaz.com/">完美世界</a></li>
+              <li><a href="http://sc.chinaz.com/">特种部队</a></li>
+              <li><a href="http://sc.chinaz.com/">热血传奇</a></li>
+            </ul>
+          </li>
+          <li><a href="http://sc.chinaz.com/">17173</a></li>
+        </ul>
+      </li>
+      <li><a href="#" class="arrow" target="_self">电影</a>
+        <ul class="third-menu">
+          <li><a href="http://sc.chinaz.com/">迅雷看看</a></li>
+          <li><a href="http://sc.chinaz.com/">狗狗搜索</a></li>
+          <li><a href="http://sc.chinaz.com/">电驴下载</a></li>
+          <li><a href="http://sc.chinaz.com/">80s手机电影</a></li>
+        </ul>
+      </li>
+      <li><a href="#" class="arrow" target="_self">视频</a>
+        <ul class="third-menu">
+          <li><a href="http://sc.chinaz.com/">优酷</a></li>
+          <li><a href="http://sc.chinaz.com/">土豆</a></li>
+          <li><a href="http://sc.chinaz.com/">酷6</a></li>
+          <li><a href="http://sc.chinaz.com/">六间房</a></li>
+          <li><a href="http://sc.chinaz.com/">56</a></li>
+        </ul>
+      </li>
+      <li><a href="#" class="arrow" target="_self">音乐</a>
+        <ul class="third-menu">
+          <li><a href="http://sc.chinaz.com/">百度-MP3</a></li>
+          <li><a href="http://sc.chinaz.com/">QQ163</a></li>
+          <li><a href="http://sc.chinaz.com/">一听音乐</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="http://sc.chinaz.com/" class="arrow" target="_blank">我的网站</a></li>
+</ul>
+<br><br><br>
+<p align="center">适用浏览器：IE8、360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗. </p><br>
+<p align="center">来源：<a href="http://sc.chinaz.com/" target="_blank">站长素材</a></p>
+</body>
+</html>

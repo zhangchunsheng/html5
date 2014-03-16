@@ -1,0 +1,368 @@
+html,body{
+    font-family: "Microsoft Yahei", Helvetica, Arial, Verdana, sans-serif;
+    font-size: 14px;
+    line-height: 165%;
+    -webkit-user-select:none;
+    -webkit-text-size-adjust:none;
+}
+
+a
+{
+    cursor: pointer;
+    color: #0D6CCC;
+}
+
+a:active,a.touch-active
+{
+    text-decoration: underline;
+}
+
+
+.hide
+{
+    display: none;
+}
+
+.left
+{
+    float: left;
+}
+
+.right
+{
+    float: right;
+}
+
+.orange
+{
+    color: #FEA000;
+}
+
+.yellow
+{
+    color: #FFFF00;
+}
+
+.blue
+{
+    color: #0065CB;
+}
+
+.tl
+{
+    text-align:left;
+}
+
+.tc
+{
+    text-align:center;
+}
+
+.fs-14
+{
+    font-size: 12px;
+}
+
+.fs-14
+{
+    font-size: 14px;
+}
+
+.fs-16
+{
+    font-size: 16px;
+}
+
+.fs-18
+{
+    font-size: 18px;
+}
+
+
+h2
+{
+    text-align: center;
+}
+
+h3
+{
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+p
+{
+    font-size: 12px;
+}
+
+.imag-boxstyle
+{
+    text-align: center;
+    background: #fff;
+    border-radius: 6px;
+    background-image: -webkit-linear-gradient(top, #F1F1F1 45%, #E5E5E5 100%);
+    -webkit-box-shadow: 0px 3x 7px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 3px 7px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+.imag-tip-box:after
+{
+    content: '';
+    background: #fff;
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    bottom: -5px;
+    left: 47%;
+    z-index: 4;
+    background-image: -webkit-linear-gradient(top, #E5E5E5 0%, #E5E5E5 100%);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-box-shadow: 5px 5x 9px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 5px 5px 9px 0px rgba(0, 0, 0, 0.2);
+}
+
+.imag-tip-box
+{
+    position:absolute;
+    bottom:10px;
+    opacity: 0;
+    left: 50%;
+    width: 160px;
+    padding: 10px;
+    margin-left: -90px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height:18px;
+}
+
+.imag-add-icon
+{
+    display:inline-block;
+    width:22px;
+    height: 17px;
+    background:url(../images/add_icon.png);
+    vertical-align: middle;
+    margin: 4px;
+    margin-top: 0px;
+}
+
+.imag-share-to-screen-box-animation
+{
+    animation-name: autohide;
+    animation-duration: 8s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-delay: .1s;
+    /* Firefox: */
+    -moz-animation-name: autohide;
+    -moz-animation-duration: 8s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-direction: normal;
+    -moz-animation-delay: 1s;
+    /* Safari and Chrome: */
+    -webkit-animation-name: autohide;
+    -webkit-animation-duration: 8s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count:1;
+    -webkit-animation-direction:normal;
+    -webkit-animation-delay: .1s;
+}
+
+
+@keyframes autohide
+{
+0%   {bottom:-60px;}
+5%  {opacity: 0.5;bottom: 10px}
+10%  {opacity: 0.75;}
+25%  {opacity: 1;}
+90%  {opacity: 1;}
+100% {opacity: 0;}
+}
+
+@-moz-keyframes autohide /* Firefox */
+{
+0%   {bottom:-60px;}
+5%  {bottom: 10px}
+50%  {opacity: 1,bottom: 10px}
+75%  {opacity: 1,bottom: 10px}
+100% {opacity: 0,bottom: 10px}
+}
+
+@-webkit-keyframes autohide /* Safari and Chrome */
+{
+0%   {bottom:-60px;}
+5%  {opacity: 0.5;bottom: 10px}
+10%  {opacity: 0.75;}
+25%  {opacity: 1;}
+90%  {opacity: 1;}
+100% {opacity: 0;}
+}
+
+
+
+
+
+/*  cratch-lottery  */
+.game-scratch-lottery
+{
+    position:relative;
+    height: 360px;
+    background: url(../images/scratch-bk.png) no-repeat center 30px,url(../images/scratch-bk2.png) repeat;
+    text-align: center;
+    height:100%;
+}
+.scratchLottery
+{
+    display: inline-block;
+    margin-top: 90px;
+    width: 100%;
+    padding: 40px 0 60px 0;
+    z-index: 555;
+}
+
+.game-scratch-lottery .btns
+{
+    position: absolute;
+    top: 200px;
+    text-align: center;
+    width: 100%;
+}
+.game-scratch-lottery .btns > a
+{
+    display: inline-block;
+    width: 204px;
+    height: 46px;
+}
+.game-scratch-lottery .prize-btn
+{
+    z-index: 2;
+    background: url(../images/scratch-prize-btn.png) no-repeat top left;
+}
+
+.game-scratch-lottery .again-btn
+{
+    z-index: 1;
+    background: url(../images/scratch-again-btn.png) no-repeat top left;
+}
+
+.game-scratch-lottery .prize-btn:active, .game-scratch-lottery .prize-btn.touch-active, .game-scratch-lottery .again-btn:active, .game-scratch-lottery .again-btn.touch-active
+{
+    background-position: left bottom;
+}
+
+.imag-shield-box
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.imag-page-mask
+{
+    position: absolute;
+    top: 0;
+    background-color: #000;
+    opacity: 0.7;
+    height: 100%;
+    width: 320px;
+    z-index: 2;
+}
+
+.imag-send-box
+{
+    position: absolute;
+    top: 50px;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+}
+
+.imag-send-form
+{
+    text-align: center;
+    background-color: #f4f4f4;
+    width: 240px;
+    height: 240px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    -moz-box-shadow: inset 0px 0px 10px 3px #dddddd;
+    -webkit-box-shadow: inset 0px 0px 10px 3px #dddddd;
+    box-shadow: inset 0px 0px 10px 3px #dddddd;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+}
+
+.imag-send-form p
+{
+    margin: 10px 0;
+}
+
+.imag-send-form input
+{
+    height: 40px;
+    font-size: 14px;
+    width: 220px;
+    text-indent: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.imag-send-form .luckyDraw-submit
+{
+    color: #fff;
+    font-size: 20px;
+    height: 40px;
+    background: url(../images/confirm-blue-btn.png) no-repeat left top;
+    background-size: 100%;
+    border: none;
+}
+.luckyDraw-submit:active, .luckyDraw-submit.touch-active
+{
+    background-position: left bottom;
+}
+
+.imag-send-form .emsg
+{
+    height: 20px;
+    text-align: center;
+    color: #D50000;
+}
+
+.imag-send-form .error
+{
+    border: 1px solid #D50000;
+    -moz-box-shadow: inset 0px 0px 5px 0px #D50000;
+    -webkit-box-shadow: inset 0px 0px 5px 0px #D50000;
+    box-shadow: inset 0px 0px 5px 0px #D50000;
+    background-color: #FFEBEB;
+}
+
+::-webkit-input-placeholder
+{
+    color: #666;
+    font-weight: bold;
+}
+
+:-moz-placeholder
+{
+    color: #666;
+    font-weight: bold;
+}
+
+.imag-shield-box .imag-page-return {
+    position: absolute;
+    top: 10px;
+    background: url(../images/closeBtn.png) no-repeat;
+    left: 10px;
+    width: 26px;
+    height: 26px;
+    z-index: 900;
+}

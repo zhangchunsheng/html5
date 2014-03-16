@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>My Snake Game</title>
+		<script src="mix_snake.js"></script>
+		
+	</head>
+	<body>
+		<div align="center">
+		<h3>Edacious snake(V1.0)</h3>
+		<h5>---------------------------author:yangguo </h5>
+		<div style="width:550px;margin:0 auto;height:400px;">
+		<div id="gamePanel" tabindex="0"  style="width:400px; float:left;clear:left">
+		<canvas id="myCanvas" width="400" height="400" style="border:1px solid #c3c3c3;" >
+			Your browser does not support the canvas element.
+		</canvas>
+		</div>
+		<div id="scorePanel" style="float:right;">
+			<strong>Highest Score</strong>
+			<p></p>
+			<div id="highestScore" style="color:red; font-weight:bold;">
+				0
+			</div>
+			<p></p> 
+			<strong>Score</strong>
+			<p></p>
+			<div id="score" style="font-weight:bold;">
+				0
+			</div>
+			
+		</div>
+		
+		</div>
+		<p>
+		speed: <select id="speed">
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+			<option>6</option>
+			<option>7</option>
+			<option>8</option>
+			<option>9</option>
+			</select>
+		<button id="start" onclick="startGame(this)">start</button>
+		
+		<button id="control" onclick="control(this)" disabled="true">pause</button>
+		
+		
+		
+		</p>
+		</div>
+		
+		<script language="JavaScript">		 
+			var gameMrg = new Ga1900("myCanvas");	
+			function startGame(startBtn){
+				var step = document.getElementById("speed").value;
+				gameMrg.startGame(step);
+				document.getElementById("gamePanel").focus();
+				pause = true;
+				var btn = document.getElementById("control");
+				btn.innerHTML = "pause";
+				btn.disabled = false;
+				
+			}	
+			var pause = true;
+			function control(btn){
+			
+				if (pause) {
+				
+					gameMrg.pause();
+					btn.innerHTML = "continue";
+				}
+				else{
+					gameMrg.goon();
+					btn.innerHTML = "pause";
+					document.getElementById("gamePanel").focus();
+				}
+				pause = !pause;
+				
+			}					
+		</script>
+
+	</body>
+</html>

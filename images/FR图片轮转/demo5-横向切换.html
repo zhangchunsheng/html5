@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html>
+	<head>
+		<title>
+			FR图片轮转效果
+		</title>
+		<link href="fr.carousel.css" type="text/css" rel="stylesheet">
+		<script src="fr.carousel.pack.js" language="javascript"></script>
+		<script>
+			FR.Carousel.start({
+				mode:5,
+				bgColor:'transparent',
+				width:610,
+				height:205,
+				steps:10,
+				period:25
+			});
+			FR.Typer.start();
+		</script>
+	</head>
+	<body>
+		<div id="carousel">
+			<div id="carouselimg">
+				<div id="imgcontainer">
+					<a href="./"><img src="manage.jpg" /></a>
+					<a href="./"><img src="player.jpg" /></a>
+					<a href="./"><img src="TT.jpg" /></a>
+					<a href="./"><img src="xf.jpg" /></a>
+					<a href="./"><img src="py.jpg" /></a>
+				</div>
+			</div>
+			<div id="carouseltitle">
+				<ul>
+					<li>
+						Ⅰ
+					</li>
+					<li>
+						Ⅱ
+					</li>
+					<li>
+						Ⅲ
+					</li>
+					<li>
+						Ⅳ
+					</li>
+					<li>
+						Ⅴ
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

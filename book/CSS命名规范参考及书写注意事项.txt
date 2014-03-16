@@ -1,0 +1,751 @@
+http://www.jb51.net/css/34068.html
+CSS书写顺序 
+*{ 
+/*显示属性*/ 
+display 
+position 
+float 
+clear 
+cursor 
+… 
+
+/*盒模型*/ 
+margin 
+padding 
+width 
+height 
+
+/*排版*/ 
+vertical-align 
+white-space 
+text-decoration 
+text-align 
+… 
+
+/*文字*/ 
+color 
+font 
+content 
+
+/*边框背景 为什么要把 boder和background放在最后的原因是修改的频率会较之前的频繁，放在最后查看起来方便，哈哈。*/ 
+border 
+background 
+} 
+下表顺序为从上到下，从左到右： 
+======================== 
+
+display || visibility 
+list-style : list-style-type || list-style-position || list-style-image 
+position 
+top || right || bottom || left 
+z-index 
+clear 
+float 
+
+width 
+max-width || min-width 
+height 
+max-height || min-height 
+overflow || clip 
+margin : margin-top || margin-right || margin-bottom || margin-left 
+padding : padding-top || padding-right || padding-bottom || padding-left 
+outline : outline-color || outline-style || outline-width 
+border 
+background : background-color || background-image || background-repeat || background-attachment || background-position 
+
+color 
+font : font-style || font-variant || font-weight || font-size || line-height || font-family 
+font : caption | icon | menu | message-box | small-caption | status-bar 
+text-overflow 
+text-align 
+text-indent 
+line-height 
+white-space 
+vertical-align 
+cursor 
+
+CSS命名规则： 
+一．文件命名规范 
+全局样式：global.css； 
+框架布局：layout.css； 
+字体样式：font.css； 
+链接样式：link.css； 
+打印样式：print.css； 
+主要的 master.css 
+专栏 columns.css 
+主题 themes.css 
+主要的 master.css 
+模块 module.css 
+基本共用 base.css 
+表单 forms.css 
+补丁 mend.css 
+二．页面结构 
+容 器: container 
+页 头：header 
+内 容：content 
+页面主体：main 
+页 尾：footer 
+栏目：column 
+页面外围控制整体布局宽度：wrapper 
+左右中：left right center 
+三．导航 
+导航：nav 
+主导航：mainbav 
+子导航：subnav 
+顶导航：topnav 
+边导航：sidebar 
+左导航：leftsidebar 
+右导航：rightsidebar 
+菜单：menu 
+子菜单：submenu 
+摘要: summary 
+四．功能 
+标志：logo 
+广告：banner 
+登陆：login 
+登录条：loginbar 
+注册：regsiter 
+搜索：search 
+功能区：shop 
+标题：title 
+加入：joinus 
+状态：status 
+按钮：btn 
+滚动：scroll 
+标签页：tab 
+文章列表：list 
+提示信息：msg 
+当前的: current 
+小技巧：tips 
+图标: icon 
+注释：note 
+指南：guild 
+服务：service 
+热点：hot 
+新闻：news 
+下载：download 
+投票：vote 
+合作伙伴：partner 
+友情链接：link 
+版权：copyright 
+
+Container div 
+#container 
+容器 
+Layout 
+#layout 
+布局 
+Header or banner div 
+#head, #header 
+页头部分 
+Footer div 
+#foot, #footer 
+页脚部分 
+Navigation list 
+#nav 
+主导航 
+Sub-navigation list 
+#subNav 
+二级导航 
+Menu 
+#menu 
+菜单 
+Sub Menu 
+#submenu 
+子菜单 
+Left or right side columns 
+#sidebar_a, #sidebar_b 
+左边栏或右边栏 
+Main div 
+#main 
+页面主体 
+Tag 
+#tag 
+标签 
+Message 
+#msg #message 
+提示信息 
+Tips 
+#tips 
+小技巧 
+Vote 
+#vote 
+投票 
+Friend Link 
+#friendlink 
+友情连接 
+Title 
+#title 
+标题 
+Summary 
+#summary 
+摘要 
+Search input 
+#searchInput 
+搜索输入框 
+Search output 
+#search_output 
+搜索输出和搜索结果相似 
+Search 
+#search 
+搜索 
+Search bar 
+#searchBar 
+搜索条 
+Search results 
+#search_results 
+搜索结果 
+Copyright information 
+#copyright 
+版权信息 
+brand 
+#branding 
+商标 
+branding-logo 
+#logo 
+LOGO 
+Site information 
+#siteinfo 
+网站信息 
+Copyright information etc. 
+#siteinfoLegal 
+法律声明 
+Designer or other credits 
+#siteinfoCredits 
+信誉 
+Join us 
+#joinus 
+加入我们 
+Partnership opportunities 
+#partner 
+合作伙伴 
+Services 
+#service 
+服务 
+Regsiter 
+#regsiter 
+注册 
+Arrow 
+arr/arrow 
+箭头 
+Little 
+#little 
+标题 
+Website map 
+#sitemap 
+网站地图 
+List 
+#list 
+列表 
+Home page 
+#homepage 
+首页 
+Sub page 
+subpage 
+二级页面子页面 
+Toolbar 
+#tool, #toolbar 
+工具条 
+Next pulls 
+#drop 
+下拉 
+Next pulls menu 
+#dorpmenu 
+下拉菜单 
+Status 
+#status 
+状态 
+Container div 
+#container 
+容器 
+Header or banner div 
+#header 
+页头部分 
+Main or global navigation div 
+#mainNav 
+主导航 
+Menu 
+#menu 
+菜单 
+Sub Menu 
+#submenu 
+子菜单 
+Left or right side columns 
+#sidebarA, #sidebarB 
+左边栏或右边栏 
+Main div 
+#main 
+页面主体 
+Content div 
+#content 
+内容部分 
+The main content area 
+#contentMain 
+主要内容区域 
+Footer div 
+#footer 
+页脚部分 
+Tag 
+#tag 
+标签 
+Message 
+#msg #message 
+提示信息 
+Tips 
+#tips 
+小技巧 
+Vote 
+#vote 
+投票 
+Friend Link 
+#friendlink 
+友情连接 
+Title 
+#title 
+标题 
+Summary 
+#summary 
+摘要 
+Sub-navigation list 
+#subNav 
+二级导航 
+Search input 
+#searchInput 
+搜索输入框 
+Search output 
+#searchOutput 
+搜索输出和搜索结果相似 
+Search 
+#search 
+搜索 
+Search results 
+#searchResults 
+搜索结果 
+Copyright information 
+#copyright 
+版权信息 
+brand 
+#branding 
+商标 
+branding-logo 
+#brandingLogo 
+LOGO 
+Site information 
+#siteinfo 
+网站信息 
+Copyright information etc. 
+#siteinfoLegal 
+法律声明 
+Designer or other credits 
+#siteinfoCredits 
+信誉 
+Join us 
+#joinus 
+加入我们 
+Partnership opportunities 
+#partner 
+合作伙伴 
+Services 
+#service 
+服务 
+Regsiter 
+#regsiter 
+注册 
+Status 
+#status 
+状态 
+Products 
+.products 
+产品 
+Products prices 
+.productsPrices 
+产品价格 
+Products description 
+.productsDescription 
+产品描述 
+Products review 
+.productsReview 
+产品评论 
+Editor’s review 
+.editorReview 
+编辑评论 
+New release 
+.newsRelease 
+最新产品 
+Publisher 
+.publisher 
+生产商 
+Screen shot 
+.screenshot 
+缩略图 
+FAQ 
+.faqs 
+常见问题 
+Keyword 
+.keyword 
+关键词 
+Blog 
+.blog 
+博客 
+Forum 
+.forum 
+论坛 
+
+五class的命名: 
+(1)颜色:使用颜色的名称或者16进制代码,如 
+.red { color: red; } 
+.f60 { color: #f60; } 
+.ff8600 { color: #ff8600; } 
+(2)字体大小,直接使用“font+字体大小“作为名称,如 
+.font12px { font-size: 12px; } 
+.font9pt {font-size: 9pt; } 
+(3)对齐样式,使用对齐目标的英文名称,如 
+.left { float:left; } 
+.bottom { float:bottom; } 
+(4)标题栏样式,使用“类别+功能“的方式命名,如 
+.barnews { } 
+.barproduct { } 
+
+XHTML-CSS写作建议 
+1. 所有的xhtml代码小写 
+2. 属性的值一定要用双引号(“”)括起来，且一定要有值 
+3. 每个标签都要有开始和结束，且要有正确的层次 
+4. 空元素要有结束的tag或于开始的tag后加上“/” 
+5. 表现与结构完全分离，代码中不涉及任何的表现元素，如style、font、bgColor、border等 
+6. <h1>到<h5>的定义，应遵循从大到小的原则，体现文档的结构，并有利于搜索引擎的查询。 
+7. 给每一个表格和表单加上一个唯一的、结构标记id 
+8. 给重要的区块加上注释,如： 
+9. 给图片加上alt标签 
+10. 所有的标签必须进行合理的嵌套 
+11. 根元素前必须有元素，宣告使用那一种DTD 
+12. 根元素必须有xmlns属性来指定使用http://www.w3.org/1999/xhtml的namespace 
+一. 常规书写规范及方法 
+1. 选择DOCTYPE： 
+XHTML 1.0 提供了三种DTD声明可供选择： 
+过渡的(Transitional):要求非常宽松的DTD，它允许你继续使用HTML4.01的标识(但是要符合xhtml的写法)。完整代码如下： 
+<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN” “http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd“> 
+严格的(Strict):要求严格的DTD，你不能使用任何表现层的标识和属性，例如<br>。完整代码如下： 
+<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Strict//EN” “http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd“> 
+框架的(Frameset):专门针对框架页面设计使用的DTD，如果你的页面中包含有框架，需要采用这种DTD。完整代码如下： 
+<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Frameset//EN” “http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd“> 
+理想情况当然是严格的DTD，但对于我们大多数刚接触web标准的设计师来说，过渡的DTD(XHTML 1.0 Transitional)是目前理想选择(包括本站，使用的也是过渡型DTD)。因为这种DTD还允许我们使用表现层的标识、元素和属性，也比较容易通过W3C的代码校验。 
+2. 指定语言及字符集： 
+为文档指定语言： 
+<html xmlns=”http://www.w3.org/1999/xhtml” lang=”en”> 
+为了被浏览器正确解释和通过W3C代码校验，所有的XHTML文档都必须声明它们所使用的编码语言；如： 
+常用的语言定义： 
+<meta http-equiv=”Content-Type” content=”text/html; charset=utf-8″ /> 
+标准的XML文档语言定义： 
+<?xml version=”1.0″ encoding=” utf-8″?> 
+针对老版本的浏览器的语言定义： 
+<meta http-equiv=”Content-Language” content=” utf-8″ /> 
+为提高字符集，建议采用“utf-8”。 
+3. 调用样式表： 
+外部样式表调用： 
+页面内嵌法：就是将样式表直接写在页面代码的head区。 如： 
+<style type=”text/css”><!– body { background : white ; color : black ; } –> </style> 
+外部调用法：将样式表写在一个独立的.css文件中，然后在页面head区用类似以下代码调用。 
+<link rel=”stylesheet” rev=”stylesheet” href=style.css” type=”text/css” media=”all” /> 
+在符合web标准的设计中，推荐使用外部调用法，可以不修改页面只修改.css文件而改变页面的样式。如果所有页面都调用同一个样式表文件，那么改一个样式表文件，可以改变所有文件的样式。 
+4、选用恰当的元素： 
+根据文档的结构来选择HTML元素，而不是根据HTML元素的样式来选择。例如，使用P元素来包含文字段落，而不是为了换行。如果在创建文档时找不到适当的元素，则可以考虑使用通用的div 或者是span； 
+避免过渡使用div和span。少量、适当的使用div和span元素可以使文档的结构更加清晰合理并且易于使用样式； 
+尽可能少地使用标签和结构嵌套，这样不但可以使文档结构清晰，同时也可以保持文件的小巧，在提高用户下载速度的同时，也易于浏览器对文档的解释及呈视； 
+5、派生选择器： 
+可以使用派生选择器给一个元素里的子元素定义样式，在简化命名的同时也使结构更加的清晰化，如： 
+.mainMenu ul li {background:url(images/bg.gif;)} 
+6、辅助图片用背影图处理： 
+这里的”辅助图片”是指那些不是作为页面要表达的内容的一部分，而仅仅用于修饰、间隔、提醒的图片。将其做背影图处理，可以在不改动页面的情况下通过CSS样式来进行改动，如： #logo {background:url(images/logo.jpg) #FEFEFE no-repeat right bottom;} 
+7、结构与样式分离： 
+在页面里只写入文档的结构，而将样式写于css文件中，通过外部调用CSS样式表来实现结构与样式的分离。
+8、文档的结构化书写： 
+页面CSS文档都应采用结构化的书写方式，逻辑清晰易于阅读。如： 
+<div id=”mainMenu”> 
+<ul> 
+<li><a href=SPAN>”#” >首页</a></li> 
+<li><a href=SPAN>”#” >介绍</a></li> 
+<li><a href=SPAN>”#” >服务</a></li> 
+</ul> 
+</div> 
+
+/*=====主导航=====*/ 
+#mainMenu { 
+width:100%; 
+height:30px; 
+background:url(images/mainMenu_bg.jpg) repeat-x; 
+} 
+#mainMenu ul li { 
+float:left; 
+line-height:30px; 
+margin-right:1px; 
+cursor:pointer; 
+} 
+/*=====主导航结束=====*/ 
+9、鼠标手势： 
+在XHTML标准中，hand只被IE识别，当需要将鼠标手势转换为“手形”时，则将“hand”换为“pointer”，即“cursor:pointer;” 
+10．注释书写规范 
+1、行间注释： 
+直接写于属性值后面，如： 
+.search{ 
+border:1px solid #fff;/*定义搜索输入框边框*/ 
+background:url(../images/icon.gif) no-report #333;/*定义搜索框的背景*/ 
+} 
+2、整段注释： 
+分别在开始及结束地方加入注释，如： 
+/*=====搜索条=====*/ 
+.search { 
+border:1px solid #fff; 
+background:url(../images/icon.gif) no-repeat #333; 
+} 
+/*=====搜索条结束=====*/ 
+3．协助注释 
+非作者维护时所加入的表示修改时间、修改人等标识信息。 
+在区域注释或单行注释的基础上加上修改人和修改时间等信息。 
+例(区域注释)： 
+<!--==S 注释内容[修改人和修改时间]--> 
+<div> 
+... 
+</div> 
+<!--==E 注释内容[修改人和修改时间]--> 
+/*=S 注释内容[修改人和修改时间]*/ 
+.class{ 
+... 
+} 
+.class{ 
+... 
+} 
+/*=E 注释内容[修改人和修改时间]*/ 
+例(单行注释)： 
+<div> 
+<!-- 注释内容[修改人和修改时间]--> 
+... 
+</div> 
+.class{ 
+/*注释内容[修改人和修改时间]*/ 
+... 
+} 
+11．样式属性代码缩写 
+1、不同类有相同属性及属性值的缩写： 
+对于两个不同的类，但是其中有部分相同甚至是全部相同的属性及属性值时，应对其加以合并缩写，特别是当有多个不同的类而有相同的属性及属性值时，合并缩写可以减少代码量并易于控制。如： 
+#mainMenu { 
+background:url(../images/bg.gif); 
+border:1px solid #333; 
+width:100%; 
+height:30px; 
+overflow:hidden; 
+} 
+#subMenu { 
+background:url(../images/bg.gif); 
+border:1px solid #333; 
+width:100%; 
+height:20px; 
+overflow:hidden; 
+} 
+两个不同类的属性值有重复之处，刚可以缩写为： 
+#mainMenu,#subMenu { 
+background:url(../images/bg.gif); 
+border:1px solid #333; 
+width:100%; 
+overflow:hidden; 
+} 
+#mainMenu {height:30px;} 
+#subMenu {height:20px;} 
+2、同一属性的缩写： 
+同一属性根据它的属性值也可以进行简写，如： 
+.search { 
+background-color:#333; 
+background-image:url(../images/icon.gif); 
+background-repeat: no-repeat; 
+background-position:50% 50%; 
+} 
+.search { 
+background:#333 url(../images/icon.gif) no-repeat 50% 50%; 
+} 
+3、内外侧边框的缩写： 
+在CSS中关于内外侧边框的距离是按照上、右、下、左的顺序来排列的，当这四个属性值不同时也可直接缩写，如： 
+.btn { 
+margin-top:10px; 
+margin-right:8px; 
+margin-bottom:12px; 
+margin-left:5px; 
+padding-top:10px; 
+padding-right:8px; 
+padding-bottom:12px; 
+padding-left:8px; 
+} 
+则可缩写为： 
+.btn { 
+Margin:10px 8px 12px 5px; 
+Padding:10px 8px 12px 5px; 
+} 
+
+而如果当上边与下边、左边与右边的边框属性值相同时，则属性值可以直接缩写为两个，如： .btn { 
+margin-top:10px; 
+margin-right:5px; 
+margin-bottom:10px; 
+margin-left:5px; 
+} 
+
+缩写为： .btn {margin:10px 5px;} 
+而当上下左右四个边框的属性值都相同时，则可以直接缩写成一个，如： 
+.btn { 
+margin-top:10px; 
+margin-right:10px; 
+margin-bottom:10px; 
+margin-left:10px; 
+} 
+缩写为： 
+.btn{margin:10px;} 
+4、颜色值的缩写： 
+当RGB三个颜色值数值相同时，可缩写颜色值代码。如： 
+.menu { color:#ff3333;} 
+可缩写为: 
+.menu {color:#f33;} 
+12．hack书写规范 
+因为不同浏览器对W3C标准的支持不一样，各个浏览器对于页面的解释呈视也不尽相同，比如IE在很多情况下就与FF存在3px的差距，对于这些差异性，就需要利用css 的hack来进行调整，当然在没有必要的情况下，最好不要写hack来进行调整，避免因为hack而导致页面出现问题。 
+1、 IE6、IE7、Firefox之间的兼容写法： 
+写法一： 
+IE都能识别*;标准浏览器(如FF)不能识别*； 
+IE6能识别*，但不能识别 !important, 
+IE7能识别*，也能识别!important; 
+FF不能识别*，但能识别!important; 
+根据上述表达，同一类/ID下的CSS hack可写为： 
+.searchInput { 
+background-color:#333;/*三者皆可*/ 
+*background-color:#666 !important; /*仅IE7*/ 
+*background-color:#999; /*仅IE6及IE6以下*/ 
+} 
+一般三者的书写顺序为：FF、IE7、IE6. 
+写法二： 
+IE6可识别“_”，而IE7及FF皆不能识别，所以当只针对IE6与IE7及FF之间的区别时，可这样书写： 
+.searchInput { 
+background-color:#333;/*通用*/ 
+_background-color:#666;/*仅IE6可识别*/ 
+} 
+写法三： 
+*+html 与 *html 是IE特有的标签, Firefox 暂不支持。 
+.searchInput {background-color:#333;} 
+*html .searchInput {background-color:#666;}/*仅IE6*/ 
+*+html .searchInput {background-color:#555;}/*仅IE7*/ 
+屏蔽IE浏览器： 
+select是选择符，根据情况更换。第二句是MAC上safari浏览器独有的。 
+*:lang(zh) select {font:12px !important;} /*FF的专用*/ 
+select:empty {font:12px !important;} /*safari可见*/ 
+IE6可识别： 
+这里主要是通过CSS注释分开一个属性与值，注释在冒号前。 
+select { display /*IE6不识别*/:none;} 
+IE的if条件hack写法： 
+所有的IE可识别： 
+<!–[if IE]> Only IE <![end if]–> 
+只有IE5.0可以识别: 
+<!–[if IE 5.0]> Only IE 5.0 <![end if]–> 
+IE5.0包换IE5.5都可以识别: 
+<!–[if gt IE 5.0]> Only IE 5.0+ <![end if]–> 
+仅IE6可识别: 
+<!–[if lt IE 6]> Only IE 6- <![end if]–> 
+IE6以及IE6以下的IE5.x都可识别: 
+<!–[if gte IE 6]> Only IE 6/+ <![end if]–> 
+仅IE7可识别: 
+<!–[if lte IE 7]> Only IE 7/- <![end if]–> 
+13、清除浮动： 
+在Firefox中，当子级都为浮动时，那么父级的高度就无法完全的包住整个子级，那么这时用这个清除浮动的HACK来对父级做一次定义，那么就可以解决这个问题。 
+select:after { 
+content:”.”; 
+display:block; 
+height:0; 
+clear:both; 
+visibility:hidden; 
+} 
+
+注意事项: 
+1. id和class命名采用该版块的英文单词或组合命名，并第一个单词小写，第二个单词首个字母大写，如:newRelease（最新产品/new+Release) 
+常用类的命名应尽量以常见英文单词为准，做到通俗易懂，并在适当的地方加以注释。对于二级类/ID命名，则采用组合书写的模式，后一个单词的首字母应大写：诸如“搜索框”则应命名为“searchInput”、“搜索图标”命名这“searchIcon”、“搜索按钮”命名为 “searchBtn”…… 
+2. CSS样式表各区块用注释说明 
+3. 尽量使用英文命名原则 
+4. 不用加中杠和下划线 
+5. 尽量不缩写，除非一看就明白的单词 
+6．检查HTML元素是否有拼写错误、是否忘记结束标记 
+即使是老手也经常会弄错div的嵌套关系。可以用dreamweaver的验证功能检查一下有无错误。 
+7. 检查CSS是否正确 
+检查一下有无拼写错误、是否忘记结尾的 } 等。可以利用CleanCSS来检查 CSS的拼写错误。CleanCSS本是为CSS减肥的工具，但也能检查出拼写错误。 
+8. 确定错误发生的位置 
+如果错误影响了整体布局，则可以逐个删除div块，直到删除某个div块后显示恢复正常，即可确定错误发生的位置。 
+9. 利用border属性确定出错元素的布局特性 
+使用float属性布局一不小心就会出错。这时为元素添加border属性确定元素边界，错误原因即水落石出。 
+10. float元素的父元素不能指定clear属性 
+MacIE下如果对float的元素的父元素使用clear属性，周围的float元素布局就会混乱。这是MacIE的著名的bug，倘若不知道就会走弯路。 
+11. float元素务必指定width属性 
+很多浏览器在显示未指定width的float元素时会有bug。所以不管float元素的内容如何，一定要为其指定width属性。 
+另外指定元素时尽量使用em而不是px做单位。 
+12. float元素不能指定margin和padding等属性 
+IE在显示指定了margin和padding的float元素时有bug。因此不要对float元素指定margin和padding属性（可以在float元素内部嵌套一个div来设置margin和padding）。也可以使用hack方法为IE指定特别的值。 
+13. float元素的宽度之和要小于100% 
+如果float元素的宽度之和正好是100%，某些古老的浏览器将不能正常显示。因此请保证宽度之和小于99%。
+14. 是否重设了默认的样式？ 
+某些属性如margin、padding等，不同浏览器会有不同的解释。因此最好在开发前首先将全体的margin、padding设置为0、列表样式设置为none等。 
+15、float的div一定要闭合。 
+例如：(其中floatA、floatB的属性已经设置为float:left;) 
+程序代码 
+<#div id=”floatA” ></#div> 
+<#div id=”floatB” ></#div> 
+<#div id=”NOTfloatC” ></#div> 
+这里的NOTfloatC并不希望继续平移，而是希望往下排。 
+这段代码在IE中毫无问题，问题出在FF。原因是NOTfloatC并非float标签，必须将float标签闭合。在 程序代码 
+<#div class=”floatB”></#div> 
+<#div class=”NOTfloatC”></#div> 
+之间加上 程序代码 
+<#div class=”clear”></#div> 
+这个div一定要注意声明位置，一定要放在最恰当的地方，而且必须与两个具有float属性的div同级，之间不能存在嵌套关系，否则会产生异常。 
+并且将clear这种样式定义为为如下即可： 
+程序代码 
+.clear{ 
+clear:both;} 
+此外，为了让高度能自动适应，要在wrapper里面加上overflow:hidden; 
+当包含float的box的时候，高度自动适应在IE下无效，这时候应该触发IE的layout私有属性(万恶的IE啊！)用zoom:1;可以做到，这样就达到了兼容。 
+例如某一个wrapper如下定义： 
+程序代码 
+.colwrapper{ 
+overflow:hidden; 
+zoom:1; 
+margin:5px auto;} 
+16、margin加倍的问题。 
+设置为float的div在ie下设置的margin会加倍。这是一个ie6都存在的bug。 
+解决方案是在这个div里面加上display:inline; 
+例如： 
+<#div id=”imfloat”></#div> 
+相应的css为 
+程序代码 
+#IamFloat{ 
+float:left; 
+margin:5px;/*IE下理解为10px*/ 
+display:inline;/*IE下再理解为5px*/} 
+17、关于容器的包涵关系 
+很多时候，尤其是容器内有平行布局，例如两、三个float的div时，宽度很容易出现问题。在IE中，外层的宽度会被内层更宽的div挤破。一定要用Photoshop或者Firework量取像素级的精度。 
+18、关于高度的问题 
+如果是动态地添加内容，高度最好不要定义。浏览器可以自动伸缩，然而如果是静态的内容，高度最好定好。（似乎有时候不会自动往下撑开，不知道具体怎么回事） 
+
+常见兼容问题： 
+1.DOCTYPE 影响 CSS 处理 
+2.FF: div 设置 margin-left, margin-right 为 auto 时已经居中, IE 不行 
+3.FF: body 设置 text-align 时, div 需要设置 margin: auto(主要是 margin-left,margin-right) 方可居中 
+4.FF: 设置 padding 后, div 会增加 height 和 width, 但 IE 不会, 故需要用 !important 多设一个 height 和 width 
+5.FF: 支持 !important, IE 则忽略, 可用 !important 为 FF 特别设置样式 
+6.div 的垂直居中问题: vertical-align:middle; 将行距增加到和整个DIV一样高 line-height:200px; 然后插入文字，就垂直居中了。缺点是要控制内容不要换行 
+7.cursor: pointer 可以同时在 IE FF 中显示游标手指状， hand 仅 IE 可以 
+8.FF: 链接加边框和背景色，需设置 display: block, 同时设置 float: left 保证不换行。参照 menubar, 给 a 和 menubar 设置高度是为了避免底边显示错位, 若不设 height, 可以在 menubar 中插入一个空格。 
+9.在mozilla firefox和IE中的BOX模型解释不一致导致相差2px解决方法： 
+div{margin:30px!important;margin:28px;} 
+注意这两个margin的顺序一定不能写反，据阿捷的说法!important这个属性IE不能识别，但别的浏览器可以识别。所以在IE下其实解释成这样： 
+div{maring:30px;margin:28px} 
+重复定义的话按照最后一个来执行，所以不可以只写margin:XXpx!important; 
+
+10.IE5 和IE6的BOX解释不一致 
+IE5下 程序代码 
+div{width:300px;margin:0 10px 0 10px;} 
+div的宽度会被解释为300px-10px(右填充)-10px(左填充)最终div的宽度为280px，而在IE6和其他浏览器上宽度则是以300px+10px(右填充)+10px(左填充)=320px来计算的。这时我们可以做如下修改 
+div{width:300px!important;width /**/:340px;margin:0 10px 0 10px} 
+关于这个/**/是什么我也不太明白，只知道IE5和firefox都支持但IE6不支持，如果有人理解的话，请告诉我一声，谢了！：） 
+11.ul标签在Mozilla中默认是有padding值的,而在IE中只有margin有值所以先定义 
+程序代码ul{margin:0;padding:0;} 
+注意书写格式的问题： 
+一定要注意缩进。对齐。要有良好的编程习惯。

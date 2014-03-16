@@ -1,0 +1,202 @@
+body {
+	font-size:12px;
+	border:none 0px;
+	margin:0px;
+	padding:0px;
+	overflow : hidden;
+	height : 100%;
+	background-color : #eeeeee;
+
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-text-size-adjust: none;
+	
+
+}
+
+    body[orient="profile"] .container {
+       -webkit-transform : rotate(90deg);
+    }
+    
+    body[orient="landscape"] .container {
+       -webkit-transform : rotate(0deg);
+    }
+
+* {
+	-webkit-tap-higlight-color: transparent;
+   	-webkit-user-select: none; 
+
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-text-size-adjust: none;   	
+}	
+
+/*
+@font-face {
+  font-family: 'test';
+  src: url("../images/Agency FB Bold.otf");
+}
+*/
+@font-face {
+  font-family: 'test';
+  src: url("../images/simple_small_pixels.ttf");
+}
+
+
+canvas {
+		image-rendering: optimizeSpeed;
+		-webkit-interpolation-mode: nearest-neighbor;
+			
+}
+
+/* ( max-device-width: 480px ) */
+@media screen and (-webkit-min-device-pixel-ratio:2 ){
+	canvas {
+		qwidth: 320px;
+		qheight: 320px;
+	}
+}
+
+.gamebox {
+		margin : auto ;
+		padding : 0px;
+		border:0px;
+		position : relative ;
+		overflow : hidden;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
+		-webkit-text-size-adjust: none;
+}
+
+.viewport {
+		margin : 0px ;
+		padding : 0px;
+		border:0px;
+		position : relative ;
+		overflow : hidden;
+		background-color : #f0f0ff;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
+		-webkit-text-size-adjust: none;
+}
+
+
+.ui {
+	qdisplay : none;
+	text-align : center;
+	vertical-align:middle;
+	position:absolute;
+	top:0px;
+	left:0px;
+	width : 100px;
+	height : 100px;
+	overflow : hidden;
+	background-color:#ffffff;
+	z-index: 1201;
+	font-size:16px;
+}
+
+.viewmask {
+	position:absolute;
+	top:0px;
+	left:0px;
+	z-index : 1199;
+	background-color : #cccccc;
+	opacity  : 0.5;
+}
+
+.loading-page {
+
+}
+.loading-logo{
+position:absolute;top:30%;left:50%;margin-left:-60px;width:120px;height:50px;border:1px solid #000;
+}
+.loading-bar{
+background-image:url(./res/bar.png);background-repeat:no-repeat;background-position:left -8px;
+}
+
+
+.menutitle {
+	margin : 20px auto ;
+	font-size : 32px;
+}
+.menuitems {
+	margin : 30px auto ;
+	margin-top : 50px;
+
+}
+.menuitems div {
+	margin : 20px auto ;
+	height : 30px;
+	font-size : 24px;
+}
+.currentitem , .menuitems div:hover {
+	color : red;
+	font-size : 32px;
+	
+}
+
+.link {
+	height : 20px;
+	background-color : #eee;
+}
+.link:hover {
+	background-color : #ddd;
+}
+
+
+
+
+.gameover {
+
+}
+
+.touchbutton-bar {
+position:absolute;
+bottom:0px;left:0px;
+}
+
+.touchbutton {
+	position:absolute;
+	z-index: 999;
+	background-color:#fff;
+	border : 1px solid #000;
+	padding : 0px;
+	margin : 0px;	
+	opacity  : 0.25;
+	
+	width: 40px;
+	height: 40px;
+
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-text-size-adjust: none;
+}
+
+.b-left {
+left : 0px;
+bottom : 55px;
+}
+.b-right {
+left : 50px;
+bottom : 55px;
+}
+.b-up {
+left : 0px;
+bottom : 100px;
+width: 30px;
+height: 50px;
+}
+.b-down {
+left : 0px;
+bottom: 0px;
+width: 30px;
+height: 50px;
+
+}
+	

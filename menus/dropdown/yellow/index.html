@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<!-- SCRIPTS -->
+	<script src="jQuery/jquery-1.9.1.min.js"></script>
+	<script src="js/jquery.zlight.menu.1.0.min.js"></script>
+
+	<!-- STYLES -->
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link rel="stylesheet" href="css/font-awesome.min.css" media="screen">
+	<link rel="stylesheet" href="css/style.css" media="screen">
+	<link rel="stylesheet" href="css/zlight.menu.css" media="screen">
+
+	<title>jQuery页面滚动顶部悬浮导航 - 站长素材</title>
+	<script>
+		$(document).ready(function(){
+			$('#zlight-nav').zlightMenu();
+		});
+	</script>
+</head>
+<body>
+	<div class="container" id="main">
+		
+		<div class="row">
+			<div class="col-lg-12">
+				<h4>Default:</h4>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-12">
+
+				<nav id="zlight-nav">
+					<ul id="zlight-main-nav">
+						<li class="zlight-active"><a href="#">Home</a></li>
+						<li class="zlight-dropdown">
+							<a href="#">Blog <i class="icon-angle-down"></i></a>
+							<ul class="zlight-submenu">
+								<li><a href="#">Link 1</a></li>
+								<li><a href="#">Link 2</a></li>
+								<li><a href="#">Link 3</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Portfolio</a></li>
+						<li class="zlight-dropdown">
+							<a href="#">Pages <i class="icon-angle-down"></i></a>
+							<ul class="zlight-submenu">
+								<li><a href="#">Link 1</a></li>
+								<li><a href="#">Link 2</a></li>
+								<li><a href="#">Link 3</a></li>
+								<li class="zlight-dropdown">
+									<a href="#">Dropdown <i class="icon-angle-right"></i></a>
+									<ul class="zlight-submenu">
+										<li><a href="#">Link 1</a></li>
+										<li><a href="#">Link 2</a></li>
+										<li><a href="#">Link 3</a></li>
+										<li class="zlight-dropdown">
+											<a href="#">Dropdown <i class="icon-angle-right"></i></a>
+											<ul class="zlight-submenu">
+												<li><a href="#">Link 1</a></li>
+												<li><a href="#">Link 2</a></li>
+												<li><a href="#">Link 3</a></li>
+												<li><a href="#">Link 4</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li><a href="#">Link 5</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Contact</a></li>
+						<li><a href="#">About</a></li>
+					</ul>
+					<!-- MOBILE NAV -->
+					<div id="zlight-mobile-nav">
+						<span>Menu</span>
+						<i class="icon-reorder zlight-icon"></i>
+						<select></select>
+					</div>
+				</nav> <!-- nav close -->
+
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 prev-con">
+				<h5>Default</h5>
+				<a href="index.html" class="prev"><img src="images/1.jpg" alt="preview" class="img-responsive"></a>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 prev-con">
+				<h5>Custom</h5>
+				<a href="prev1.html" class="prev"><img src="images/2.jpg" alt="preview" class="img-responsive"></a>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-12">
+				<h4 class="zlight-hhh">jQuery页面滚动顶部悬浮导航</h4>
+			</div>
+		</div>
+
+		<div class="row" style="margin-bottom:900px;">
+			<div class="col-lg-12">
+				<p>Z Light Menu is the simple responsive navigation plugin, 
+				working with media queries, which can be easy transformed for 
+				mobile devices.</p>
+				<p><h4 style="margin-top:30px;">Features:</h4>
+					<ul>
+						<li>Responsive</li>
+						<li>Simple to Use</li>
+						<li>Cross Browsers</li>
+						<li>Fully customizable</li>
+						<li>Retina ready (Font Awesome integrated)</li>
+						<li>Min version: 5kb</li>
+					</ul>
+				</p><p>Scroll down (don&#39;t forget to remove the frame)</p>
+				<div style="text-align:center;clear:both"><br>
+				<p>适用浏览器：FireFox、Chrome、Safari、Opera、傲游、搜狗. 不支持IE8、360、世界之窗。</p>
+				<p>来源：<a href="http://sc.chinaz.com/" target="_blank">站长素材</a></p>
+			</div>
+			</div>
+		</div>
+
+	</div> <!-- main close -->
+
+	</div> <!-- container close -->
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/respond.min.js"></script>
+
+</body>
+</html>

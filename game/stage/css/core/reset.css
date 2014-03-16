@@ -1,0 +1,24 @@
+@charset "UTF-8";
+/**
+ * @author			mitchell
+ * @description		Resets default browser CSS. [*game model only] [*html4]
+ * @lastmodified		$2010-02-09$
+ */
+body,ul,li{
+	margin:0px;
+	padding:0px;
+	font-family:"微软雅黑";
+	font-size:14px;
+}
+div,img{
+	position:absolute;
+	font-family:"微软雅黑";
+	font-size:14px;
+}
+
+
+
+ul {}
+li {
+	list-style-type:none;
+}

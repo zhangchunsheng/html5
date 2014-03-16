@@ -1,0 +1,289 @@
+/* Flexnav Base Styles */
+
+@import "compass/reset";
+@import "compass/utilities";
+@import "compass/css3";
+
+$nav_text: #222;
+$top_level: #a6a6a2;
+$second_level: #b2b2af;
+$third_level: #bfbfbc;
+$fourth_level: #cbcbc9;
+
+/* Globals */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	font: inherit;
+	vertical-align: baseline;
+}
+.flexnav {
+	@include pie-clearfix;
+	@include transition(0);
+	-webkit-transform-style: preserve-3d; // stop webkit flicker
+	overflow: hidden;
+	margin: 0 auto;
+	width: 100%;
+	max-height: 0;
+	
+	&.show {
+		max-height: 2000px;
+		@include transition(1s);
+	}
+	&.one-page {
+		position: fixed;
+		top: 50px;
+		right: 5%;
+		max-width: 200px;
+	}
+	
+	li {
+		font-size: 100%;
+		position: relative;
+		overflow: hidden;
+	}
+	li a {
+		position: relative;
+		display: block;
+		padding: .96em;
+		z-index: 2;
+		overflow: hidden;
+		color: $nav_text;
+		background: #a6a6a2;
+		border-bottom: 1px solid rgba(0,0,0,.15);
+	}
+	li ul {
+		width: 100%;
+		
+		li {
+			font-size: 100%;
+			position: relative;
+			overflow: hidden;		
+		}
+	}
+	li ul.show {
+		
+		li {
+			overflow: visible;
+		}
+	}	
+	
+	li ul li a {
+		display: block;
+		background: $second_level;			
+	}
+	ul li ul li a {
+		background: $third_level;
+	}
+	ul li ul li ul li a {
+		background: $fourth_level;
+	}
+	.touch-button {
+		position: absolute;
+		z-index: 999;
+		top: 0;
+		right: 0;
+		width: 50px;
+		height: 50px;
+		display: inline-block;
+		background: #acaca1;
+		background: rgba(0,0,0,.075);
+		text-align: center;
+		&:hover {
+			cursor: pointer;
+		}
+		.navicon {
+			position: relative;
+			top: 1.4em;
+			font-size: 12px;
+			color: #666;
+		}
+	}
+}
+.menu-button {
+	position: relative;
+	display: block;
+	padding: 1em;
+	background: $top_level;
+	color: $nav_text;
+	cursor: pointer;
+	border-bottom: 1px solid rgba(0,0,0,.2);
+	
+	&.one-page {
+		position: fixed;
+		top: 0;
+		right: 5%;
+		padding-right: 45px;
+	}
+	
+	.touch-button {
+		background: transparent;
+		position: absolute;
+		z-index: 999;
+		top: 0;
+		right: 0;
+		width: 50px;
+		height: 50px;
+		display: inline-block;
+		text-align: center;
+				
+		.navicon {
+			font-size: 16px;
+			position: relative;
+			top: 1em;
+			color: #666;
+		}
+	}
+}
+
+@media all and (min-width: 800px) {
+	body.one-page {
+		padding-top: 70px;
+	}
+	.flexnav {
+		overflow: visible;
+				
+		&.one-page {
+			top: 0;
+			right: auto;
+			max-width: 1080px;
+		}
+		li {
+			position: relative;
+			list-style: none;
+			float: left;
+			display: block;	
+			background-color: #a6a6a2;	
+			width: 20%;
+			overflow: visible;
+		}
+		li a {
+			border-left: 1px solid #acaca1;
+			border-bottom: none;
+		}
+		li > ul {
+			position: absolute; 
+			top: auto;
+			left: 0;
+			display: block;
+			
+			li {
+				width: 100%;
+			}
+		}
+		li ul li > ul {
+			margin-left: 100%;
+			top: 0;
+		}
+		li ul li:hover > ul,
+		li ul li > ul.show {
+		}		
+		li ul li a {
+			border-bottom: none;
+		}
+		li ul.open {
+			display: block;
+			opacity: 1;
+			visibility: visible;
+			z-index: 1;
+			
+			li {
+				overflow: visible;
+				max-height: 100px;
+			}	
+			ul.open {
+				margin-left: 100%;
+				top: 0;
+			}
+		}
+	}
+	.menu-button {
+		display: none;
+	}
+}
+
+.oldie {
+	body.one-page {
+		padding-top: 70px;
+	}
+	.flexnav {
+		overflow: visible;
+				
+		&.one-page {
+			top: 0;
+			right: auto;
+			max-width: 1080px;
+		}
+		li {
+			position: relative;
+			list-style: none;
+			float: left;
+			display: block;	
+			background-color: #a6a6a2;	
+			width: 20%;
+			min-height: 50px;
+		}
+		li:hover > ul { 
+			visibility: visible;
+			opacity: 1;
+			height: auto;
+			display: block;
+			position: absolute;
+			
+			li {
+				width: 100%;
+				float: none;
+			}
+		}
+		li a {
+			border-left: 1px solid #acaca1;
+			border-bottom: none;		
+		}
+		li > ul {
+			position: absolute; 
+			top: auto;
+			left: 0;
+			opacity: 0;
+			visibility: hidden;
+			height: 1px;
+			z-index: 1;	
+		}
+		li ul li ul { 
+			top: 0;		
+		}
+		li ul li a {
+			border-bottom: none;
+		}
+		li ul.open {
+			display: block;
+			opacity: 1;
+			visibility: visible;
+			height: auto;
+	
+			ul.open {
+				margin-left: 100%;
+				top: 0;
+			}
+		}
+		ul li:hover ul {
+			margin-left: 100%;
+			top: 0;
+		}
+	}
+	.menu-button {
+		display: none;
+	}
+	&.ie7 .flexnav li {
+		width: 19.9%;
+	}
+}

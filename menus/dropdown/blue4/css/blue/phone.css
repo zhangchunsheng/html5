@@ -1,0 +1,355 @@
+@charset "utf-8";
+/*** General *******************/
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+a, p, h3, h4, h5, .one li a {
+	font-family:'titilliumregular', Palatino, Georgia, serif;
+}
+a, h3, h4, h5, .one li a{
+	text-transform: uppercase;
+}
+a{
+	display:block;
+	text-decoration: none;
+}
+i {
+	display: block;
+	padding: 0 5px;
+	float: none;
+}
+li {
+	list-style: none;
+}
+p {
+	font-size: 14px;
+	line-height: 23px;
+}
+input,
+textarea{
+	display:block;
+	border:none;
+}
+h3 {
+	font-size: 20px;
+}
+h4 {
+	font-size: 18px;
+}
+h5 {
+	font-size: 16px;
+}
+h6{
+	font-family: Cambria, Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
+	font-size:13px;
+	font-style:italic;
+	line-height: 20px;
+}
+img {
+	padding: 5px;
+	
+	box-shadow: 1px 1px 4px rgba(102,102,102,.4);
+	-webkit-box-shadow: 1px 1px 4px rgba(102,102,102,.4);
+	-moz-box-shadow: 1px 1px 4px rgba(102,102,102,.4);
+}
+.light-color{ /*Used in link box, product box...*/
+	border-radius:3px;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+}
+i.icon-chevron-right {
+	display: none;
+	visibility: hidden;
+}
+.one i.icon-spinner{
+	display:none;
+}	
+	
+/*** Start .nav  **************************/
+.nav {
+	width: 500px;
+	margin: 20px auto;
+	
+	box-shadow: 
+		0px 0px 0px 1px rgba(155,155,155,.3), 
+		0px 2px 2px rgba(0,0,0,.1);
+	-webkit-box-shadow:
+		0px 0px 0px 1px rgba(155,155,155,.3), 
+		0px 2px 2px rgba(0,0,0,.1);
+	-moz-box-shadow:
+		0px 0px 0px 1px rgba(155,155,155,.3), 
+		0px 2px 2px rgba(0,0,0,.1);
+}
+.nav > li {
+	float:none;
+}
+.nav > li a.label{
+	display: block;
+	position: relative;
+	height: 44px;
+	padding: 5px 20px;
+	
+	cursor: pointer;
+	line-height: 33px;
+	letter-spacing: .1em;
+	font-size: 16px;	
+	
+	border:1px solid rgba(204,204,204,.1);
+}
+.nav li i{
+	font-size:21px;
+	padding:3px 40px 0 0;
+}
+.nav li i.icon-chevron-down{
+	float:right;
+	font-size:14px;
+}
+/*** End .nav  *****************************/
+
+/*** Start .one ****************************/
+.one{
+	display: block;
+	height:auto;
+	padding: 0 10px;
+	overflow: hidden;
+}
+#menu.one li a{
+	font-size:15px;
+	padding:7px 10px;
+	line-height:25px;
+}
+/*** End .one ******************************/
+
+/*** Start #sub-menu ***********************/
+.one#sub-menu{
+	height: 0;
+	padding: 0 20px;
+}
+.one#sub-menu li a{
+	font-size:14px;
+	padding:5px 20px;
+	line-height:20px;
+}
+/*** End #sub-menu ***********************/
+
+/*** Start Home **************************/
+#home li {
+	padding: 10px 20px;
+}
+#home li p{
+	padding: 5px;
+	text-align:justify;
+}
+/*** End Home ***************************/
+
+/*** Start About ************************/
+#about li {
+	padding: 10px;
+}
+#about li p{
+	padding: 5px 8px;
+	text-align:justify;
+}
+#about img {
+	float: right;
+	margin: 30px 5px 5px 20px;
+}
+#about h6{
+	margin:15px 20px 10px 20px;
+	padding:10px;
+}
+#about h6 i{
+	font-size:11px;
+	padding:0 3px;
+}
+/*** End About ************************/
+
+/*** Start links *********************/
+#links > li {
+	padding: 10px;
+	border:none;
+}
+#links li i {
+	font-size: 12px;
+}
+#links .link-block{
+	width: 45%;
+	float: left;
+	padding: 0 5px 10px 5px;
+	margin: 10px 0 10px 15px;
+}
+#links h5 {
+	padding: 10px 0 6px 8px;
+	margin: 0 12px 10px 12px;
+	border-bottom: 1px dotted;
+}
+#links h5 i {
+	font-size: 20px;
+}
+#links .link-block li a {
+	font-family: Cambria, Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
+	text-transform:capitalize;
+
+	font-style: italic;
+	font-size: 13px;
+	padding: 0 0 0 6px;
+	line-height:20px;
+	
+	transition: padding-left .3s;
+	-webkit-transition: padding-left .3s;
+	-moz-transition: padding-left .3s;
+	-o-transition: padding-left .3s;
+	-ms-transition: padding-left .3s;
+}
+#links .link-block li:hover a {
+	padding-left: 14px;
+}
+/*** End links ***********************/
+
+/*** Start Product *******************/
+#products li{
+	padding:5px 0px 0px 5px;
+}
+#products h3{
+	margin:4px 0 0 10px;
+}
+.product{
+	width:214px;
+	
+	padding:5px 10px 5px 10px;
+	margin:15px 10px;
+	float:left;
+	
+	box-shadow: 1px 1px 4px rgba(102,102,102,.4);
+	-webkit-box-shadow: 1px 1px 4px rgba(102,102,102,.4);
+	-moz-box-shadow: 1px 1px 4px rgba(102,102,102,.4);	
+}
+.product img{
+	width:110px;
+	height:100px;
+	margin:5px 0 10px 34px;
+	padding:5px;
+}
+#preamble{
+	clear:left;
+}
+#preamble h6{
+	margin:15px 30px 10px 20px;
+	padding:10px;
+}
+/*** End Product ***********************/
+
+/*** Start Contact *********************/
+#contact li {
+	overflow:hidden;
+	padding: 10px 5px;
+}
+/*Part-Left*/
+#contact li#part-left{
+	width:280px;
+	float:left;
+}
+#contact > li#part-left p {
+	margin-left: 3px;
+	padding-top:5px;
+}
+#contact > li#part-left p i{
+	font-size:14px;
+}
+/*Part-Right*/
+#contact li#part-right{
+	width:200px;
+	float:right;
+	padding-left:2px;
+}
+#contact li#part-right input{
+	width:90%;
+	height:27px;
+}
+#contact li#part-right textarea{
+	width:90%;
+	height:80px;
+}
+#contact li#part-right p{
+	display:block;
+	font:14px;
+	padding:3px 0;
+}
+#contact li#part-right input#send{
+	width:70px;
+	height:27px;
+	margin-top:10px;
+	margin-left:20px;
+	
+	box-shadow:none;
+	-webkit-box-shadow:none;
+	-moz-box-shadow:none;
+}
+
+/*Social Network*/
+#h4-social {
+	margin: 30px 0 10px 5px;
+}
+#contact li#part-left > a {
+	height: 50px;
+	width: 48px;
+	padding: 0;
+	margin: 0;
+	float: left;
+}
+#contact li#part-left a > i {
+	font-size: 40px;
+	margin: 0 1px;
+	padding: 0;
+	
+	transition: font-size .3s;
+	-webkit-transition: font-size .3s;
+	-moz-transition: font-size .3s;
+	-o-transition: font-size .3s;
+	-ms-transition: font-size .3s;
+}
+#contact li#part-left a:hover i {
+	font-size: 43px;	
+}
+#contact li#part-left:hover a{
+	background-color:transparent;
+}
+/*** End Contact *********************/
+
+/*** Color And Background ************/
+.one#sub-menu2{
+	background-color: rgba(155, 206, 255,.4);    /*light Main Color*/
+}
+.one#sub-menu{
+	background-color:rgba(155, 206, 255,.8);     /*light Main Color*/
+}
+
+/*** Responsive **********************/
+@media screen and (min-width:600px) and (max-width:820px) {
+/*** Start .nav  **********************/
+.nav {
+	width: 600px;
+}
+
+/*** Start Product *******************/
+.product{
+	margin:15px 35px;
+}
+.product img{
+	margin:5px 0 10px 37px;
+}
+
+/*** Start Contact *******************/
+/*Part-Left*/
+#contact li#part-left{
+	width:300px;
+}
+/*Part-Right*/
+#contact li#part-right{
+	width:280px;
+	padding-left:10px;
+}
+/*** End Contact ********************/
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<china dn="day">
+  <city quName="北京" pyName="beijing" cityname="北京" code="101010100" />
+  <city quName="天津" pyName="tianjin" cityname="天津" code="101030100" />
+  <city quName="上海" pyName="shanghai" cityname="上海" code="101020100" />
+  <city quName="重庆" pyName="chongqing" cityname="重庆" code="101040100" />
+  <city quName="安徽" pyName="anhui" cityname="合肥" code="101220101" />
+  <city quName="福建" pyName="fujian" cityname="福州" code="101230101" />
+  <city quName="甘肃" pyName="gansu" cityname="兰州" code="101160101" />
+  <city quName="广东" pyName="guangdong" cityname="广州" code="101280101" />
+  <city quName="广西" pyName="guangxi" cityname="南宁" code="101300101" />
+  <city quName="贵州" pyName="guizhou" cityname="贵阳" code="101260101" />
+  <city quName="河北" pyName="hebei" cityname="石家庄" code="101090101" />
+  <city quName="河南" pyName="henan" cityname="郑州" code="101180101" />
+  <city quName="黑龙江" pyName="heilongjiang" cityname="哈尔滨" code="101050101" />
+  <city quName="湖北" pyName="hubei" cityname="武汉" code="101200101" />
+  <city quName="湖南" pyName="hunan" cityname="长沙" code="101250101" />
+  <city quName="吉林" pyName="jilin" cityname="长春" code="101060101" />
+  <city quName="江苏" pyName="jiangsu" cityname="南京" code="101190101" />
+  <city quName="江西" pyName="jiangxi" cityname="南昌" code="101240101" />
+  <city quName="辽宁" pyName="liaoning" cityname="沈阳" code="101070101" />
+  <city quName="山东" pyName="shandong" cityname="济南" code="101120101" />
+  <city quName="山西" pyName="shanxi" cityname="太原" code="101100101" />
+  <city quName="内蒙古" pyName="neimenggu" cityname="呼和浩特" code="101080101" />
+  <city quName="新疆" pyName="xinjiang" cityname="乌鲁木齐" code="101130101" />
+  <city quName="西藏" pyName="xizang" cityname="拉萨" code="101140101" />
+  <city quName="青海" pyName="qinghai" cityname="西宁" code="101150101" />
+  <city quName="宁夏" pyName="ningxia" cityname="银川" code="101170101" />
+  <city quName="陕西" pyName="sanxi" cityname="西安" code="101110101" />
+  <city quName="四川" pyName="sichuan" cityname="成都" code="101270101" />
+  <city quName="云南" pyName="yunnan" cityname="昆明" code="101290101" />
+  <city quName="浙江" pyName="zhejiang" cityname="杭州" code="101210101" />
+  <city quName="海南" pyName="hainan" cityname="海口" code="101310101" />
+  <city quName="香港" pyName="xianggang" cityname="香港" code="101320101" />
+  <city quName="澳门" pyName="aomen" cityname="澳门" code="101330101" />
+  <city quName="台湾" pyName="taiwan" cityname="台北" code="101340101" />
+</china>

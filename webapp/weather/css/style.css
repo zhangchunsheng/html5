@@ -1,0 +1,32 @@
+* { margin:0; padding:0; font-size:12px; font-family:Verdana, Geneva, sans-serif;}
+
+.cen { text-align:center;}
+.datecol { color:#FF6600;}
+.ok { border:#67ABDF solid 1px; background:#6FB1E5; color:#FFF;}
+.cancel { border:#E0DDDD solid 1px; background:#FFF; color:#666;}
+.fl { float:left;}
+.clr { clear:left;}
+
+#weather-main { color:#666; height:30px; line-height:30px; padding:0 5px; border-bottom:1px #F0F0F0 solid;}
+#weather-main #layout { cursor:pointer;}
+#weather-main #layout img { border:none; width:24px; height:24px; vertical-align:middle;}
+
+#showBox { margin-left:20px; width:273px; height:173px; border:1px #E0DDDD solid; color:#666; display:none;}
+#showBox .list { border-right:1px #E0DDDD solid; width:90px; height:145px;}
+#showBox .list span { display:block;}
+#showBox .list span.date { padding-top:10px; padding-bottom:5px;}
+#showBox .list span.ico img { width:54px; height:54px; border:none; margin:5px;}
+#showBox .list span.temper { font-weight:bold; padding-bottom:5px;}
+#showBox .footset { height:28px; line-height:28px; text-align:right; padding-right:5px; color:#666; background:#F7F7F7; border-top:1px #E0DDDD solid; border-bottom:2px #E0DDDD solid; border-right:1px #E0DDDD solid;}
+#showBox .footset a { color:#666; text-decoration:none;}
+#showBox .footset a:hover { color:#C30;}
+
+#showSelectCity { position:absolute; margin:0 0 0 20px; width:272px; height:173px; border:1px #E0DDDD solid; border-right:2px #E0DDDD solid; color:#666; display:none;}
+#showSelectCity span { display:block; padding-bottom: 10px;}
+#showSelectCity #cityList { width:70px;}
+#showSelectCity #subCityList { width:100px;}
+#showSelectCity .opt { position:absolute; margin:30px 0 0 40px; }
+#showSelectCity button { margin-top:10px; width:44px; height:25px; line-height:25px; text-align:center; margin-right:5px; cursor:pointer;}
+#showSelectCity .footset { width:267px; position:absolute; margin:143px 0 0 0px; height:28px; line-height:28px; text-align:right; padding-right:5px; color:#666; background:#F7F7F7; border-top:1px #E0DDDD solid; border-bottom:1px #E0DDDD solid;}
+#showSelectCity .footset a { color:#666; text-decoration:none;}
+#showSelectCity .footset a:hover { color:#C30;}

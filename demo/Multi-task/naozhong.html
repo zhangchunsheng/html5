@@ -1,0 +1,61 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="jquery-1.4.2.js"></script>
+<script type="text/javascript" src="Multi-task.js"></script>
+</head>
+<body>
+<p><br>
+  JS任务开发脚本 v0.03 (20100710)<br>
+  更新日志:<br>
+  0.01 建立了基本任务模型<br>
+  0.02 改进了任务管理,扩展任务属性,优化多任务处理<br>
+  0.03 支持动态修改任务，添加任务执行命令<br>
+  说明：适用于各种定时任务应用，请注重劳动成果！保留说明文字，以便获得技术支持。<br>
+  作者：康乐<br>
+发布与下载地址：<a href="http://www.javaCS.cn" target="_blank" >www.javacs.cn</a> 中国java工作者<br>
+</p>
+<p> <strong>脚本开放,兼容FF/IE，难免有不足之处，希望在大家的帮助下改进和完善它。</strong></p>
+<p>欢迎参与此兴趣小组！你可以到<a href="http://www.javaCS.cn/home" target="_blank" >http://www.javaCS.cn/home</a> 中国java工作者家园 群组里联系上我们</p>
+<p>一个很小的功能但非常实用，在B/S开发过程中会经常用上。<br>
+</p>
+<p><strong>添加任务：</strong></p>
+<p>属性设置：<br>
+  提示信息
+  <input id="SMS" size="30" width="" height="">
+  <label>
+    是否提示</label>
+  :
+  <label>
+    <input type="checkbox"  id="Ais">
+  </label>
+  <br>
+  音乐地址
+  <input id="MUSIC" size="30">
+  <br>
+  图片地址
+  <input id="PHOTO" size="30">
+  <br>
+  设定任务时间<b>:</b> 时
+  <input id="H" size="5">
+  分
+  <input id="M" size="5">
+  秒
+<input id="S" size="5">
+</p>
+<p>
+  <button onClick="kllz.addAtime()">添加</button>
+  <label>&nbsp;<br>
+    &nbsp;<br>
+  <strong>清理任务</strong></label>
+  <label>
+    <button onClick="kllz.gxAtimes()">清理任务</button>
+  </label>
+<p>统计：
+  <input name="cont" type="text" id="cont" size="20">
+
+<div id="t" style="background-color:#FFFF00;"></div>
+<div id="q" style="background-color:#FF0000;"></div>
+<div id="w" style="background-color:#CCCCCC;"></div>
+</body>
+</html>
