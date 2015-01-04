@@ -17,7 +17,58 @@
                 -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
                 box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
             }
+
+            .note:hover .closebutton {
+                display: block;
+            }
+
+            .closebutton {
+                display: none;
+                background-image: url(deleteButton.png);
+                height: 30px;
+                position: absolute;
+                right: -15px;
+                top: -15px;
+                width: 30px;
+            }
+
+            .edit {
+                outline: none;
+            }
+
+            .timestamp {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                font-size: 9px;
+                background-color: #db0;
+                color: white;
+                border-top: 1px solid #a80;
+                padding: 2px 4px;
+                text-align: right;
+            }
         </style>
+        <script type="text/javascript">
+            var obj = {
+                sql: null, //数据库
+                captured: null, //点击的对象
+                highestZ: 0, //最大Z轴
+                highestId: 0 //最大ID号
+            };
+
+            try {
+                if(window.openDatabase) {
+                    obj.sql = window.openDatabase("NoteTest", "1.0", "HTML5 Database API example", 1024 * 1024 * 2);
+                    !obj.sql && alert("打开本地数据库失败，可能是数据库版本问题或者磁盘没有足够空间！");
+                } else {
+                    alert("不能打开本地数据，请使用支持本地存储的浏览器浏览！");
+                }
+            } catch(err) {
+                obj.sql = null;
+                alert("创建数据库失败，可能你的浏览器不支持HTML5！");
+            }
+        </script>
     </head>
     <body>
 
