@@ -169,15 +169,15 @@
             }
 
             function CheckIntersect(object1, object2, overlap) {
-                A1 = object1.x + overlap;
-                B1 = object1.x + object1.image.width - overlap;
-                C1 = object1.y + overlap;
-                D1 = object1.y + object1.image.height - overlap;
+                var A1 = object1.x + overlap;
+                var B1 = object1.x + object1.image.width - overlap;
+                var C1 = object1.y + overlap;
+                var D1 = object1.y + object1.image.height - overlap;
 
-                A2 = object2.x + overlap;
-                B2 = object2.x + object2.image.width - overlap;
-                C2 = object2.y + overlap;
-                D2 = object2.y + object2.image.width - overlap;
+                var A2 = object2.x + overlap;
+                var B2 = object2.x + object2.image.width - overlap;
+                var C2 = object2.y + overlap;
+                var D2 = object2.y + object2.image.width - overlap;
 
                 if(A1 > A2 && A1 < B2 || B1 > A2 && B1 < B2) {
                     if(C1 > C2 && C1 < D2 || D1 > C2 && D1 < D2) {
