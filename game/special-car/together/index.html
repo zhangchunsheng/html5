@@ -95,7 +95,7 @@
             }
 
             var loadImgCount = 0;
-            var allImgCount = 7;
+            var allImgCount = 13;
 
             function loadImages() {
                 mushroomImg.src = "images/mushroom.png";
@@ -134,6 +134,13 @@
                 for(var i = 0 ; i < 6 ; i++) {
                     livesImages[i] = new Image();
                     livesImages[i].src = "images/lives" + i + ".png";
+
+                    livesImages[i].onload = function() {
+                        loadImgCount++;
+                        if(loadImgCount == allImgCount) {
+                            gameLoop();
+                        }
+                    };
                 }
 
                 mushroomImg.onload =
