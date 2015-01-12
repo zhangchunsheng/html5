@@ -94,6 +94,9 @@
                 HasAnimalHitPrize();
             }
 
+            var loadImgCount = 0;
+            var allImgCount = 7;
+
             function loadImages() {
                 mushroomImg.src = "images/mushroom.png";
                 backgroundImg.src = "images/bg.jpeg";
@@ -133,8 +136,17 @@
                     livesImages[i].src = "images/lives" + i + ".png";
                 }
 
-                backgroundImg.onload = function() {
-                    gameLoop();
+                mushroomImg.onload =
+                backgroundImg.onload =
+                ycImg.onload =
+                dididacheImg.onload =
+                yihaozhuancheImg.onload =
+                aazucheImg.onload =
+                scoreImg.onload = function() {
+                    loadImgCount++;
+                    if(loadImgCount == allImgCount) {
+                        gameLoop();
+                    }
                 };
             }
 
