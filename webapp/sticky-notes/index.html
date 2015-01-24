@@ -53,6 +53,7 @@ body {
 }
 </style>
 <script>
+//https://www.webkit.org/demos/sticky-notes/
 var db = null;
 
 try {
@@ -285,7 +286,7 @@ Note.prototype = {
     {
         this.dirty = true;
         this.saveSoon();
-    },
+    }
 }
 
 function loaded()
