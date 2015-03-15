@@ -1,0 +1,177 @@
+/*iPhone 6 Portrait横*/
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : portrait) {
+	    
+}	
+
+/*iPhone 6 landscape竖*/
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : landscape) {
+
+}
+
+/*iPhone 6+ Portrait*/
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation : portrait) {
+     
+}
+
+/*iPhone 6+ landscape*/
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation : landscape) {
+     
+}
+
+/*iPhone 6 and iPhone 6+ portrait and landscape*/
+@media only screen and (max-device-width: 640px), only screen and (max-device-width: 667px), only screen and (max-width: 480px){
+     
+}
+
+/*iPhone 6 and iPhone 6+ portrait*/
+@media only screen and (max-device-width: 640px), only screen and (max-device-width: 667px), only screen and (max-width: 480px) and (orientation : portrait){
+   .index-slogan:before{
+    	width: 18px;
+    	height: 18px;
+    	background-size: 18px 18px;
+    }
+    .index-slogan:after{
+    	width: 18px;
+    	height: 18px;
+    	background-size: 18px 18px;
+    }
+    .index-slogan span{
+		font-size: 4.2rem;	
+		background:url(../images/index_text_short.png) left center no-repeat;
+		background-size: 80px 37px;
+		padding-left: 90px;
+	}
+	.index_logo{
+		width: 130px;
+		height: 130px;
+		margin-left: -65px;
+	}
+	.index_logo img{
+		width: 101px;
+		height: 101px;
+	}
+	.company-slogan{
+		font-size: 2.6rem;
+		line-height: 2;
+	}
+	.company-slogan:before{
+		background-size: 14px 13px;
+		width: 14px;
+		height: 13px;
+	}
+	.company-slogan:after{
+		background-size: 14px 13px;
+		width: 14px;
+		height: 13px;
+		margin: 32px 0 0 10px;
+	}
+	.company-keyword{
+		font-size: 1.8rem;
+	}
+	.company-logo-circle{
+		width: 130px;
+		height: 130px;
+		margin-left: -65px;
+		top: -120px;
+	}
+	.company-logo-circle_last{
+		width: 130px;
+		height: 130px;
+		margin-left: -65px;
+		top: -136px;
+	}
+	.company-logo {
+		width: 130px;
+		height: 130px;
+	}
+	.company-white-block{
+		font-size: 1.8rem;
+	}
+	.company-icon1 {
+		background-size: 50px 55px;
+		width: 53px;
+		height: 55px;
+		position: absolute;
+		z-index: 10;
+		left: 10%;
+		top: -45px;
+	}
+	.company-icon1 p {
+		margin-top: 60px;
+	}
+	.company-icon2{
+		background: url("../images/icon2.png") 20px 0 no-repeat;
+		background-size: 68px 75px;
+		width: 101px;
+		height: 82px;
+		top: 50px;
+	}
+	.company-icon2 p {
+		margin-top: 84px;
+	}
+	.company-icon3 {
+		background: url("../images/icon3.png") 28px 0 no-repeat;
+		background-size: 56px 63px;
+		width: 105px;
+		height: 65px;
+		position: absolute;
+		top: -8px;
+		right: 24px;
+	}
+	.company-icon3 p {
+		margin-top: 70px;
+	}
+	.intro-title {
+		font-size: 3rem;
+		line-height: 1.8;
+	}
+	.intro-title img{
+		width: 107px;
+		height: 18px;
+	}
+	.position_name span{
+		width:90px;
+	}
+	.content{
+		font-size: 2rem;
+		line-height: 1.9;
+	}
+	.position_name a{
+	  font-size: 2rem;
+	  line-height: 2.4;
+	}
+	.position_name span{
+		background-size: 20px 20px;
+		padding-left: 25px;
+	}
+	.more_positions{
+		font-size: 2rem;
+		padding: 13px 0;
+	}
+	.end-h1 h1{
+		font-size: 2.2rem;
+	}
+	.nothing-logo{
+		width: 65px;
+		height: 56px;
+		margin: 35px 0 0 33px;
+	}
+	.lagou-btn{
+		font-size: 2rem;
+		padding: 13px 0;
+	}
+	.company-tri {
+		top: 43.2%;
+	}	
+	.intro-tri {
+		top: 22.2%;
+	}
+	.share-to-moments{
+	  background-size: 300px 154px;
+	}
+}
+
+/*iPhone 6 and iPhone 6+ landscape*/
+@media only screen and (max-device-width: 640px), only screen and (max-device-width: 667px), only screen and (max-width: 480px) and (orientation : landscape){
+     
+}
