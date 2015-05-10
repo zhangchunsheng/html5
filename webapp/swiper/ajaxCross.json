@@ -1,0 +1,300 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=10;IE=9;IE=8;IE=7;IE=EDGE">
+<meta charset="utf-8">
+
+<title>开通招聘服务-拉勾网-最专业的互联网招聘平台</title>
+<meta property="qc:admins" content="23635710066417756375" />
+<meta content="拉勾网是3W旗下的互联网领域垂直招聘网站,互联网职业机会尽在拉勾网" name="description">
+<meta content="拉勾,拉勾网,拉勾招聘,拉钩, 拉钩网 ,互联网招聘,拉勾互联网招聘, 移动互联网招聘, 垂直互联网招聘, 微信招聘, 微博招聘, 拉勾官网, 拉勾百科,跳槽, 高薪职位, 互联网圈子, IT招聘, 职场招聘, 猎头招聘,O2O招聘, LBS招聘, 社交招聘, 校园招聘, 校招,社会招聘,社招" name="keywords">
+<meta name="baidu-site-verification" content="QIQ6KC1oZ6" />
+
+
+<!-- <div class="web_root"  style="display:none">http://www.lagou.com</div> -->
+<script type="text/javascript">
+var ctx = "http://www.lagou.com";
+var rctx = "http://hr.lagou.com";
+var pctx = "http://passport.lagou.com";
+
+var frontLogin = "http://www.lagou.com/frontLogin.do";
+var frontLogout = "http://www.lagou.com/frontLogout.do";
+var frontRegister = "http://www.lagou.com/frontRegister.do";
+
+</script>
+
+<script defer id="_lgpassport_" data-css-site="0" data-css-popup="0" src="http://passport.lagou.com/static/js/passport.js" onload="passportInit()"></script>
+
+<script type="text/javascript">
+	function passportInit(){
+			        noticeInit();
+		        
+	}
+</script><link rel="Shortcut Icon" href="http://www.lagou.com/images/favicon.ico">
+<link rel="stylesheet" type="text/css" href="http://www.lagou.com/css/style.css?v=1.5.5.7_0311_01"/>
+<link rel="stylesheet" type="text/css" href="http://hr.lagou.com/css/style.css?v=1.5.5.7_0311_01"/>
+<link rel="stylesheet" type="text/css" href="http://www.lagou.com/css/external.min.css?v=1.5.5.7_0311_01"/>
+<link rel="stylesheet" type="text/css" href="http://www.lagou.com/css/popup.css?v=1.5.5.7_0311_01"/>
+<link rel="stylesheet" type="text/css" href="http://www.lagou.com/css/activity.css?v=1.5.5.7_0311_01"/>
+<script src="http://www.lagou.com/js/libs/jquery.1.10.1.min.js?v=1.5.5.7_0311_01" type="text/javascript"></script>
+<script type="text/javascript" src="http://www.lagou.com/js/libs/jquery.lib.min.js?v=1.5.5.7_0311_01"></script>
+<script src="http://www.lagou.com/js/ajaxfileupload.js?v=1.5.5.7_0311_01" type="text/javascript"></script>
+<script type="text/javascript" src="http://www.lagou.com/js/timeCountDown.js?v=1.5.5.7_0311_01"></script>
+<script type="text/javascript" src="http://www.lagou.com/js/additional-methods.js?v=1.5.5.7_0311_01"></script>
+<!--[if lte IE 8]>
+    <script type="text/javascript" src="http://www.lagou.com/js/assets/excanvas.js?v=1.5.5.7_0311_01"></script>
+<![endif]-->
+</head>
+<body>
+<div class="activity_end">
+     <a class="activity_main" href="http://www.lagou.com/marchActivity/index.html" target="_blank"></a>
+</div>
+<!--后台给出的变量天数》0-->
+<script>
+    var cd = {
+            $: function(id){
+                return document.getElementById(id);    
+            },
+            futureDate: -576783162,
+            obj: function(){
+                return {
+                    sec: cd.$("activity_minute"),
+                    mini: cd.$("activity_hour"),
+                    hour: cd.$("activity_day")
+                }
+            }
+        };
+        fnTimeCountDown(cd.futureDate, cd.obj());
+</script>
+<div id="body">
+	<div id="header">
+    	<div class="wrapper">
+    		<a href="http://www.lagou.com/" class="logo"></a>
+    		<ul class="reset" id="navheader">
+    			<li ><a href="http://www.lagou.com/?f=m">首页</a></li>
+    			    			<li class="current"><a href="http://www.lagou.com/gongsi/" >公司</a></li>
+    			    			<!-- <li ><a href="http://www.lagou.com/toForum.html" target="_blank" rel="nofollow">论坛</a></li> -->
+    				    			<li ><a href="http://www.lagou.com/resume/basic.html" rel="nofollow">我的简历</a></li>
+	    						    		</ul> 
+        	        	<dl class="collapsible_menu">
+            	<dt>
+           			<span id="nowrap">姓名&nbsp;</span>
+                    <span id="noticeDot" class="red dn"></span>
+            		<i></i>
+            	</dt>
+                                	<dd><a href="http://www.lagou.com/resume/myresume.html" rel="nofollow">我的简历</a></dd>
+                	                	<dd><a href="http://www.lagou.com/mycenter/collections.html">我收藏的职位</a></dd>
+                	                	<dd>
+                        <a id="noticeNo" href="http://www.lagou.com/mycenter/delivery.html">我投递的职位 <span class="red dn"></span></a>
+                    </dd>
+                	<dd class="btm"><a href="http://www.lagou.com/s/subscribe.html">我的订阅</a></dd>
+                	<dd><a href="http://www.lagou.com/mycenter/saveUserType.do?type=1">我要招人</a></dd>
+                                		            		        		<dd><a href="http://account.lagou.com/account/accountBind.html">帐号设置</a></dd>
+		        	                                <dd class="logout"><a href="http://www.lagou.com/frontLogout.do" rel="nofollow">退出</a></dd>
+            </dl>
+                    </div>
+    </div><!-- end #header -->
+    <div id="container">
+        <div class="content_mid">
+        <!--form-->  
+            <dl class="c_section c_section_service">
+                <dt>
+                    <h2><em></em>开通招聘服务</h2>
+                </dt>
+                <dd>
+                	<div class="os_step_1"></div>
+	                <form id="bindForm" class="corp_form">
+	                    <input type="hidden" id="resubmitToken" value="f67712c6b7fb4902a36cbe219b5d9b61" />
+	                 	<h3><em class="redstar">*</em>联系电话 <span>（请填写真实有效的电话号码，方便系统校验使用）</span></h3>
+	                    <input type="text" id="tel" name="tel" maxlength="30" placeholder="请输入你的手机号码或座机号码" value="" />	
+	                 	<h3><em class="redstar">*</em>接收简历邮箱 <span>（该邮箱为公司邮箱，审核通过后不可更改）</span></h3>
+	                    <input type="text" id="email" name="email" placeholder="请输入你的公司邮箱作为接收简历邮箱" value="" />	
+	                    <span class="error" style="display:none;" id="beError"></span>
+	                    <input type="submit" id="bindSubmit" value="下一步" />
+                    </form>
+                    <div class="contactus">
+	                    <table>
+	                    	<tr>
+	                    		<td colspan="2">常见问题：</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td valign="top">问：</td>
+	                    		<td>填写个人邮箱可以么？</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td valign="top">答：</td>
+	                    		<td>不可以。为了保证每个职位的真实性，拉勾网严格要求招聘方必须提供公司邮箱。（公司邮箱是指以你的公司网址为后缀的免费公司邮箱，例如拉勾网的公司邮箱后缀是@lagou.com）即使是初创公司也必须提供公司邮箱才允许开通招聘。</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td valign="top">问：</td>
+	                    		<td>没有企业邮箱怎么办？</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td valign="top">答：</td>
+	                    		<td>目前主流企业邮箱服务商都提供免费版产品，你可以选择常用的腾讯企业邮、网易企业邮、263企业邮等。在官网上登记资料后，很快有服务人员联系。</td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td colspan="2"><br />如有其它问题，请发送问题到<a href="mailto:vivi@lagou.com">vivi@lagou.com</a>，我们会尽快为你解决。</td>
+	                    	</tr>
+	                    </table>
+                    </div>
+                </dd>
+            </dl>
+       	</div>
+
+<script type="text/javascript" src="http://www.lagou.com/js/corp/services.min.js?v=1.5.5.7_0311_01"></script>
+<script type="text/javascript">
+function edit(){
+	var element = document.getElementById("email");
+	if("\v"=="v") {
+		element.onpropertychange = webChange;
+	}else{
+		element.addEventListener("input",webChange,false);
+	}
+	function webChange(){
+		$('#beError').text('').hide();
+	}
+}
+edit(); 
+</script>
+			<div class="clear"></div>
+			<input type="hidden" id="resubmitToken" value="f67712c6b7fb4902a36cbe219b5d9b61" />
+	    	<a id="backtop" title="回到顶部" rel="nofollow"></a>
+	    	<!--product feedback-->
+	    	<!--我要反馈按钮-->
+<div id="product-fk">
+	<div id="feedback-icon">
+	<div class="fb-icon"></div>
+	<span>我要反馈</span>	
+	<em class="error dn fk-limit">今天已经反馈足够多了，给产品经理点时间消化下吧~<i></i></em>
+	<em class="error dn fk-suc">&nbsp;&nbsp;反馈提交成功！</em>
+</div>
+</div>
+
+<div id="feedback-con">
+	<div class="pfb-pho-close">
+		<div class="pfb-pho"></div>
+		<div class="pfb-close"></div>
+	</div>
+	<em class="error dn"><span>你还没填任何反馈呢</span><i></i></em>
+	<form id="product-fb">
+		<div class="pfb-txt">
+			<textarea placeholder="我是拉勾的产品经理哈丁，把你遇到的问题，或是想要的功能告诉我吧^_^（200字以内）" maxlength="200"></textarea>
+		</div>
+		<div class="pfb-email" style="height:60px;">
+			<input type="text" name="email" placeholder="留下邮箱我会尽快回复你（选填）～"/>
+			<span class="ensure">确定</span>
+		</div>
+	</form>
+</div>
+<script>
+	// 关闭
+	//3s tips消失
+	var global = {}
+	global.email = "";
+	global.usertoken = $.cookie('user_trace_token');
+</script>	    </div><!-- end #container -->
+	</div><!-- end #body -->
+	<div id="footer">
+		<div class="wrapper">
+			<a href="http://www.lagou.com/qa.html?t=1" target="_blank" rel="nofollow">帮助中心</a>
+			<a href="http://www.lagou.com/about.html" target="_blank" rel="nofollow">联系我们</a>
+		    <a href="http://e.weibo.com/lagou720" target="_blank" rel="nofollow">拉勾微博</a>
+		    <a class="footer_qr" href="javascript:void(0)" rel="nofollow">拉勾微信<i></i></a>
+			<div class="copyright">
+                <span>&copy;2015 Lagou </span>
+                <a target="_blank" href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action" rel="nofollow">京ICP备14023790号-2</a>
+                <span>京公网安备11010802017116号</span>
+            </div>
+		</div>
+	</div>
+
+<script type="text/javascript" src="http://www.lagou.com/js/core.min.js?v=1.5.5.7_0311_01"></script>
+<script type="text/javascript" src="http://www.lagou.com/js/popup.js?v=1.5.5.7_0311_01"></script>
+<script type="text/javascript" src="http://www.lagou.com/js/libs/tongji.js?v=1.5.5.7_0311_01"></script>
+<script type="text/javascript" src="http://www.lagou.com/js/libs/analytics.js?v=1.5.5.7_0311_01"></script>
+<!--copy账号系统的passport.html-->
+<script type="text/javascript">
+	function noticeInit(){
+        var userId = "131003";
+        var urls = {
+            //调用B端简历管理nav的数字
+            queryTipsNums : "http://hr.lagou.com/recruitment/queryTipsNums.json",
+            //调用B端简历管理Notice Tip
+            queryNotice : "http://hr.lagou.com/notice/queryNotice.json",
+            //调用C端用户的notice数字
+            getPushNoticeOfC : "http://www.lagou.com/common/getPushNoticeOfC.json",
+            //清空C端用户的notice
+            clearPushNoticeOfC : "http://www.lagou.com/common/clearPushNoticeOfC.json",
+            //清空B端用户的notice
+            clearAll : "http://hr.lagou.com/notice/clearAll.json"
+        }
+        
+             
+        //调用C端用户的notice数字
+        PASSPORT.util.rpc({
+            params:{},
+            url: urls.getPushNoticeOfC,
+            succ:function(data){
+                var result = data.content.data;
+                if(data.state == "1"){
+                    var headerNoticeObj = $('#header .wrapper');
+                    var noticeDotObj = $("#noticeDot");
+                    var noticePopTip = ['<div id="noticeTip">','<span class="bot"></span>','<span class="top"></span>','<a href="javascript:;" class="closeNT"></a>'];
+                    
+                    //推送投递反馈数
+                    if(result.isShowPushNotice){
+                        var counters = result.pushNoticeEntity.statusList;
+                        if(counters && counters[0] >= 0 ){
+                            noticePopTip.push('<a href="http://www.lagou.com/mycenter/delivery.html?tag=0&r=0"  class="notice_tip" target="_blank"><strong>'+counters[0]+'</strong>条新投递反馈</a>');
+
+                            //下拉菜单中我投递的职位number
+                            $('#noticeNo a').attr("href","http://www.lagou.com/mycenter/delivery.html?tag=0&r=0")
+                            .children("span").html("("+counters[0]+")").show();
+                        }
+                    }
+                    
+                    //推送plus邀约
+                    if(result.isShowPlusTips){
+                        noticePopTip.push('<a href="http://www.lagou.com/mycenter/invitation.html"  class="notice_tip" target="_blank"><strong>'+result.plusTipsCount+'</strong>条新职位邀请</a>');
+                    }
+
+                    noticePopTip.push('</div>');
+
+                    if(result.isShowPushNotice || result.isShowPlusTips){
+                        //弹出tip和红点
+                        noticeDotObj.removeClass("dn");
+                        headerNoticeObj.append(noticePopTip.join(''));
+                    }
+                    
+                    //全部已读
+                    $('#noticeTip a.closeNT').click(function(){
+                        //与后台交互，消息标识为已读
+                        clearNoticeTip(urls.clearPushNoticeOfC); 
+                        $('#noticeNo a span').html('').hide();
+                    });
+                }
+            },
+            fail:function(data){
+                console.log('fail:' + data);
+            }
+        });
+        	}
+    /*
+    * 全部清空notice
+    */
+    function clearNoticeTip(url){
+        PASSPORT.util.rpc({
+            params:{},
+            url:url,
+            succ:function(data){
+                $('#noticeTip').remove();
+                $("#noticeDot").addClass("dn");
+            },
+            fail:function(data){
+                 console.log('fail:' + data);
+            }
+        });
+    }
+</script></body>
+</html>	

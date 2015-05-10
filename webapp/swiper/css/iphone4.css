@@ -1,0 +1,33 @@
+/*iphone4*/
+@media screen and (device-aspect-ratio: 2/3){
+	
+    
+	.company-slogan{
+		font-size: 2rem;
+		line-height: 1.2;
+  		margin:5% 7% 4% 7%;
+	}
+	.company-slogan:after{
+		margin: 14px 0 0 10px;
+	}
+	
+	.position_name a{
+	  font-size: 1.5rem;
+	  line-height: 1.8;
+	}
+	.end-h1 h1{
+		padding-top: 5%;
+	}
+	.white-tri {
+	  height:18%;
+	  width:100%;
+	  background: url(../images/triangle.png) no-repeat;
+	  background-size:cover;
+	}
+	.company-tri {
+		top: 40%;
+	}	
+	.intro-tri {
+		top: 20%;
+	}
+}
