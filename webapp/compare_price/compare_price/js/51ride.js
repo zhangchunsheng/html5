@@ -6,7 +6,7 @@ $(document).ready(function() {
         var n = $("#startAddress").val();
         var m = $("#endAddress").val();
         l(n, m, null);
-        $.get("http://51ride.duapp.com/price.php", {
+        $.get("http://51ride.duapp.com/compare_price/compare.php", {
             lat: n,
             lng: m
         }, function(p, o) {})
