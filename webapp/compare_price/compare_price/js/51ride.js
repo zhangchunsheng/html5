@@ -1,142 +1,148 @@
 $(document).ready(function() {
-    function l(o, m, n) {
-        c.search(o, m)
+    function drawRoute(startAddress, endAddress) {
+        drivingRoute.search(startAddress, endAddress)
     }
     $("#button_compare").click(function() {
-        var n = $("#startAddress").val();
-        var m = $("#endAddress").val();
-        l(n, m, null);
-        $.get("http://51ride.duapp.com/compare_price/compare.php", {
-            lat: n,
-            lng: m
-        }, function(p, o) {})
+        var startAddress = $("#startAddress").val();
+        var endAddress = $("#endAddress").val();
+        drawRoute(startAddress, endAddress);
+        /*$.get("http://51ride.duapp.com/compare_price/compare.php", {
+            startAddress: startAddress,
+            endAddress: endAddress
+        }, function(status, ret) {
+
+        });*/
     });
 
-    function j(m) {
-        return document.getElementById(m)
+    function getEl(m) {
+        return document.getElementById(m);
     }
-    var a = new BMap.Map("l-map");
+    var map = new BMap.Map("l-map");
 
-    function g(m, o) {
-        var n = new BMap.Marker(m);
-        a.addOverlay(n)
+    function addMarker(point) {
+        var marker = new BMap.Marker(point);
+        map.addOverlay(marker)
     }
-    var b = new BMap.Geocoder();
-    var k = new BMap.Autocomplete({
+
+    var geocoder = new BMap.Geocoder();
+
+    var autoCompleteStartAddress = new BMap.Autocomplete({
         "input": "startAddress",
-        "location": a
+        "location": map
     });
-    var e = new BMap.Autocomplete({
+    var autoCompleteEndAddress = new BMap.Autocomplete({
         "input": "endAddress",
-        "location": a
+        "location": map
     });
-    k.addEventListener("onhighlight", function(o) {
-        var p = "";
-        var m = o.fromitem.value;
-        var n = "";
-        if (o.fromitem.index > -1) {
-            n = m.province + m.city + m.district + m.street + m.business
+
+    autoCompleteStartAddress.addEventListener("onhighlight", function(e) {
+        var str = "";
+        var _value = e.fromitem.value;
+        var value = "";
+        if (e.fromitem.index > -1) {
+            value = _value.province + _value.city + _value.district + _value.street + _value.business;
         }
-        p = "FromItem<br />index = " + o.fromitem.index + "<br />value = " + n;
-        n = "";
-        if (o.toitem.index > -1) {
-            m = o.toitem.value;
-            n = m.province + m.city + m.district + m.street + m.business
+        str = "FromItem<br />index = " + e.fromitem.index + "<br />value = " + value;
+        value = "";
+        if (e.toitem.index > -1) {
+            _value = e.toitem.value;
+            value = _value.province + _value.city + _value.district + _value.street + _value.business;
         }
-        p += "<br />ToItem<br />index = " + o.toitem.index + "<br />value = " + n
+        str += "<br />ToItem<br />index = " + e.toitem.index + "<br />value = " + value;
     });
-    e.addEventListener("onhighlight", function(o) {
-        var p = "";
-        var m = o.fromitem.value;
-        var n = "";
-        if (o.fromitem.index > -1) {
-            n = m.province + m.city + m.district + m.street + m.business
+
+    autoCompleteEndAddress.addEventListener("onhighlight", function(e) {
+        var str = "";
+        var _value = e.fromitem.value;
+        var value = "";
+        if (e.fromitem.index > -1) {
+            value = _value.province + _value.city + _value.district + _value.street + _value.business;
         }
-        p = "FromItem<br />index = " + o.fromitem.index + "<br />value = " + n;
-        n = "";
-        if (o.toitem.index > -1) {
-            m = o.toitem.value;
-            n = m.province + m.city + m.district + m.street + m.business
+        str = "FromItem<br />index = " + e.fromitem.index + "<br />value = " + value;
+        value = "";
+        if (e.toitem.index > -1) {
+            _value = e.toitem.value;
+            value = _value.province + _value.city + _value.district + _value.street + _value.business;
         }
-        p += "<br />ToItem<br />index = " + o.toitem.index + "<br />value = " + n
+        str += "<br />ToItem<br />index = " + e.toitem.index + "<br />value = " + value;
     });
-    var i;
-    k.addEventListener("onconfirm", function(n) {
-        var m = n.item.value;
-        i = m.province + m.city + m.district + m.street + m.business;
-        j("searchResultPanel").innerHTML = "onconfirm<br />index = " + n.item.index + "<br />myValue = " + i;
-        h()
+
+    var myValue;
+
+    autoCompleteStartAddress.addEventListener("onconfirm", function(e) {
+        var _value = e.item.value;
+        myValue = _value.province + _value.city + _value.district + _value.street + _value.business;
+        getEl("searchResultPanel").innerHTML = "onconfirm<br />index = " + e.item.index + "<br />myValue = " + myValue;
+        setPlace();
     });
-    e.addEventListener("onconfirm", function(n) {
-        var m = n.item.value;
-        i = m.province + m.city + m.district + m.street + m.business;
-        j("searchResultPanel").innerHTML = "onconfirm<br />index = " + n.item.index + "<br />myValue = " + i;
-        h()
+
+    autoCompleteEndAddress.addEventListener("onconfirm", function(e) {
+        var _value = e.item.value;
+        myValue = _value.province + _value.city + _value.district + _value.street + _value.business;
+        getEl("searchResultPanel").innerHTML = "onconfirm<br />index = " + e.item.index + "<br />myValue = " + myValue;
+        setPlace();
     });
-    var d = function(n) {
-        if (c.getStatus() != BMAP_STATUS_SUCCESS) {
+
+    var searchComplete = function(results) {
+        if (drivingRoute.getStatus() != BMAP_STATUS_SUCCESS) {
             return
         }
-        var o = n.getPlan(0);
-        var m = (o.getDistance(false) / 1000).toFixed(0);
-        if (m <= 7.2) {
-            $("#weui_dialog_msg").html(o.getDistance(true) + "坐【滴滴】最便宜");
-            $("#weui_dialog").css("display", "block")
+        var plan = results.getPlan(0);
+        var distance = (plan.getDistance(false) / 1000).toFixed(0);
+        if (distance <= 7.2) {
+            $("#weui_dialog_msg").html(plan.getDistance(true) + "坐【滴滴】最便宜");
+            $("#weui_dialog").css("display", "block");
         } else {
-            if (m > 7.2 && m <= 9.2) {
-                $("#weui_dialog_msg").html(o.getDistance(true) + "坐【Uber】最便宜");
-                $("#weui_dialog").css("display", "block")
-            } else {
-                if (m >= 9.2) {
-                    $("#weui_dialog_msg").html(o.getDistance(true) + "坐【易到】最便宜");
-                    $("#weui_dialog").css("display", "block")
-                }
-            }
+            $("#weui_dialog_msg").html(plan.getDistance(true) + "坐【易到】最便宜");
+            $("#weui_dialog").css("display", "block");
         }
     };
-    var c = new BMap.DrivingRoute(a, {
+
+    var drivingRoute = new BMap.DrivingRoute(map, {
         renderOptions: {
-            map: a
+            map: map
         },
-        onSearchComplete: d
+        onSearchComplete: searchComplete
     });
 
-    function h() {
-        a.clearOverlays();
+    function setPlace() {
+        map.clearOverlays();
 
-        function m() {
-            var p = n.getResults().getPoi(0).point;
-            a.centerAndZoom(p, 18);
-            var o = new BMap.Marker(p);
-            o.enableDragging();
-            a.addOverlay(o)
+        function myFun() {
+            var point = local.getResults().getPoi(0).point;
+            map.centerAndZoom(point, 18);
+            var marker = new BMap.Marker(point);
+            marker.enableDragging();
+            map.addOverlay(marker);
         }
-        var n = new BMap.LocalSearch(a, {
-            onSearchComplete: m
+        var local = new BMap.LocalSearch(map, {
+            onSearchComplete: myFun
         });
-        n.search(i)
+        local.search(myValue);
     }
-    var f = new BMap.Geolocation();
-    f.getCurrentPosition(function(n) {
+
+    var geolocation = new BMap.Geolocation();
+
+    geolocation.getCurrentPosition(function(r) {
         if (this.getStatus() == BMAP_STATUS_SUCCESS) {
-            var m = new BMap.Marker(n.point);
-            m.enableDragging();
-            a.addOverlay(m);
-            b.getLocation(n.point, function(q) {
-                var r = q.addressComponents
-            });
-            var o = new BMap.Point(n.point.lng, n.point.lat);
-            $("#start_point").valueOf(o);
-            a.centerAndZoom(o, 17);
-            a.enableScrollWheelZoom(true);
-            var p = new BMap.Geocoder();
-            p.getLocation(o, function(q) {
-                if (q) {
-                    $("#startAddress").val(q.address)
+            var marker = new BMap.Marker(r.point);
+            marker.enableDragging();
+            map.addOverlay(marker);
+            
+            var point = new BMap.Point(r.point.lng, r.point.lat);
+            $("#start_point").valueOf(point);
+            map.centerAndZoom(point, 17);
+            map.enableScrollWheelZoom(true);
+            
+            geocoder.getLocation(point, function(rs) {
+                if (rs) {
+                    $("#startAddress").val(rs.address);
                 }
             })
-        } else {}
+        } else {
+
+        }
     }, {
         enableHighAccuracy: false
-    })
+    });
 });
