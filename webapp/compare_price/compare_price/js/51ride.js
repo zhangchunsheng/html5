@@ -6,12 +6,12 @@ $(document).ready(function() {
         var startAddress = $("#startAddress").val();
         var endAddress = $("#endAddress").val();
         drawRoute(startAddress, endAddress);
-        $.get("http://51ride.duapp.com/compare_price/compare.php", {
+        /*$.get("http://51ride.duapp.com/compare_price/compare.php", {
             startAddress: startAddress,
             endAddress: endAddress
         }, function(status, ret) {
 
-        })
+        });*/
     });
 
     function getEl(m) {
@@ -25,6 +25,7 @@ $(document).ready(function() {
     }
 
     var geocoder = new BMap.Geocoder();
+
     var autoCompleteStartAddress = new BMap.Autocomplete({
         "input": "startAddress",
         "location": map
@@ -39,15 +40,15 @@ $(document).ready(function() {
         var _value = e.fromitem.value;
         var value = "";
         if (e.fromitem.index > -1) {
-            value = _value.province + _value.city + _value.district + _value.street + _value.business
+            value = _value.province + _value.city + _value.district + _value.street + _value.business;
         }
         str = "FromItem<br />index = " + e.fromitem.index + "<br />value = " + value;
         value = "";
         if (e.toitem.index > -1) {
             _value = e.toitem.value;
-            value = _value.province + _value.city + _value.district + _value.street + _value.business
+            value = _value.province + _value.city + _value.district + _value.street + _value.business;
         }
-        str += "<br />ToItem<br />index = " + e.toitem.index + "<br />value = " + value
+        str += "<br />ToItem<br />index = " + e.toitem.index + "<br />value = " + value;
     });
 
     autoCompleteEndAddress.addEventListener("onhighlight", function(e) {
@@ -55,15 +56,15 @@ $(document).ready(function() {
         var _value = e.fromitem.value;
         var value = "";
         if (e.fromitem.index > -1) {
-            value = _value.province + _value.city + _value.district + _value.street + _value.business
+            value = _value.province + _value.city + _value.district + _value.street + _value.business;
         }
         str = "FromItem<br />index = " + e.fromitem.index + "<br />value = " + value;
         value = "";
         if (e.toitem.index > -1) {
             _value = e.toitem.value;
-            value = _value.province + _value.city + _value.district + _value.street + _value.business
+            value = _value.province + _value.city + _value.district + _value.street + _value.business;
         }
-        str += "<br />ToItem<br />index = " + e.toitem.index + "<br />value = " + value
+        str += "<br />ToItem<br />index = " + e.toitem.index + "<br />value = " + value;
     });
 
     var myValue;
@@ -90,14 +91,13 @@ $(document).ready(function() {
         var distance = (plan.getDistance(false) / 1000).toFixed(0);
         if (distance <= 7.2) {
             $("#weui_dialog_msg").html(plan.getDistance(true) + "坐【滴滴】最便宜");
-            $("#weui_dialog").css("display", "block")
+            $("#weui_dialog").css("display", "block");
         } else {
-            if (distance >= 9.2) {
-                $("#weui_dialog_msg").html(plan.getDistance(true) + "坐【易到】最便宜");
-                $("#weui_dialog").css("display", "block")
-            }
+            $("#weui_dialog_msg").html(plan.getDistance(true) + "坐【易到】最便宜");
+            $("#weui_dialog").css("display", "block");
         }
     };
+
     var drivingRoute = new BMap.DrivingRoute(map, {
         renderOptions: {
             map: map
@@ -122,6 +122,7 @@ $(document).ready(function() {
     }
 
     var geolocation = new BMap.Geolocation();
+
     geolocation.getCurrentPosition(function(r) {
         if (this.getStatus() == BMAP_STATUS_SUCCESS) {
             var marker = new BMap.Marker(r.point);
@@ -135,7 +136,7 @@ $(document).ready(function() {
             
             geocoder.getLocation(point, function(rs) {
                 if (rs) {
-                    $("#startAddress").val(rs.address)
+                    $("#startAddress").val(rs.address);
                 }
             })
         } else {
