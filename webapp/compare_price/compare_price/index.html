@@ -1,147 +1,147 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>专车比价</title>
-    <style type="text/css">
-        #l-map {
-            height: 200px;
-            width: 100%;
-        }
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>专车比价</title>
+        <meta name="description" content="专车比价,易到,滴滴,Uber,顺风车,公交,比价,专车,网约车,出租车,租车,神州,代驾" />
+        <style type="text/css">
+            #l-map {
+                height: 200px;
+                width: 100%;
+            }
 
-        #r-result {
-            width: 100%;
-        }
-    </style>
-    <link href="./css/51ride.css" rel="stylesheet">
-    <link href="./css/weui.min.css" rel="stylesheet">
+            #r-result {
+                width: 100%;
+            }
+        </style>
+        <link href="./css/51ride.css" rel="stylesheet">
+        <link href="./css/weui.min.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <!--<script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>-->
-    <!--<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>-->
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <!--<script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>-->
+        <!--<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>-->
 
-    <![endif]-->
-</head>
-<body>
+        <![endif]-->
+    </head>
 
-<img style="width:0px; height:0px; overflow:hidden" src="http://51ride.duapp.com/compare_price/images/icon.jpg" />
+    <body>
+        <img style="width:0px; height:0px; overflow:hidden" src="http://51ride.duapp.com/compare_price/images/icon.jpg" />
 
-<div class="container" style="max-width: 730px; margin: 10px;">
-    <div class="hd">
-        <a href="javascript:;">
-            <h1 class="page_title">专车比价</h1>
-            <p class="page_desc">易到/Uber/滴滴</p>
-        </a>
-    </div>
+        <div class="container" style="max-width: 730px; margin: 10px;">
+            <div class="hd">
+                <a href="javascript:;">
+                    <h1 class="page_title">专车比价</h1>
+                    <p class="page_desc">易到 vs 滴滴</p>
+                </a>
+            </div>
 
 
-    <div class="weui_panel">
-        <!--<div class="weui_panel_hd">包菜地图</div>-->
-        <div class="weui_panel_bd">
+            <div class="weui_panel">
+                <!--<div class="weui_panel_hd">包菜地图</div>-->
+                <div class="weui_panel_bd">
 
-            <div class="weui_cell">
-                <div class="weui_cell_hd"><label class="weui_label">出发地</label></div>
-                <div class="weui_cell_bd weui_cell_primary">
-                    <input class="weui_input" id="startAddress" placeholder="从哪儿出发" type="text">
+                    <div class="weui_cell">
+                        <div class="weui_cell_hd"><label class="weui_label">出发地</label></div>
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <input class="weui_input" id="startAddress" placeholder="从哪儿出发" type="text">
+                        </div>
+                    </div>
+
+                    <div class="weui_cell">
+                        <div class="weui_cell_hd"><label class="weui_label">目的地</label></div>
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <input class="weui_input" id="endAddress" placeholder="你要去哪儿" type="text">
+                        </div>
+                    </div>
+
+                    <div class="weui_media_box weui_media_text">
+                        <!--<p class="weui_media_desc">结果仅供参考,^_^</p>-->
+                        <div id="l-map" style="border:1px #bbbbbb solid "></div>
+                        <div id="searchResultPanel"
+                             style="border:1px solid #bbbbbb;width:150px;height:auto; display:none;"></div>
+                    </div>
+
+                    <input name="lng" value="" id="start_point" type="hidden"/>
+                    <input name="lat" value="" id="end_point" type="hidden"/>
+                    <input name="total_distance" value="" id="total_distance" type="hidden"/>
+
+                    <a href="javascript:;" class="weui_btn weui_btn_warn" id="button_compare">一键比价</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="loadingToast" class="weui_loading_toast" style="display:none;">
+            <div class="weui_mask_transparent"></div>
+            <div class="weui_toast">
+                <div class="weui_loading">
+                    <!-- :) -->
+                    <div class="weui_loading_leaf weui_loading_leaf_0"></div>
+                    <div class="weui_loading_leaf weui_loading_leaf_1"></div>
+                    <div class="weui_loading_leaf weui_loading_leaf_2"></div>
+                    <div class="weui_loading_leaf weui_loading_leaf_3"></div>
+                    <div class="weui_loading_leaf weui_loading_leaf_4"></div>
+                    <div class="weui_loading_leaf weui_loading_leaf_5"></div>
+                    <div class="weui_loading_leaf weui_loading_leaf_6"></div>
+                    <div class="weui_loading_leaf weui_loading_leaf_7"></div>
+                    <div class="weui_loading_leaf weui_loading_leaf_8"></div>
+                    <div class="weui_loading_leaf weui_loading_leaf_9"></div>
+                    <div class="weui_loading_leaf weui_loading_leaf_10"></div>
+                    <div class="weui_loading_leaf weui_loading_leaf_11"></div>
+                </div>
+                <p class="weui_toast_content">数据加载中</p>
+            </div>
+        </div>
+
+        <div id="weui_dialog" class="weui_dialog_alert" style="display:none;">
+            <div class="weui_mask"></div>
+            <div class="weui_dialog">
+                <div class="weui_dialog_hd"><strong class="weui_dialog_title">预估结果</strong></div>
+                <div class="weui_dialog_bd">
+                    <div class="weui_icon_area"><i class="weui_icon_success weui_icon_msg"></i></div>
+                    <div class="weui_text_area">
+                        <h2 class="weui_msg_title"></h2>
+                        <p class="weui_msg_desc weui_dialog_msg" id="weui_dialog_msg"></p>
+                    </div>
+                </div>
+                <div class="weui_dialog_ft">
+                    <a href="javascript:void(0)" class="weui_btn_dialog warn" style="color: #e40c0a" onclick="close_dialog()">确定</a>
                 </div>
             </div>
-
-            <div class="weui_cell">
-                <div class="weui_cell_hd"><label class="weui_label">目的地</label></div>
-                <div class="weui_cell_bd weui_cell_primary">
-                    <input class="weui_input" id="endAddress" placeholder="你要去哪儿" type="text">
-                </div>
-            </div>
-
-            <div class="weui_media_box weui_media_text">
-                <!--<p class="weui_media_desc">结果仅供参考,^_^</p>-->
-                <div id="l-map" style="border:1px #bbbbbb solid "></div>
-                <div id="searchResultPanel"
-                     style="border:1px solid #bbbbbb;width:150px;height:auto; display:none;"></div>
-            </div>
-
-            <input name="lng" value="" id="start_point" type="hidden"/>
-            <input name="lat" value="" id="end_point" type="hidden"/>
-            <input name="total_distance" value="" id="total_distance" type="hidden"/>
-
-            <a href="javascript:;" class="weui_btn weui_btn_warn" id="button_compare">一键比价</a>
         </div>
 
-    </div>
 
-</div>
+        </div><!-- /.container -->
 
-<div id="loadingToast" class="weui_loading_toast" style="display:none;">
-    <div class="weui_mask_transparent"></div>
-    <div class="weui_toast">
-        <div class="weui_loading">
-            <!-- :) -->
-            <div class="weui_loading_leaf weui_loading_leaf_0"></div>
-            <div class="weui_loading_leaf weui_loading_leaf_1"></div>
-            <div class="weui_loading_leaf weui_loading_leaf_2"></div>
-            <div class="weui_loading_leaf weui_loading_leaf_3"></div>
-            <div class="weui_loading_leaf weui_loading_leaf_4"></div>
-            <div class="weui_loading_leaf weui_loading_leaf_5"></div>
-            <div class="weui_loading_leaf weui_loading_leaf_6"></div>
-            <div class="weui_loading_leaf weui_loading_leaf_7"></div>
-            <div class="weui_loading_leaf weui_loading_leaf_8"></div>
-            <div class="weui_loading_leaf weui_loading_leaf_9"></div>
-            <div class="weui_loading_leaf weui_loading_leaf_10"></div>
-            <div class="weui_loading_leaf weui_loading_leaf_11"></div>
-        </div>
-        <p class="weui_toast_content">数据加载中</p>
-    </div>
-</div>
+        <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+        <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=DEd51bf09fcded27d8705981745b7351"></script>
 
-<div id="weui_dialog" class="weui_dialog_alert" style="display:none;">
-    <div class="weui_mask"></div>
-    <div class="weui_dialog">
-        <div class="weui_dialog_hd"><strong class="weui_dialog_title">预估结果</strong></div>
-        <div class="weui_dialog_bd">
-            <div class="weui_icon_area"><i class="weui_icon_success weui_icon_msg"></i></div>
-            <div class="weui_text_area">
-                <h2 class="weui_msg_title"></h2>
-                <p class="weui_msg_desc weui_dialog_msg" id="weui_dialog_msg"></p>
-            </div>
-        </div>
-        <div class="weui_dialog_ft">
-            <a href="javascript:void(0)" class="weui_btn_dialog warn" style="color: #e40c0a" onclick="close_dialog()">确定</a>
-        </div>
-    </div>
-</div>
+        <script>
+            var WxJsApi=function Weixin(a,b,c){this.init=function(){$.getScript("http://res.wx.qq.com/open/js/jweixin-1.0.0.js",function(){wx.config({debug:a.debug||false,appId:a.appId,timestamp:a.timestamp,nonceStr:a.nonceStr,signature:a.signature,jsApiList:["checkJsApi","onMenuShareTimeline","onMenuShareAppMessage","onMenuShareQQ","onMenuShareWeibo","hideMenuItems","showMenuItems","hideAllNonBaseMenuItem","showAllNonBaseMenuItem","hideOptionMenu","showOptionMenu"]});wx.ready(function(){wx.checkJsApi({jsApiList:["onMenuShareTimeline","onMenuShareAppMessage"]});wx.onMenuShareAppMessage({title:b.title||b.tile,desc:b.desc||b.desc,link:b.link||b.link,imgUrl:b.imgUrl||b.imgUrl,trigger:function(d){c.shareAppMessage&&c.shareAppMessage.trigger&&c.shareAppMessage.trigger()},success:function(d){c.shareAppMessage&&c.shareAppMessage.success&&c.shareAppMessage.success()},cancel:function(d){c.shareAppMessage&&c.shareAppMessage.cancle&&c.shareAppMessage.cancle()},fail:function(d){c.shareAppMessage&&c.shareAppMessage.fail&&c.shareAppMessage.fail()}});wx.onMenuShareTimeline({title:b.title||b.tile,link:b.link||b.link,imgUrl:b.imgUrl||b.imgUrl,trigger:function(d){c.shareTimeline&&c.shareTimeline.trigger&&c.shareTimeline.trigger()},success:function(d){c.shareTimeline&&c.shareTimeline.success&&c.shareTimeline.success()},cancel:function(d){c.shareTimeline&&c.shareTimeline.cancle&&c.shareTimeline.cancle()},fail:function(d){c.shareTimeline&&c.shareTimeline.fail&&c.shareTimeline.fail()}})})})}};
+        </script>
 
+        <script type="text/javascript">
+            function close_dialog() {
+                $('#weui_dialog').css('display', 'none');
+            }
 
-</div><!-- /.container -->
+            var shareData = {
+                "title": "专车比价",
+                "desc": "专车比价,易到/Uber/滴滴哪个最省钱?",
+                "imgUrl" : "http://51ride.duapp.com/compare_price/images/icon.jpg" ,
+                "link" : 'http://51ride.duapp.com/compare_price/index.html'
+            };
 
-<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=DEd51bf09fcded27d8705981745b7351"></script>
-
-<script>
-    var WxJsApi=function Weixin(a,b,c){this.init=function(){$.getScript("http://res.wx.qq.com/open/js/jweixin-1.0.0.js",function(){wx.config({debug:a.debug||false,appId:a.appId,timestamp:a.timestamp,nonceStr:a.nonceStr,signature:a.signature,jsApiList:["checkJsApi","onMenuShareTimeline","onMenuShareAppMessage","onMenuShareQQ","onMenuShareWeibo","hideMenuItems","showMenuItems","hideAllNonBaseMenuItem","showAllNonBaseMenuItem","hideOptionMenu","showOptionMenu"]});wx.ready(function(){wx.checkJsApi({jsApiList:["onMenuShareTimeline","onMenuShareAppMessage"]});wx.onMenuShareAppMessage({title:b.title||b.tile,desc:b.desc||b.desc,link:b.link||b.link,imgUrl:b.imgUrl||b.imgUrl,trigger:function(d){c.shareAppMessage&&c.shareAppMessage.trigger&&c.shareAppMessage.trigger()},success:function(d){c.shareAppMessage&&c.shareAppMessage.success&&c.shareAppMessage.success()},cancel:function(d){c.shareAppMessage&&c.shareAppMessage.cancle&&c.shareAppMessage.cancle()},fail:function(d){c.shareAppMessage&&c.shareAppMessage.fail&&c.shareAppMessage.fail()}});wx.onMenuShareTimeline({title:b.title||b.tile,link:b.link||b.link,imgUrl:b.imgUrl||b.imgUrl,trigger:function(d){c.shareTimeline&&c.shareTimeline.trigger&&c.shareTimeline.trigger()},success:function(d){c.shareTimeline&&c.shareTimeline.success&&c.shareTimeline.success()},cancel:function(d){c.shareTimeline&&c.shareTimeline.cancle&&c.shareTimeline.cancle()},fail:function(d){c.shareTimeline&&c.shareTimeline.fail&&c.shareTimeline.fail()}})})})}};
-</script>
-
-<script type="text/javascript">
-    function close_dialog() {
-        $('#weui_dialog').css('display', 'none');
-    }
-
-    var shareData = {
-        "title": "专车比价",
-        "desc": "专车比价,易到/Uber/滴滴哪个最省钱?",
-        "imgUrl" : "http://51ride.duapp.com/compare_price/images/icon.jpg" ,
-        "link" : 'http://51ride.duapp.com/compare_price/index.html'
-    };
-
-    var wxConfig = [];
-    var callback = {};
-    var c =  new WxJsApi(wxConfig, shareData, callback);
-    c.init();
-</script>
-<script src="./js/51ride.js"></script>
-
-</body>
+            var wxConfig = [];
+            var callback = {};
+            var c =  new WxJsApi(wxConfig, shareData, callback);
+            c.init();
+        </script>
+        <script src="./js/51ride.js"></script>
+    </body>
 </html>
