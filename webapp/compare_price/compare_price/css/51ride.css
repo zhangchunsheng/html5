@@ -275,3 +275,36 @@ body {
     -webkit-animation: b .25s forwards;
     animation: b .25s forwards
 }
+
+.weui_icon_warn_toast {
+  margin: 22px 0 0;
+  display: block;
+}
+
+.weui_icon_warn_toast:before {
+    content: '\EA0B';
+    color: #FFFFFF;
+    font-size: 55px;
+}
+
+.tip {
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/tip.gif);
+    background-size:100% 100%;
+}
+
+.none_select {
+    -webkit-user-select: none;  /* Chrome 49+ */
+    -moz-user-select: none;     /* Firefox 43+ */
+    -ms-user-select: none;      /* No support yet */
+    user-select: none;          /* Likely future */   
+}
+
+.result_line > div {
+    height: 25px;
+}
+
+.win_circle:before {
+    margin-top: -2px;
+}

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
         <title>专车比价</title>
         <meta name="description" content="专车比价,易到,滴滴,Uber,顺风车,公交,比价,专车,网约车,出租车,租车,神州,代驾" />
         <style type="text/css">
@@ -16,8 +16,8 @@
                 width: 100%;
             }
         </style>
-        <link href="./css/51ride.css" rel="stylesheet">
         <link href="./css/weui.min.css" rel="stylesheet">
+        <link href="./css/51ride.css" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -31,19 +31,17 @@
     <body>
         <img style="width:0px; height:0px; overflow:hidden" src="http://51ride.duapp.com/compare_price/images/icon.jpg" />
 
-        <div class="container" style="max-width: 730px; margin: 10px;">
-            <div class="hd">
+        <div id="container" class="container none_select" style="margin: 10px;">
+            <div id="title" class="hd">
                 <a href="javascript:;">
                     <h1 class="page_title">专车比价</h1>
-                    <p class="page_desc">易到 vs 滴滴</p>
+                    <p class="page_desc">滴滴 vs 易到</p>
                 </a>
             </div>
 
 
             <div class="weui_panel">
-                <!--<div class="weui_panel_hd">包菜地图</div>-->
                 <div class="weui_panel_bd">
-
                     <div class="weui_cell">
                         <div class="weui_cell_hd"><label class="weui_label">出发地</label></div>
                         <div class="weui_cell_bd weui_cell_primary">
@@ -59,54 +57,72 @@
                     </div>
 
                     <div class="weui_media_box weui_media_text">
-                        <!--<p class="weui_media_desc">结果仅供参考,^_^</p>-->
                         <div id="l-map" style="border:1px #bbbbbb solid "></div>
                         <div id="searchResultPanel"
                              style="border:1px solid #bbbbbb;width:150px;height:auto; display:none;"></div>
                     </div>
 
-                    <input name="lng" value="" id="start_point" type="hidden"/>
-                    <input name="lat" value="" id="end_point" type="hidden"/>
+                    <input name="current_point" value="" id="current_point" type="hidden"/>
                     <input name="total_distance" value="" id="total_distance" type="hidden"/>
 
                     <a href="javascript:;" class="weui_btn weui_btn_warn" id="button_compare">一键比价</a>
                 </div>
-
             </div>
-
         </div>
 
-        <div id="loadingToast" class="weui_loading_toast" style="display:none;">
+        <div id="toast" style="display: none;">
             <div class="weui_mask_transparent"></div>
             <div class="weui_toast">
-                <div class="weui_loading">
-                    <!-- :) -->
-                    <div class="weui_loading_leaf weui_loading_leaf_0"></div>
-                    <div class="weui_loading_leaf weui_loading_leaf_1"></div>
-                    <div class="weui_loading_leaf weui_loading_leaf_2"></div>
-                    <div class="weui_loading_leaf weui_loading_leaf_3"></div>
-                    <div class="weui_loading_leaf weui_loading_leaf_4"></div>
-                    <div class="weui_loading_leaf weui_loading_leaf_5"></div>
-                    <div class="weui_loading_leaf weui_loading_leaf_6"></div>
-                    <div class="weui_loading_leaf weui_loading_leaf_7"></div>
-                    <div class="weui_loading_leaf weui_loading_leaf_8"></div>
-                    <div class="weui_loading_leaf weui_loading_leaf_9"></div>
-                    <div class="weui_loading_leaf weui_loading_leaf_10"></div>
-                    <div class="weui_loading_leaf weui_loading_leaf_11"></div>
-                </div>
-                <p class="weui_toast_content">数据加载中</p>
+                <i class="weui_icon_warn_toast"></i>
+                <p class="weui_toast_content"></p>
             </div>
         </div>
 
-        <div id="weui_dialog" class="weui_dialog_alert" style="display:none;">
+        <div id="pk_start" class="weui_dialog_alert" style="display:none;">
             <div class="weui_mask"></div>
-            <div class="weui_dialog">
-                <div class="weui_dialog_hd"><strong class="weui_dialog_title">预估结果</strong></div>
+            <div id="pk_start_content" class="weui_dialog" style="background-color:transparent;width:272px;height:107px">
+                <span id="pk_start_didi" style="position:absolute;left: -110px;top: 15px;">
+                    <img width="100px" height="80px" src="./images/didi.png" />
+                </span>
+                <span id="pk_start_pk" style="position:absolute;left: -60px;top: -140px;display:none">
+                    <img width="400px" height="400px" src="./images/pk.png" />
+                </span>
+                <span id="pk_start_yidao" style="position:absolute;right: -110px">
+                    <img width="100px" height="100px" src="./images/yidao.png" />
+                </span>
+            </div>
+        </div>
+
+        <div id="tip" class="weui_dialog_alert" style="display:none;">
+            <div class="weui_mask weui_mask_can_close"></div>
+            <div class="weui_dialog" style="height:80%">
+                <div class="tip"></div>
+            </div>
+        </div>
+
+        <div id="result" class="weui_dialog_alert" style="display:none;">
+            <div class="weui_mask"></div>
+            <div class="weui_dialog" style="top:60%">
+                <div class="weui_dialog_hd" style="background:url(images/Userbox_Contest_Winner-Copy.png);background-size:110%;">
+                    <strong class="weui_dialog_title" style="font-size:26px;color:#DEA514">The winner is【易到】</strong>
+                </div>
                 <div class="weui_dialog_bd">
-                    <div class="weui_icon_area"><i class="weui_icon_success weui_icon_msg"></i></div>
-                    <div class="weui_text_area">
-                        <h2 class="weui_msg_title"></h2>
-                        <p class="weui_msg_desc weui_dialog_msg" id="weui_dialog_msg"></p>
+                    <div class="driverDetail"></div>
+                </div>
+                <div class="weui_dialog_bd" style="height:220px">
+                    <div id="result_didi" style="width:46%;position:absolute;left:0px;text-align: right;color:orange">
+                        <!--<div>滴滴</div>
+                        <div>
+                            <div>快车</div>
+                            <div>10元</div>
+                        </div>-->
+                    </div>
+                    <div id="result_yidao" style="width:46%;position:absolute;right:0px;text-align: left;color:red">
+                        <!--<div>易到（充返）</div>
+                        <div>
+                            <div>Young车型</div>
+                            <div>6元</div>
+                        </div>-->
                     </div>
                 </div>
                 <div class="weui_dialog_ft">
@@ -114,7 +130,6 @@
                 </div>
             </div>
         </div>
-
 
         </div><!-- /.container -->
 
@@ -126,10 +141,6 @@
         </script>
 
         <script type="text/javascript">
-            function close_dialog() {
-                $('#weui_dialog').css('display', 'none');
-            }
-
             var shareData = {
                 "title": "专车比价",
                 "desc": "专车比价,易到/Uber/滴滴哪个最省钱?",
