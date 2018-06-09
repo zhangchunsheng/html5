@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sphere Renderer</title>
+<style>
+</style>
+</head>
+<body>
+    <canvas id="sphere" width="300" height="300"></canvas>
+	<script src="..\sphere.js"></script>
+	<script>
+		function go() {
+			var texture = "earth1024x1024.jpg";
+			createSphere(document.getElementById("sphere"),texture);
+		}
+		go();
+	</script>
+</body>
+</html>
